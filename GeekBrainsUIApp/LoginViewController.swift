@@ -18,9 +18,18 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+     
+        setupPasswordField()
     }
 
+    private func setupPasswordField() {
+        let showPasswordButton = UIButton()
+        showPasswordButton.contentEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 10)
+        showPasswordButton.setImage(.eye, for: .normal)
+        passwordField.rightView = showPasswordButton
+        passwordField.rightViewMode = .always
+    }
+    
 
 }
 
