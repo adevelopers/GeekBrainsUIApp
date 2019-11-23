@@ -10,7 +10,10 @@ import UIKit
 
 class LoginViewController: UIViewController {
 
+    @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var emailPhoneLabel: UILabel!
     @IBOutlet weak var emailPhoneField: UITextField!
+    @IBOutlet weak var passwordLabel: UILabel!
     @IBOutlet weak var passwordField: UITextField!
     @IBOutlet weak var signInButton: UIButton!
     @IBAction func didTapSignIn(_ sender: Any) {
@@ -19,6 +22,7 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
      
+        setupScrollView()
         setupPasswordField()
     }
 
@@ -31,5 +35,8 @@ class LoginViewController: UIViewController {
     }
     
 
+    private func setupScrollView() {
+        scrollView.backgroundColor = .white
+    }
 }
 
