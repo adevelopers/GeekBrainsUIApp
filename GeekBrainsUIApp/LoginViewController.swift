@@ -29,7 +29,6 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-     
         setupScrollView()
         setupPasswordField()
         setupActionHideKeyboard()
@@ -60,11 +59,11 @@ class LoginViewController: UIViewController {
         let showPasswordButton = UIButton()
         showPasswordButton.contentEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 10)
         showPasswordButton.setImage(.eye, for: .normal)
+        showPasswordButton.addTarget(self, action: #selector(didTapShowPassword), for: .touchUpInside)
         passwordField.rightView = showPasswordButton
         passwordField.rightViewMode = .always
     }
     
-
     private func setupScrollView() {
         scrollView.backgroundColor = .white
     }
@@ -72,6 +71,11 @@ class LoginViewController: UIViewController {
     private func setupActionHideKeyboard() {
         let tapOnView = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
         view.addGestureRecognizer(tapOnView)
+    }
+    
+    @objc
+    private func didTapShowPassword() {
+        passwordField.isSecureTextEntry = !passwordField.isSecureTextEntry
     }
 }
 
