@@ -32,6 +32,7 @@ class LoginViewController: UIViewController {
      
         setupScrollView()
         setupPasswordField()
+        setupActionHideKeyboard()
     }
 
     private func setupPasswordField() {
@@ -46,5 +47,16 @@ class LoginViewController: UIViewController {
     private func setupScrollView() {
         scrollView.backgroundColor = .white
     }
+    
+    private func setupActionHideKeyboard() {
+        let tapOnView = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
+        view.addGestureRecognizer(tapOnView)
+    }
 }
 
+    @objc
+    private func hideKeyboard() {
+        scrollView?.endEditing(true)
+    }
+
+}
