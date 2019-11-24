@@ -34,6 +34,27 @@ class LoginViewController: UIViewController {
         setupPasswordField()
         setupActionHideKeyboard()
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+       super.viewWillAppear(animated)
+       
+       NotificationCenter.default.addObserver(self,
+                                              selector: #selector(keyboardWasShown),
+                                              name: UIResponder.keyboardWillShowNotification,
+                                              object: nil)
+       
+       NotificationCenter.default.addObserver(self,
+                                              selector: #selector(keyboardWillBeHidden),
+                                              name: UIResponder.keyboardWillHideNotification,
+                                              object: nil)
+    }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
 
     private func setupPasswordField() {
         let showPasswordButton = UIButton()
@@ -54,6 +75,31 @@ class LoginViewController: UIViewController {
     }
 }
 
+// MARK: Показ/Скрытие клавиатуры
+extension LoginViewController {
+    
+    @objc
+    private func keyboardWasShown(notification: Notification) {
+        guard
+            let info = notification.userInfo as NSDictionary?,
+            let value = info.value(forKey: UIResponder.keyboardFrameEndUserInfoKey) as? NSValue
+        else {
+            return
+        }
+        
+        let keyboardSize = value.cgRectValue.size
+        scrollView?.setContentOffset(CGPoint(x: 0,
+                                             y: keyboardSize.height
+                                                - passwordField.frame.height
+                                                - passwordLabel.intrinsicContentSize.height),
+                                     animated: true)
+    }
+    
+    @objc
+    private func keyboardWillBeHidden(notification: Notification) {
+        scrollView.setContentOffset(.zero, animated: true)
+    }
+    
     @objc
     private func hideKeyboard() {
         scrollView?.endEditing(true)
