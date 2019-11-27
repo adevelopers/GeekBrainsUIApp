@@ -9,21 +9,23 @@
 /* Begin PBXBuildFile section */
 		FAACA19D2388893A005BB6A7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAACA19C2388893A005BB6A7 /* AppDelegate.swift */; };
 		FAACA19F2388893A005BB6A7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAACA19E2388893A005BB6A7 /* SceneDelegate.swift */; };
-		FAACA1A12388893A005BB6A7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAACA1A02388893A005BB6A7 /* ViewController.swift */; };
+		FAACA1A12388893A005BB6A7 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAACA1A02388893A005BB6A7 /* LoginViewController.swift */; };
 		FAACA1A42388893A005BB6A7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAACA1A22388893A005BB6A7 /* Main.storyboard */; };
 		FAACA1A62388893C005BB6A7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FAACA1A52388893C005BB6A7 /* Assets.xcassets */; };
 		FAACA1A92388893C005BB6A7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAACA1A72388893C005BB6A7 /* LaunchScreen.storyboard */; };
+		FAACA1B123888E71005BB6A7 /* Images.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAACA1B023888E71005BB6A7 /* Images.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		FAACA1992388893A005BB6A7 /* GeekBrainsUIApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GeekBrainsUIApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAACA19C2388893A005BB6A7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FAACA19E2388893A005BB6A7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		FAACA1A02388893A005BB6A7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		FAACA1A02388893A005BB6A7 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		FAACA1A32388893A005BB6A7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FAACA1A52388893C005BB6A7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FAACA1A82388893C005BB6A7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FAACA1AA2388893C005BB6A7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FAACA1B023888E71005BB6A7 /* Images.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Images.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,11 +60,12 @@
 			children = (
 				FAACA19C2388893A005BB6A7 /* AppDelegate.swift */,
 				FAACA19E2388893A005BB6A7 /* SceneDelegate.swift */,
-				FAACA1A02388893A005BB6A7 /* ViewController.swift */,
+				FAACA1A02388893A005BB6A7 /* LoginViewController.swift */,
 				FAACA1A22388893A005BB6A7 /* Main.storyboard */,
 				FAACA1A52388893C005BB6A7 /* Assets.xcassets */,
 				FAACA1A72388893C005BB6A7 /* LaunchScreen.storyboard */,
 				FAACA1AA2388893C005BB6A7 /* Info.plist */,
+				FAACA1B023888E71005BB6A7 /* Images.swift */,
 			);
 			path = GeekBrainsUIApp;
 			sourceTree = "<group>";
@@ -138,7 +141,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FAACA1A12388893A005BB6A7 /* ViewController.swift in Sources */,
+				FAACA1A12388893A005BB6A7 /* LoginViewController.swift in Sources */,
+				FAACA1B123888E71005BB6A7 /* Images.swift in Sources */,
 				FAACA19D2388893A005BB6A7 /* AppDelegate.swift in Sources */,
 				FAACA19F2388893A005BB6A7 /* SceneDelegate.swift in Sources */,
 			);
