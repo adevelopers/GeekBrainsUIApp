@@ -27,6 +27,7 @@ class LoginViewController: UIViewController {
         setupScrollView()
         setupPasswordField()
         setupActionHideKeyboard()
+        setDemoCredentials()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -116,6 +117,11 @@ extension LoginViewController {
         let action = UIAlertAction(title: "OK", style: .cancel, handler: nil)
         alert.addAction(action)
         present(alert, animated: true)
+    }
+    
+    private func setDemoCredentials() {
+        emailPhoneField.text = "client"
+        passwordField.text = "12345"
     }
     
 }
