@@ -8,6 +8,10 @@
 
 import UIKit
 
+enum Segues: String {
+    case tabbar
+}
+
 class LoginViewController: UIViewController {
 
     @IBOutlet weak var scrollView: UIScrollView!
@@ -68,6 +72,52 @@ class LoginViewController: UIViewController {
     private func didTapShowPassword() {
         passwordField.isSecureTextEntry = !passwordField.isSecureTextEntry
     }
+    
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+        guard
+            let login = emailPhoneField.text,
+            let passord = passwordField.text
+        else {
+            return false
+        }
+        
+        switch Segues(rawValue: identifier) {
+        case .tabbar:
+            if isValid(credentials: (login, passord)) {
+                return true
+            } else {
+                showError(message: "Введены неверные данные пользователя")
+            }
+            return false
+        default:
+            return false
+        }
+    }
+    
+}
+
+extension LoginViewController {
+    
+    private func isValid(credentials: (login: String, password: String)) -> Bool {
+        if
+            credentials.login == "client",
+            credentials.password == "12345"
+        {
+            print("✅")
+            return true
+        } else {
+            print("❌")
+            return false
+        }
+    }
+    
+    private func showError(message: String) {
+        let alert = UIAlertController(title: "Ошибка", message: message, preferredStyle: .alert)
+        let action = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+        alert.addAction(action)
+        present(alert, animated: true)
+    }
+    
 }
 
 // MARK: Показ/Скрытие клавиатуры
