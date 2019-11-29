@@ -191,7 +191,6 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <action selector="didTapSignIn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fPA-qS-kKZ"/>
                                             <segue destination="7Zn-w4-e6b" kind="show" identifier="tabbar" id="udc-Gq-yMP"/>
                                         </connections>
                                     </button>

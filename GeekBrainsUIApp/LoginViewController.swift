@@ -16,16 +16,7 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var passwordLabel: UILabel!
     @IBOutlet weak var passwordField: UITextField!
     @IBOutlet weak var signInButton: UIButton!
-    @IBAction func didTapSignIn(_ sender: Any) {
-        guard
-            let emailOrPhone = emailPhoneField.text,
-            let password = passwordField.text
-        else {
-            return
-        }
-        
-        print("введены \(emailOrPhone) и \(password)")
-    }
+   
     
     override func viewDidLoad() {
         super.viewDidLoad()
