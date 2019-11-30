@@ -15,5 +15,6 @@ struct User {
     let lastName: String
     let email: String
     let phone: String
+    let avatar: String
     let sex: Sex
 }
