@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FA08D2682392F9CF0005E549 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA08D2672392F9CF0005E549 /* User.swift */; };
+		FA08D26A2392FD9A0005E549 /* Sex.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA08D2692392FD9A0005E549 /* Sex.swift */; };
 		FAACA19D2388893A005BB6A7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAACA19C2388893A005BB6A7 /* AppDelegate.swift */; };
 		FAACA19F2388893A005BB6A7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAACA19E2388893A005BB6A7 /* SceneDelegate.swift */; };
 		FAACA1A12388893A005BB6A7 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAACA1A02388893A005BB6A7 /* LoginViewController.swift */; };
@@ -17,6 +19,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FA08D2672392F9CF0005E549 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		FA08D2692392FD9A0005E549 /* Sex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sex.swift; sourceTree = "<group>"; };
 		FAACA1992388893A005BB6A7 /* GeekBrainsUIApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GeekBrainsUIApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAACA19C2388893A005BB6A7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FAACA19E2388893A005BB6A7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -42,6 +46,8 @@
 		FA08D2662392EAD20005E549 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				FA08D2672392F9CF0005E549 /* User.swift */,
+				FA08D2692392FD9A0005E549 /* Sex.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -151,7 +157,9 @@
 			files = (
 				FAACA1A12388893A005BB6A7 /* LoginViewController.swift in Sources */,
 				FAACA1B123888E71005BB6A7 /* Images.swift in Sources */,
+				FA08D26A2392FD9A0005E549 /* Sex.swift in Sources */,
 				FAACA19D2388893A005BB6A7 /* AppDelegate.swift in Sources */,
+				FA08D2682392F9CF0005E549 /* User.swift in Sources */,
 				FAACA19F2388893A005BB6A7 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
