@@ -66,12 +66,20 @@
 		FA08D26D2393BCB60005E549 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				FA08D27623940B310005E549 /* Friends */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		FA08D27623940B310005E549 /* Friends */ = {
+			isa = PBXGroup;
+			children = (
 				FA08D26E2393BD0C0005E549 /* FriendListViewController.swift */,
 				FA08D2702393C7E00005E549 /* FriendCell.swift */,
 				FA08D2722393EF000005E549 /* FriendDetailCell.swift */,
 				FA08D2742393F0E50005E549 /* FriendViewController.swift */,
 			);
-			path = UI;
+			path = Friends;
 			sourceTree = "<group>";
 		};
 		FAACA1902388893A005BB6A7 = {

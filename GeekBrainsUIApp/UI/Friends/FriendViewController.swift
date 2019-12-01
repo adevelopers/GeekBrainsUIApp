@@ -41,6 +41,7 @@ class FriendViewController: UICollectionViewController {
         cell.avaterImageView.image = friend.avatar.isEmpty
             ? .noPhoto
             : UIImage(imageLiteralResourceName: friend.avatar)
+        cell.avaterImageView.backgroundColor = .gray
         cell.lastVisitLabel.text = (friend.sex == .male ? "Заходил" : "Заходила") + " час назад"
         
         return cell
