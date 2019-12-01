@@ -17,6 +17,16 @@ class FriendListViewController: UITableViewController {
 
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if  let segueId = segue.identifier,
+            segueId == "friendDetailSegue",
+            let friendViewController = segue.destination as? FriendViewController,
+            let selectedIndex = tableView.indexPathForSelectedRow
+        {
+            friendViewController.model = items[selectedIndex.row]
+        }
+    }
+    
 
     // MARK: DataSource
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
