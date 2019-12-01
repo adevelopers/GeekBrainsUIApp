@@ -31,7 +31,7 @@
         <scene sceneID="XJp-Yf-AF3">
             <objects>
                 <tableViewController id="M5q-uI-CfN" customClass="GroupsListViewController" customModule="GeekBrainsUIApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Jyl-k0-Ngi">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Jyl-k0-Ngi">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <inset key="separatorInset" minX="66" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -41,36 +41,39 @@
                             <outlet property="delegate" destination="M5q-uI-CfN" id="ahH-0g-d1c"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Мои группы" id="AzK-Xo-80h"/>
+                    <navigationItem key="navigationItem" title="Мои группы" id="AzK-Xo-80h">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="s8L-Lb-L0Q">
+                            <connections>
+                                <segue destination="Y5Q-M2-177" kind="show" identifier="addGroupSegue" id="nRM-SZ-jcm"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pAP-oi-fXU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3043.125" y="495.42253521126759"/>
+            <point key="canvasLocation" x="3043" y="495"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Add Group-->
         <scene sceneID="sfJ-IZ-aHe">
             <objects>
-                <tableViewController id="Y5Q-M2-177" sceneMemberID="viewController">
+                <tableViewController id="Y5Q-M2-177" userLabel="Add Group" customClass="AddGroupViewController" customModule="GeekBrainsUIApp" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="IZn-5L-cR7">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="Q65-YM-gUu">
-                                <rect key="frame" x="0.0" y="28" width="320" height="43.5"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Q65-YM-gUu" id="gym-Gu-IFF">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
                         <connections>
                             <outlet property="dataSource" destination="Y5Q-M2-177" id="qcH-xO-QM2"/>
                             <outlet property="delegate" destination="Y5Q-M2-177" id="MqV-Xz-m1u"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="Yya-HT-mRm"/>
+                    <navigationItem key="navigationItem" title=" " id="Yya-HT-mRm">
+                        <barButtonItem key="backBarButtonItem" title=" " id="le1-lX-UHK"/>
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="more_horizontal" id="jnq-dg-ec9">
+                            <connections>
+                                <action selector="unwindToSegue:" destination="Y5Q-M2-177" id="OGR-Em-xvm"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="p6h-3V-2Lc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -397,6 +400,7 @@
                                         </label>
                                     </subviews>
                                     <constraints>
+                                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="7OY-zw-cAC" secondAttribute="trailing" constant="10" id="0Tf-uN-diK"/>
                                         <constraint firstItem="VuP-hd-g9d" firstAttribute="top" secondItem="kAA-uF-swA" secondAttribute="top" constant="10" id="5Do-yO-m1f"/>
                                         <constraint firstItem="7OY-zw-cAC" firstAttribute="top" secondItem="N8R-pf-Xhp" secondAttribute="bottom" constant="8" id="8LI-hR-Hx5"/>
                                         <constraint firstItem="N8R-pf-Xhp" firstAttribute="leading" secondItem="VuP-hd-g9d" secondAttribute="trailing" constant="16" id="9JN-W7-HTI"/>
@@ -429,6 +433,7 @@
     <resources>
         <image name="VK-Logo" width="192" height="192"/>
         <image name="groups2" width="28" height="28"/>
+        <image name="more_horizontal" width="24" height="24"/>
         <image name="no-photo" width="48" height="48"/>
         <image name="user" width="28" height="28"/>
     </resources>

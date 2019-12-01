@@ -23,9 +23,12 @@ extension Group {
         Group(id: "1", name: "Интернет вещей", description: "IoT, Smart devices", avatar: "iot", isInGroup: true),
         Group(id: "2", name: "Соус", description: "Рецепты", avatar: "sous", isInGroup: true),
         Group(id: "3", name: "Идеи для дома", description: "другие хобби", avatar: "idea", isInGroup: true),
-        Group(id: "4", name: "Фитнесс", description: "", avatar: "fitness", isInGroup: true),
+        Group(id: "4", name: "Фитнесс", description: "Тренировки", avatar: "fitness", isInGroup: true),
         Group(id: "5", name: "Мобильная разработка", description: "", avatar: "ios2", isInGroup: false),
-        Group(id: "6", name: "PeerLab", description: "", avatar: "ios", isInGroup: false),
+        Group(id: "6", name: "PeerLab", description: "Камерные встречи разработчиков", avatar: "ios", isInGroup: false),
         Group(id: "7", name: "Еда", description: "Стейки", avatar: "meat" , isInGroup: false),
     ]
 }
+
+
+extension Group: Hashable {}
