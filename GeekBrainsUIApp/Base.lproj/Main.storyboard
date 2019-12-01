@@ -221,7 +221,8 @@
                                 <constraints>
                                     <constraint firstItem="jLT-ln-kNu" firstAttribute="centerX" secondItem="S1t-vj-i5E" secondAttribute="centerX" id="1aP-7j-sa1"/>
                                     <constraint firstAttribute="bottom" secondItem="f0U-Tt-l5b" secondAttribute="bottom" constant="166" id="5ii-dd-Mfl">
-                                        <variation key="heightClass=compact-widthClass=regular" constant="30"/>
+                                        <variation key="heightClass=compact-widthClass=regular" constant="15"/>
+                                        <variation key="heightClass=regular-widthClass=compact" constant="166"/>
                                     </constraint>
                                     <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="BRF-Lg-zvj" secondAttribute="trailing" constant="211" id="AIv-D4-xL1"/>
                                     <constraint firstItem="IvB-jW-ifI" firstAttribute="centerX" secondItem="S1t-vj-i5E" secondAttribute="centerX" id="EeS-CU-co7"/>
