@@ -12,6 +12,7 @@
 		FA08D26C239301F60005E549 /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA08D26B239301F60005E549 /* Group.swift */; };
 		FA08D26F2393BD0C0005E549 /* FriendListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA08D26E2393BD0C0005E549 /* FriendListViewController.swift */; };
 		FA08D2712393C7E00005E549 /* FriendCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA08D2702393C7E00005E549 /* FriendCell.swift */; };
+		FA08D2732393EF000005E549 /* FriendDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA08D2722393EF000005E549 /* FriendDetailCell.swift */; };
 		FAACA19D2388893A005BB6A7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAACA19C2388893A005BB6A7 /* AppDelegate.swift */; };
 		FAACA19F2388893A005BB6A7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAACA19E2388893A005BB6A7 /* SceneDelegate.swift */; };
 		FAACA1A12388893A005BB6A7 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAACA1A02388893A005BB6A7 /* LoginViewController.swift */; };
@@ -27,6 +28,7 @@
 		FA08D26B239301F60005E549 /* Group.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
 		FA08D26E2393BD0C0005E549 /* FriendListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendListViewController.swift; sourceTree = "<group>"; };
 		FA08D2702393C7E00005E549 /* FriendCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendCell.swift; sourceTree = "<group>"; };
+		FA08D2722393EF000005E549 /* FriendDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendDetailCell.swift; sourceTree = "<group>"; };
 		FAACA1992388893A005BB6A7 /* GeekBrainsUIApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GeekBrainsUIApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAACA19C2388893A005BB6A7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FAACA19E2388893A005BB6A7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -64,6 +66,7 @@
 			children = (
 				FA08D26E2393BD0C0005E549 /* FriendListViewController.swift */,
 				FA08D2702393C7E00005E549 /* FriendCell.swift */,
+				FA08D2722393EF000005E549 /* FriendDetailCell.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -172,6 +175,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA08D2732393EF000005E549 /* FriendDetailCell.swift in Sources */,
 				FA08D26C239301F60005E549 /* Group.swift in Sources */,
 				FAACA1A12388893A005BB6A7 /* LoginViewController.swift in Sources */,
 				FAACA1B123888E71005BB6A7 /* Images.swift in Sources */,
