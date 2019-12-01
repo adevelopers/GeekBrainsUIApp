@@ -22,6 +22,7 @@ class FriendCell: UITableViewCell {
     }
     
     func setAvatar(with name: String) {
-        avatarImageView.image = UIImage(imageLiteralResourceName: name)
+        
+        avatarImageView.image = name.isEmpty ? .noPhoto : UIImage(imageLiteralResourceName: name)
     }
 }
