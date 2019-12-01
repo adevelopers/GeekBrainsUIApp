@@ -17,4 +17,14 @@ struct User {
     let phone: String
     let avatar: String
     let sex: Sex
+    let location: String?
+}
+
+
+extension User {
+    var name: String {
+        return "\(lastName) \(firstName)".trimmingCharacters(in: [" "])
+    }
+}
+
 }
