@@ -23,7 +23,7 @@ struct User {
 
 extension User {
     var name: String {
-        return "\(lastName) \(firstName)".trimmingCharacters(in: [" "])
+        return "\(firstName) \(lastName)".trimmingCharacters(in: [" "])
     }
 }
 
