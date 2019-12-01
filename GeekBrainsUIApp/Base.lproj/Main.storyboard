@@ -27,61 +27,25 @@
             </objects>
             <point key="canvasLocation" x="1175" y="125"/>
         </scene>
-        <!--Search-->
+        <!--Мои группы-->
         <scene sceneID="XJp-Yf-AF3">
             <objects>
-                <tableViewController id="M5q-uI-CfN" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="Jyl-k0-Ngi">
+                <tableViewController id="M5q-uI-CfN" customClass="GroupsListViewController" customModule="GeekBrainsUIApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Jyl-k0-Ngi">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <sections>
-                            <tableViewSection id="DN3-Bp-jYT">
-                                <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="Dac-Ha-D5I">
-                                        <rect key="frame" x="0.0" y="18" width="320" height="43.666667938232422"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Dac-Ha-D5I" id="g2S-BN-Ycr">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43.666667938232422"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="DOq-2D-GCf">
-                                        <rect key="frame" x="0.0" y="61.666667938232422" width="320" height="43.666667938232422"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="DOq-2D-GCf" id="GFx-cS-BOK">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43.666667938232422"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="VaR-OF-es2">
-                                        <rect key="frame" x="0.0" y="105.33333587646484" width="320" height="43.666667938232422"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="VaR-OF-es2" id="FDc-wq-mjf">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43.666667938232422"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </cells>
-                            </tableViewSection>
-                        </sections>
+                        <inset key="separatorInset" minX="66" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        <sections/>
                         <connections>
                             <outlet property="dataSource" destination="M5q-uI-CfN" id="9Hg-Wd-9Rl"/>
                             <outlet property="delegate" destination="M5q-uI-CfN" id="ahH-0g-d1c"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Search" id="AzK-Xo-80h">
-                        <barButtonItem key="rightBarButtonItem" title="Item" image="add_user_outline" id="ghP-PS-Y36">
-                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            <connections>
-                                <segue destination="Y5Q-M2-177" kind="show" id="LB8-uY-EWa"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Мои группы" id="AzK-Xo-80h"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pAP-oi-fXU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3044.9275362318845" y="495.53571428571428"/>
+            <point key="canvasLocation" x="3043.125" y="495.42253521126759"/>
         </scene>
         <!--Table View Controller-->
         <scene sceneID="sfJ-IZ-aHe">
@@ -112,11 +76,11 @@
             </objects>
             <point key="canvasLocation" x="3928" y="496"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Группы-->
         <scene sceneID="8p8-LC-spP">
             <objects>
                 <navigationController id="btu-Cx-fFN" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="Search" id="xUt-UT-nMo"/>
+                    <tabBarItem key="tabBarItem" title="Группы" image="groups2" id="xUt-UT-nMo"/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="9z8-jn-lJR">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -463,9 +427,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Search" width="28" height="28"/>
         <image name="VK-Logo" width="192" height="192"/>
-        <image name="add_user_outline" width="28" height="28"/>
+        <image name="groups2" width="28" height="28"/>
         <image name="no-photo" width="48" height="48"/>
         <image name="user" width="28" height="28"/>
     </resources>

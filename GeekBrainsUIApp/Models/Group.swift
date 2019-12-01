@@ -14,17 +14,18 @@ struct Group {
     let name: String
     let description: String
     let avatar: String
+    let isInGroup: Bool
 }
 
 
 extension Group {
     static let items = [
-        Group(id: "1", name: "Интернет вещей", description: "IoT, Smart devices", avatar: "iot"),
-        Group(id: "2", name: "Соус", description: "Рецепты", avatar: "sous"),
-        Group(id: "3", name: "Идеи для дома", description: "другие хобби", avatar: "idea"),
-        Group(id: "4", name: "Фитнесс", description: "", avatar: "fitness"),
-        Group(id: "5", name: "Мобильная разработка", description: "", avatar: "ios2"),
-        Group(id: "6", name: "PeerLab", description: "", avatar: "ios"),
-        Group(id: "7", name: "Еда", description: "Стейки", avatar: "meat"),
+        Group(id: "1", name: "Интернет вещей", description: "IoT, Smart devices", avatar: "iot", isInGroup: true),
+        Group(id: "2", name: "Соус", description: "Рецепты", avatar: "sous", isInGroup: true),
+        Group(id: "3", name: "Идеи для дома", description: "другие хобби", avatar: "idea", isInGroup: true),
+        Group(id: "4", name: "Фитнесс", description: "", avatar: "fitness", isInGroup: true),
+        Group(id: "5", name: "Мобильная разработка", description: "", avatar: "ios2", isInGroup: false),
+        Group(id: "6", name: "PeerLab", description: "", avatar: "ios", isInGroup: false),
+        Group(id: "7", name: "Еда", description: "Стейки", avatar: "meat" , isInGroup: false),
     ]
 }
