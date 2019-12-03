@@ -39,10 +39,14 @@ class AnimationViewController: UIViewController {
             self.tree2.moveY(-200)
         }
         
-        UIView.animate(withDuration: 2, delay: 1, usingSpringWithDamping: 1, initialSpringVelocity: 0, options: [.curveLinear], animations: {
+        UIView.animate(withDuration: 2,
+                       delay: 1,
+                       usingSpringWithDamping: 0.1,
+                       initialSpringVelocity: 0.5,
+                       options: [.curveLinear],
+                       animations: {
                self.sun.moveXY(CGPoint(x: -50, y: -250))
-        },completion: { _ in
-            
+        },completion: { _ in            
             self.view.bringSubviewToFront(self.sun)
             UIView.animate(withDuration: 0.8) {
                 self.sun.transform = CGAffineTransform.init(scaleX: 130, y: 130)
@@ -50,7 +54,12 @@ class AnimationViewController: UIViewController {
             self.view.bringSubviewToFront(self.animateButton)
         })
         
-        UIView.animate(withDuration: 1, delay: 0.65, usingSpringWithDamping: 0.3, initialSpringVelocity: 0.6, options: [.curveEaseInOut], animations: {
+        UIView.animate(withDuration: 1,
+                       delay: 0.65,
+                       usingSpringWithDamping: 0.3,
+                       initialSpringVelocity: 0.6,
+                       options: [.curveEaseInOut],
+                       animations: {
             self.trees.moveY( -150)
         }, completion: nil)
         
@@ -74,11 +83,7 @@ class AnimationViewController: UIViewController {
         view.addSubview(tree3)
         view.addSubview(ground)
         
-        
         initialState()
-        
-        
-        
     }
     
     private func initialState() {
