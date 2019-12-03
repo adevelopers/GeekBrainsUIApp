@@ -73,6 +73,7 @@ class AnimationViewController: UIViewController {
     let tree2 = UIImageView(image: .tree2)
     let tree3 = UIImageView(image: .tree3)
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -83,6 +84,13 @@ class AnimationViewController: UIViewController {
         view.addSubview(tree3)
         view.addSubview(ground)
         
+        sun.accessibilityLabel = "Sun"
+        ground.accessibilityLabel = "Ground"
+        trees.accessibilityLabel = "Forest"
+        tree1.accessibilityLabel = "Tree1"
+        tree2.accessibilityLabel = "Tree2"
+        tree3.accessibilityLabel = "Tree3"
+
         initialState()
     }
     
