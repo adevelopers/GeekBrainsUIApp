@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FA08D283239707D60005E549 /* AnimationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA08D282239707D60005E549 /* AnimationViewController.swift */; };
 		FAACA19D2388893A005BB6A7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAACA19C2388893A005BB6A7 /* AppDelegate.swift */; };
 		FAACA19F2388893A005BB6A7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAACA19E2388893A005BB6A7 /* SceneDelegate.swift */; };
 		FAACA1A12388893A005BB6A7 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAACA1A02388893A005BB6A7 /* LoginViewController.swift */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FA08D282239707D60005E549 /* AnimationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationViewController.swift; sourceTree = "<group>"; };
 		FAACA1992388893A005BB6A7 /* GeekBrainsUIApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GeekBrainsUIApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAACA19C2388893A005BB6A7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FAACA19E2388893A005BB6A7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -66,6 +68,7 @@
 				FAACA1A72388893C005BB6A7 /* LaunchScreen.storyboard */,
 				FAACA1AA2388893C005BB6A7 /* Info.plist */,
 				FAACA1B023888E71005BB6A7 /* Images.swift */,
+				FA08D282239707D60005E549 /* AnimationViewController.swift */,
 			);
 			path = GeekBrainsUIApp;
 			sourceTree = "<group>";
@@ -143,6 +146,7 @@
 			files = (
 				FAACA1A12388893A005BB6A7 /* LoginViewController.swift in Sources */,
 				FAACA1B123888E71005BB6A7 /* Images.swift in Sources */,
+				FA08D283239707D60005E549 /* AnimationViewController.swift in Sources */,
 				FAACA19D2388893A005BB6A7 /* AppDelegate.swift in Sources */,
 				FAACA19F2388893A005BB6A7 /* SceneDelegate.swift in Sources */,
 			);
