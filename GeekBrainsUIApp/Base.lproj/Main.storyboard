@@ -187,9 +187,9 @@
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="jLT-ln-kNu" firstAttribute="centerX" secondItem="S1t-vj-i5E" secondAttribute="centerX" id="1aP-7j-sa1"/>
-                                    <constraint firstAttribute="bottom" secondItem="f0U-Tt-l5b" secondAttribute="bottom" constant="166" id="5ii-dd-Mfl">
+                                    <constraint firstAttribute="bottom" secondItem="f0U-Tt-l5b" secondAttribute="bottom" constant="20" id="5ii-dd-Mfl">
                                         <variation key="heightClass=compact-widthClass=regular" constant="15"/>
-                                        <variation key="heightClass=regular-widthClass=compact" constant="166"/>
+                                        <variation key="heightClass=regular-widthClass=compact" constant="20"/>
                                     </constraint>
                                     <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="BRF-Lg-zvj" secondAttribute="trailing" constant="211" id="AIv-D4-xL1"/>
                                     <constraint firstItem="IvB-jW-ifI" firstAttribute="centerX" secondItem="S1t-vj-i5E" secondAttribute="centerX" id="EeS-CU-co7"/>
@@ -215,6 +215,7 @@
                                     <constraint firstItem="BRF-Lg-zvj" firstAttribute="top" secondItem="IvB-jW-ifI" secondAttribute="bottom" constant="17" id="vIk-5C-dsT"/>
                                     <constraint firstItem="f0U-Tt-l5b" firstAttribute="top" secondItem="xx3-nN-7fV" secondAttribute="bottom" constant="42" id="wYr-j6-CTv">
                                         <variation key="heightClass=compact-widthClass=compact" constant="22"/>
+                                        <variation key="heightClass=regular-widthClass=compact" constant="42"/>
                                     </constraint>
                                 </constraints>
                                 <viewLayoutGuide key="contentLayoutGuide" id="2E2-9c-uhF"/>
