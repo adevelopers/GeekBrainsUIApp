@@ -9,6 +9,10 @@
 import Foundation
 
 
+enum Sex {
+    case unsetted, male, female
+}
+
 struct User {
     let id: String
     let firstName: String
