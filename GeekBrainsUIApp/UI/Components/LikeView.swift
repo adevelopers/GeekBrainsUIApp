@@ -12,6 +12,8 @@ import UIKit
 class LikeView: UIControl {
     
     var count: Int = Int.random(in: 0...134)
+    var normalColor = UIColor.lightGray
+    var selectedColor = UIColor.red
     
     private let heartButton = HeartButton()
     private let likeCountLabel = UILabel(frame: CGRect(origin: .zero,
@@ -19,9 +21,11 @@ class LikeView: UIControl {
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
+        heartButton.selectedColor = selectedColor
+        heartButton.strokeColor = normalColor
         heartButton.backgroundColor = .clear
         likeCountLabel.textAlignment = .left
-        likeCountLabel.textColor = .lightGray
+        likeCountLabel.textColor = normalColor
         likeCountLabel.font = UIFont.systemFont(ofSize: 12)
         likeCountLabel.text = "\(count)"
         addSubview(heartButton)
@@ -44,10 +48,12 @@ class LikeView: UIControl {
     @objc
     private func didTapHeart() {
         if heartButton.isSelected {
+            likeCountLabel.textColor = normalColor
             heartButton.isSelected = false
             count -= 1
         } else {
             heartButton.isSelected = true
+            likeCountLabel.textColor = selectedColor
             count += 1
         }
         

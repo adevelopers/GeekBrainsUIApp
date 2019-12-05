@@ -11,20 +11,28 @@ import UIKit
 
 final class HeartButton: UIButton {
     
+    var strokeColor: UIColor = .lightGray
+    var selectedColor: UIColor = .systemRed
+    
     private var strokeWidth: CGFloat = 2.0
-    private var strokeColor: UIColor = .lightGray
-        
+    
     override func draw(_ rect: CGRect) {
         super.draw(rect)
-           
+        
         let bezierPath = UIBezierPath(heartIn: bounds)
-        strokeColor.setStroke()
-        bezierPath.lineWidth = strokeWidth
-        bezierPath.stroke()
+        
         if isSelected {
-           strokeColor.setFill()
-           bezierPath.fill()
+            bezierPath.lineWidth = strokeWidth
+            selectedColor.setStroke()
+            bezierPath.stroke()
+            selectedColor.setFill()
+            bezierPath.fill()
+        } else {
+            bezierPath.lineWidth = strokeWidth
+            strokeColor.setStroke()
+            bezierPath.stroke()
         }
+        
     }
-
+    
 }
