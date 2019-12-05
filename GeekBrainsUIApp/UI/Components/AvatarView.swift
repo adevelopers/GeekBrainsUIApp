@@ -8,6 +8,7 @@
 
 import UIKit
 
+
 @IBDesignable
 final class AvatarView: UIView {
 
@@ -41,8 +42,8 @@ final class AvatarView: UIView {
         avatarImageView.frame = CGRect(origin: .zero,
                                        size: CGSize(width: side, height: side))
         avatarImageView.layer.cornerRadius = side / 2
-        avatarImageView.center = CGPoint(x: frame.width / 2, y: frame.height / 2)
         avatarImageView.layer.masksToBounds = true
+        avatarImageView.center = CGPoint(x: frame.width / 2, y: frame.height / 2)
     }
     
     private func setupShadow() {
@@ -52,5 +53,3 @@ final class AvatarView: UIView {
         layer.shadowOffset = CGSize(width: 0, height: 4)
     }
 }
-
-

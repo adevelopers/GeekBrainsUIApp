@@ -25,6 +25,8 @@
 		FAACA1A62388893C005BB6A7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FAACA1A52388893C005BB6A7 /* Assets.xcassets */; };
 		FAACA1A92388893C005BB6A7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAACA1A72388893C005BB6A7 /* LaunchScreen.storyboard */; };
 		FAACA1B123888E71005BB6A7 /* Images.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAACA1B023888E71005BB6A7 /* Images.swift */; };
+		FAC59DFA23999D8E0097D0B5 /* LikeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC59DF923999D8E0097D0B5 /* LikeView.swift */; };
+		FAC59DFC2399AE050097D0B5 /* HeartButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC59DFB2399AE050097D0B5 /* HeartButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +50,8 @@
 		FAACA1A82388893C005BB6A7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FAACA1AA2388893C005BB6A7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FAACA1B023888E71005BB6A7 /* Images.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Images.swift; sourceTree = "<group>"; };
+		FAC59DF923999D8E0097D0B5 /* LikeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeView.swift; sourceTree = "<group>"; };
+		FAC59DFB2399AE050097D0B5 /* HeartButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeartButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +110,8 @@
 			isa = PBXGroup;
 			children = (
 				FA08D286239823DF0005E549 /* AvatarView.swift */,
+				FAC59DF923999D8E0097D0B5 /* LikeView.swift */,
+				FAC59DFB2399AE050097D0B5 /* HeartButton.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -227,6 +233,8 @@
 				FAACA19D2388893A005BB6A7 /* AppDelegate.swift in Sources */,
 				FA08D279239411EE0005E549 /* GroupsListViewController.swift in Sources */,
 				FA08D2682392F9CF0005E549 /* User.swift in Sources */,
+				FAC59DFC2399AE050097D0B5 /* HeartButton.swift in Sources */,
+				FAC59DFA23999D8E0097D0B5 /* LikeView.swift in Sources */,
 				FA08D2752393F0E50005E549 /* FriendViewController.swift in Sources */,
 				FAACA19F2388893A005BB6A7 /* SceneDelegate.swift in Sources */,
 			);
