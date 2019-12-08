@@ -14,6 +14,7 @@ class GroupCell: UITableViewCell {
     @IBOutlet weak var avatarImageView: UIImageView!
     
     static let reuseId = "GroupCell"
+    static let height: CGFloat = 100
     
     override func awakeFromNib() {
         super.awakeFromNib()
