@@ -2,7 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="P5a-eG-HQp">
     <device id="retina4_0" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -19,6 +19,7 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
+                        <segue destination="GgP-sW-K8F" kind="relationship" relationship="viewControllers" id="MR6-dB-sXO"/>
                         <segue destination="qbA-UM-zZb" kind="relationship" relationship="viewControllers" id="8AQ-VT-x4w"/>
                         <segue destination="btu-Cx-fFN" kind="relationship" relationship="viewControllers" id="U28-uI-Czi"/>
                     </connections>
@@ -296,6 +297,46 @@
             </objects>
             <point key="canvasLocation" x="138.75" y="124.64788732394366"/>
         </scene>
+        <!--Новости-->
+        <scene sceneID="Usf-ec-Hjw">
+            <objects>
+                <tableViewController title="Новости" id="e5R-pm-CqQ" customClass="NewsfeedViewController" customModule="GeekBrainsUIApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="PlH-cl-Q20">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <connections>
+                            <outlet property="dataSource" destination="e5R-pm-CqQ" id="xab-qU-vxW"/>
+                            <outlet property="delegate" destination="e5R-pm-CqQ" id="qV8-P8-dI9"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="r9r-0f-HMW"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vuy-HJ-CAA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3041" y="-976"/>
+        </scene>
+        <!--Новости-->
+        <scene sceneID="QaN-Yf-a4E">
+            <objects>
+                <navigationController title="Новости" id="GgP-sW-K8F" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Новости" image="Newsfeed" id="VKl-uU-hRy"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="7kv-9i-jxp">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.371132195" green="0.56384712459999997" blue="0.77650052309999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="e5R-pm-CqQ" kind="relationship" relationship="rootViewController" id="kSi-or-FBy"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2vh-24-Lpy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2106" y="-976"/>
+        </scene>
         <!--First line-->
         <scene sceneID="oS4-Zg-IUL">
             <objects>
@@ -483,6 +524,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Newsfeed" width="28" height="28"/>
         <image name="VK-Logo" width="192" height="192"/>
         <image name="groups2" width="28" height="28"/>
         <image name="lena" width="200" height="200"/>
