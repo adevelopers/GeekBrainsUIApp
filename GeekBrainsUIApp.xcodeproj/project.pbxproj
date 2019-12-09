@@ -11,6 +11,7 @@
 		F1C1D7EF239BC55400CE34F9 /* NewsfeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C1D7EE239BC55400CE34F9 /* NewsfeedViewController.swift */; };
 		F1C1D7F2239BC92A00CE34F9 /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C1D7F0239BC92A00CE34F9 /* PostCell.swift */; };
 		F1C1D7F3239BC92A00CE34F9 /* PostCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F1C1D7F1239BC92A00CE34F9 /* PostCell.xib */; };
+		F1C1D820239D85D500CE34F9 /* AlphabetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C1D81F239D85D500CE34F9 /* AlphabetView.swift */; };
 		FA08D2682392F9CF0005E549 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA08D2672392F9CF0005E549 /* User.swift */; };
 		FA08D26C239301F60005E549 /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA08D26B239301F60005E549 /* Group.swift */; };
 		FA08D26F2393BD0C0005E549 /* FriendListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA08D26E2393BD0C0005E549 /* FriendListViewController.swift */; };
@@ -38,6 +39,7 @@
 		F1C1D7EE239BC55400CE34F9 /* NewsfeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsfeedViewController.swift; sourceTree = "<group>"; };
 		F1C1D7F0239BC92A00CE34F9 /* PostCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
 		F1C1D7F1239BC92A00CE34F9 /* PostCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostCell.xib; sourceTree = "<group>"; };
+		F1C1D81F239D85D500CE34F9 /* AlphabetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlphabetView.swift; sourceTree = "<group>"; };
 		FA08D2672392F9CF0005E549 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		FA08D26B239301F60005E549 /* Group.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
 		FA08D26E2393BD0C0005E549 /* FriendListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendListViewController.swift; sourceTree = "<group>"; };
@@ -132,6 +134,7 @@
 				FA08D286239823DF0005E549 /* AvatarView.swift */,
 				FAC59DF923999D8E0097D0B5 /* LikeView.swift */,
 				FAC59DFB2399AE050097D0B5 /* HeartButton.swift */,
+				F1C1D81F239D85D500CE34F9 /* AlphabetView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -243,6 +246,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA08D2732393EF000005E549 /* FriendDetailCell.swift in Sources */,
+				F1C1D820239D85D500CE34F9 /* AlphabetView.swift in Sources */,
 				FA08D26C239301F60005E549 /* Group.swift in Sources */,
 				FAACA1A12388893A005BB6A7 /* LoginViewController.swift in Sources */,
 				FAACA1B123888E71005BB6A7 /* Images.swift in Sources */,

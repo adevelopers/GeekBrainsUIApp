@@ -10,11 +10,24 @@ import UIKit
 
 class FriendListViewController: UITableViewController {
 
+    let alphabetControl = AlphabetControl(frame: CGRect(x: 0, y: 0, width: 40, height: 300))
+    
     var items = User.items
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        navigationController?.view.addSubview(alphabetControl)
+        alphabetControl.list = Set(items.map { "\($0.firstName.first ?? Character(""))" }).sorted()
+        alphabetControl.frame = view.bounds
+        alphabetControl.frame.size = CGSize(width: 50, height: view.frame.height * 0.3)
+        alphabetControl.center = CGPoint(x: view.bounds.width - 25,
+                                         y: view.center.y)
+        
+        alphabetControl.rx_subscribe(onNext: { selectedLetter in
+            print("Выбрана буква -> ", selectedLetter)
+            // проскролить до ближайшего пользователя имя которого начинается с letter
+//            tableView.scr
+        })
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -27,7 +40,6 @@ class FriendListViewController: UITableViewController {
         }
     }
     
-
     // MARK: DataSource
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return items.count
