@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F1B2784423A010C000ED7F44 /* MessagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B2784323A010C000ED7F44 /* MessagesViewController.swift */; };
+		F1B2784723A0111600ED7F44 /* MessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B2784523A0111600ED7F44 /* MessageCell.swift */; };
+		F1B2784823A0111600ED7F44 /* MessageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F1B2784623A0111600ED7F44 /* MessageCell.xib */; };
+		F1B2784A23A0191400ED7F44 /* CustomCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B2784923A0191400ED7F44 /* CustomCollectionViewLayout.swift */; };
 		F1C1D7EC239B9A9900CE34F9 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C1D7EB239B9A9900CE34F9 /* Post.swift */; };
 		F1C1D7EF239BC55400CE34F9 /* NewsfeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C1D7EE239BC55400CE34F9 /* NewsfeedViewController.swift */; };
 		F1C1D7F2239BC92A00CE34F9 /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C1D7F0239BC92A00CE34F9 /* PostCell.swift */; };
@@ -34,6 +38,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F1B2784323A010C000ED7F44 /* MessagesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesViewController.swift; sourceTree = "<group>"; };
+		F1B2784523A0111600ED7F44 /* MessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageCell.swift; sourceTree = "<group>"; };
+		F1B2784623A0111600ED7F44 /* MessageCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MessageCell.xib; sourceTree = "<group>"; };
+		F1B2784923A0191400ED7F44 /* CustomCollectionViewLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCollectionViewLayout.swift; sourceTree = "<group>"; };
 		F1C1D7EB239B9A9900CE34F9 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		F1C1D7EE239BC55400CE34F9 /* NewsfeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsfeedViewController.swift; sourceTree = "<group>"; };
 		F1C1D7F0239BC92A00CE34F9 /* PostCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
@@ -73,6 +81,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F1B2784223A0109D00ED7F44 /* Messages */ = {
+			isa = PBXGroup;
+			children = (
+				F1B2784323A010C000ED7F44 /* MessagesViewController.swift */,
+				F1B2784523A0111600ED7F44 /* MessageCell.swift */,
+				F1B2784623A0111600ED7F44 /* MessageCell.xib */,
+			);
+			path = Messages;
+			sourceTree = "<group>";
+		};
 		F1C1D7ED239BC41800CE34F9 /* Posts */ = {
 			isa = PBXGroup;
 			children = (
@@ -96,10 +114,12 @@
 		FA08D26D2393BCB60005E549 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				F1B2784223A0109D00ED7F44 /* Messages */,
 				F1C1D7ED239BC41800CE34F9 /* Posts */,
 				FA08D285239823590005E549 /* Components */,
 				FA08D27723940B6B0005E549 /* Groups */,
 				FA08D27623940B310005E549 /* Friends */,
+				F1B2784923A0191400ED7F44 /* CustomCollectionViewLayout.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -228,6 +248,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FAACA1A92388893C005BB6A7 /* LaunchScreen.storyboard in Resources */,
+				F1B2784823A0111600ED7F44 /* MessageCell.xib in Resources */,
 				FAACA1A62388893C005BB6A7 /* Assets.xcassets in Resources */,
 				F1C1D7F3239BC92A00CE34F9 /* PostCell.xib in Resources */,
 				FAACA1A42388893A005BB6A7 /* Main.storyboard in Resources */,
@@ -252,6 +273,7 @@
 				F1C1D7EC239B9A9900CE34F9 /* Post.swift in Sources */,
 				FA08D26F2393BD0C0005E549 /* FriendListViewController.swift in Sources */,
 				FA08D27C239414290005E549 /* GroupCell.swift in Sources */,
+				F1B2784423A010C000ED7F44 /* MessagesViewController.swift in Sources */,
 				FA08D27F239426370005E549 /* AddGroupViewController.swift in Sources */,
 				FAACA19D2388893A005BB6A7 /* AppDelegate.swift in Sources */,
 				FA08D279239411EE0005E549 /* GroupsListViewController.swift in Sources */,
@@ -261,6 +283,8 @@
 				FA08D2752393F0E50005E549 /* FriendViewController.swift in Sources */,
 				FAACA19F2388893A005BB6A7 /* SceneDelegate.swift in Sources */,
 				F1C1D7F2239BC92A00CE34F9 /* PostCell.swift in Sources */,
+				F1B2784A23A0191400ED7F44 /* CustomCollectionViewLayout.swift in Sources */,
+				F1B2784723A0111600ED7F44 /* MessageCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

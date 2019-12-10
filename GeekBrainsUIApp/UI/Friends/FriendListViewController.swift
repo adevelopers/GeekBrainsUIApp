@@ -9,12 +9,13 @@
 import UIKit
 
 class FriendListViewController: UITableViewController {
-
+    @IBOutlet weak var searchBar: UISearchBar!
+    
     var items = User.items
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        searchBar.delegate = self
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -43,6 +44,13 @@ class FriendListViewController: UITableViewController {
         cell.setAvatar(with: model.avatar)
         return cell
     }
+    
+
 
 }
 
+extension FriendListViewController: UISearchBarDelegate {
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        print(searchText)
+    }
+}
