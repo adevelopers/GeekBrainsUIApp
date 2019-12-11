@@ -35,6 +35,7 @@
 		FAACA1B123888E71005BB6A7 /* Images.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAACA1B023888E71005BB6A7 /* Images.swift */; };
 		FAC59DFA23999D8E0097D0B5 /* LikeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC59DF923999D8E0097D0B5 /* LikeView.swift */; };
 		FAC59DFC2399AE050097D0B5 /* HeartButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC59DFB2399AE050097D0B5 /* HeartButton.swift */; };
+		FACCEAC723A19F6A005C6D77 /* PhotosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACCEAC623A19F6A005C6D77 /* PhotosViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -68,6 +69,7 @@
 		FAACA1B023888E71005BB6A7 /* Images.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Images.swift; sourceTree = "<group>"; };
 		FAC59DF923999D8E0097D0B5 /* LikeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeView.swift; sourceTree = "<group>"; };
 		FAC59DFB2399AE050097D0B5 /* HeartButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeartButton.swift; sourceTree = "<group>"; };
+		FACCEAC623A19F6A005C6D77 /* PhotosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +116,7 @@
 		FA08D26D2393BCB60005E549 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				FACCEAC523A19F44005C6D77 /* Photos */,
 				F1B2784223A0109D00ED7F44 /* Messages */,
 				F1C1D7ED239BC41800CE34F9 /* Posts */,
 				FA08D285239823590005E549 /* Components */,
@@ -187,6 +190,14 @@
 				FAACA1B023888E71005BB6A7 /* Images.swift */,
 			);
 			path = GeekBrainsUIApp;
+			sourceTree = "<group>";
+		};
+		FACCEAC523A19F44005C6D77 /* Photos */ = {
+			isa = PBXGroup;
+			children = (
+				FACCEAC623A19F6A005C6D77 /* PhotosViewController.swift */,
+			);
+			path = Photos;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -275,6 +286,7 @@
 				FA08D27C239414290005E549 /* GroupCell.swift in Sources */,
 				F1B2784423A010C000ED7F44 /* MessagesViewController.swift in Sources */,
 				FA08D27F239426370005E549 /* AddGroupViewController.swift in Sources */,
+				FACCEAC723A19F6A005C6D77 /* PhotosViewController.swift in Sources */,
 				FAACA19D2388893A005BB6A7 /* AppDelegate.swift in Sources */,
 				FA08D279239411EE0005E549 /* GroupsListViewController.swift in Sources */,
 				FA08D2682392F9CF0005E549 /* User.swift in Sources */,
