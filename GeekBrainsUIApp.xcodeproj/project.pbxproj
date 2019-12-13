@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F101C09523A3DD4000A191D5 /* PhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F101C09323A3DD4000A191D5 /* PhotoCell.swift */; };
+		F101C09623A3DD4000A191D5 /* PhotoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F101C09423A3DD4000A191D5 /* PhotoCell.xib */; };
 		F1B2784423A010C000ED7F44 /* MessagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B2784323A010C000ED7F44 /* MessagesViewController.swift */; };
 		F1B2784723A0111600ED7F44 /* MessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B2784523A0111600ED7F44 /* MessageCell.swift */; };
 		F1B2784823A0111600ED7F44 /* MessageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F1B2784623A0111600ED7F44 /* MessageCell.xib */; };
@@ -39,6 +41,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F101C09323A3DD4000A191D5 /* PhotoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCell.swift; sourceTree = "<group>"; };
+		F101C09423A3DD4000A191D5 /* PhotoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhotoCell.xib; sourceTree = "<group>"; };
 		F1B2784323A010C000ED7F44 /* MessagesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesViewController.swift; sourceTree = "<group>"; };
 		F1B2784523A0111600ED7F44 /* MessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageCell.swift; sourceTree = "<group>"; };
 		F1B2784623A0111600ED7F44 /* MessageCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MessageCell.xib; sourceTree = "<group>"; };
@@ -196,6 +200,8 @@
 			isa = PBXGroup;
 			children = (
 				FACCEAC623A19F6A005C6D77 /* PhotosViewController.swift */,
+				F101C09323A3DD4000A191D5 /* PhotoCell.swift */,
+				F101C09423A3DD4000A191D5 /* PhotoCell.xib */,
 			);
 			path = Photos;
 			sourceTree = "<group>";
@@ -264,6 +270,7 @@
 				F1C1D7F3239BC92A00CE34F9 /* PostCell.xib in Resources */,
 				FAACA1A42388893A005BB6A7 /* Main.storyboard in Resources */,
 				FA08D27D239414290005E549 /* GroupCell.xib in Resources */,
+				F101C09623A3DD4000A191D5 /* PhotoCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -278,6 +285,7 @@
 				FA08D26C239301F60005E549 /* Group.swift in Sources */,
 				FAACA1A12388893A005BB6A7 /* LoginViewController.swift in Sources */,
 				FAACA1B123888E71005BB6A7 /* Images.swift in Sources */,
+				F101C09523A3DD4000A191D5 /* PhotoCell.swift in Sources */,
 				FA08D287239823DF0005E549 /* AvatarView.swift in Sources */,
 				FA08D2712393C7E00005E549 /* FriendCell.swift in Sources */,
 				F1C1D7EF239BC55400CE34F9 /* NewsfeedViewController.swift in Sources */,

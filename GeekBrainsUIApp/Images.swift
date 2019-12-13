@@ -18,4 +18,9 @@ extension UIImage {
     static let postImage = UIImage(imageLiteralResourceName: "postImage")
     static let like = UIImage(imageLiteralResourceName: "like")
     static let likeOutline = UIImage(imageLiteralResourceName: "like_outline")
+    
+
+    static func getPhoto(by number: Int) -> UIImage? {
+        return UIImage(imageLiteralResourceName: "\(number).jpg")
+    }
 }
