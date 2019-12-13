@@ -21,6 +21,7 @@ class LikeView: UIControl {
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
+        backgroundColor = .clear
         heartButton.selectedColor = selectedColor
         heartButton.strokeColor = normalColor
         heartButton.backgroundColor = .clear
