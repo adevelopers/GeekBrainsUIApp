@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="P5a-eG-HQp">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="P5a-eG-HQp">
     <device id="retina4_0" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -286,6 +286,7 @@
                     <connections>
                         <outlet property="emailPhoneField" destination="IvB-jW-ifI" id="ze2-Vz-s6j"/>
                         <outlet property="emailPhoneLabel" destination="YIr-If-GlD" id="HN7-og-vG3"/>
+                        <outlet property="logoView" destination="jLT-ln-kNu" id="8lG-5b-QlD"/>
                         <outlet property="passwordField" destination="xx3-nN-7fV" id="Dq9-nz-RCB"/>
                         <outlet property="passwordLabel" destination="BRF-Lg-zvj" id="8mN-b6-Jgw"/>
                         <outlet property="scrollView" destination="S1t-vj-i5E" id="xeU-ft-ulE"/>
