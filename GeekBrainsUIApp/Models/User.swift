@@ -42,7 +42,7 @@ extension User {
         User(id: "6", firstName: "Захар", lastName: "Боровой", email: "zevs@mail.ru", phone: "+7 903 000-00-00", avatar: "zahar", sex: .male, location: "Москва", isOnline: false),
         User(id: "7", firstName: "Дарья", lastName: "Грач", email: "daria.grach@mail.ru", phone: "+7 903 000-00-00", avatar: "", sex: .female, location: "Москва", isOnline: false),
         User(id: "8", firstName: "Дарья", lastName: "Филатова", email: "zevs@mail.ru", phone: "+7 903 000-00-00", avatar: "jana", sex: .female, location: "Москва", isOnline: false),
-        
+        User(id: "9", firstName: "Анна", lastName: "Батистова", email: "anna.lims@mail.ru", phone: "+7 903 000-00-00", avatar: "lena", sex: .female, location: "Москва", isOnline: false),
     ]
 }
 
