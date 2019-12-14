@@ -33,7 +33,7 @@ class FriendListViewController: UITableViewController {
             let friendViewController = segue.destination as? FriendViewController,
             let selectedIndex = tableView.indexPathForSelectedRow
         {
-            friendViewController.model = items[selectedIndex.row]
+            friendViewController.model = friendsSections[selectedIndex.section].items[selectedIndex.row]
         }
     }
     
@@ -70,9 +70,12 @@ class FriendListViewController: UITableViewController {
         }
         
         friendsSections = friendsBySections.map { Section<User>(title: "\($0.key)", items: $0.value) }
-        print(friendsBySections)
+        friendsSections.sort(by: {$0.title < $1.title })
     }
 
+    override func sectionIndexTitles(for tableView: UITableView) -> [String]? {
+        return friendsSections.map { $0.title }
+    }
 }
 
 extension FriendListViewController: UISearchBarDelegate {
