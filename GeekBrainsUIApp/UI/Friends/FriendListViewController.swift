@@ -9,8 +9,8 @@
 import UIKit
 
 struct Section<T> {
-    let title: String
-    let items: [T]
+    var title: String
+    var items: [T]
 }
 
 
@@ -23,7 +23,7 @@ class FriendListViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         searchBar.delegate = self
-        
+        setupActionHideKeyboard()
         loadUsers()
     }
     
@@ -64,26 +64,41 @@ class FriendListViewController: UITableViewController {
     
     private func loadUsers() {
         items = User.items
-        
-        let friendsBySections = Dictionary(grouping: User.items) {
-            $0.lastName.prefix(1)
-        }
-        
-        friendsSections = friendsBySections.map { Section<User>(title: "\($0.key)", items: $0.value) }
-        friendsSections.sort(by: {$0.title < $1.title })
+        friendsSections = handleUsers(items: items)
+    }
+    
+    private func handleUsers(items: [User]) -> [Section<User>] {
+        return  Dictionary(grouping: items) { $0.lastName.prefix(1) }
+                   .map { Section<User>(title: "\($0.key)",
+                                        items: $0.value) }
+                   .sorted(by: {$0.title < $1.title })
     }
 
     override func sectionIndexTitles(for tableView: UITableView) -> [String]? {
         return friendsSections.map { $0.title }
     }
+    
+    private func setupActionHideKeyboard() {
+        let tapOnView = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
+        tableView.addGestureRecognizer(tapOnView)
+    }
+    
+    @objc
+       private func hideKeyboard() {
+           tableView?.endEditing(true)
+       }
 }
 
 extension FriendListViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        print(searchText)
         if !searchText.isEmpty {
-            items = User.items.filter { $0.lastName.lowercased().contains(searchText.lowercased()) }
-            tableView.reloadData()
+            friendsSections = handleUsers(items: User.items.filter {
+                $0.lastName.lowercased().contains(searchText.lowercased())
+            })
+        } else {
+            friendsSections = handleUsers(items: User.items)
         }
+    
+        tableView.reloadData()
     }
 }

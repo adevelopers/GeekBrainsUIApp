@@ -9,7 +9,6 @@
 import UIKit
 
 
-@IBDesignable
 final class AvatarView: UIView {
 
     @IBInspectable var side: CGFloat = 30
@@ -30,6 +29,7 @@ final class AvatarView: UIView {
     
     
     private func setupUI() {
+        backgroundColor = .clear
         addSubview(avatarImageView)
         setupAvatarImageView()
         setupShadow()

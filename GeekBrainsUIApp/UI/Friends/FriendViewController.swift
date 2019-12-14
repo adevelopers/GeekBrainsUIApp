@@ -17,6 +17,7 @@ class FriendViewController: UICollectionViewController {
         super.viewDidLoad()
 
         setupTitle()
+        hideBackButtonTitle()
     }
 
     private func setupTitle() {
