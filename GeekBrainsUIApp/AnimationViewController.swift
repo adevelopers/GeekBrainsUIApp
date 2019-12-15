@@ -26,42 +26,30 @@ extension UIView {
 class AnimationViewController: UIViewController {
     @IBOutlet weak var animateButton: UIButton!
     @IBAction func didTapAnimate(_ sender: Any) {
-        initialState()
-        UIView.animate(withDuration: 0.4) {
-            self.tree1.moveY(-200)
-        }
+       let animation = CAKeyframeAnimation()
+       animation.keyPath = "position"
+
+       let path = UIBezierPath(ovalIn: CGRect(x: sun.center.x - 25, y: sun.center.y - 25, width: 50, height: 50)).cgPath
+       print(path.isEmpty)
         
-        UIView.animate(withDuration: 0.5) {
-            self.tree3.moveY(-200)
-        }
         
-        UIView.animate(withDuration: 0.6) {
-            self.tree2.moveY(-200)
-        }
+       animation.path = path
+       animation.fillMode = .both
+       animation.rotationMode = .none
+        animation.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut)
+       animation.duration = 2
+       animation.repeatCount = .infinity
+        animation.speed = 1
+    animation.isRemovedOnCompletion = false
+       
         
-        UIView.animate(withDuration: 2,
-                       delay: 1,
-                       usingSpringWithDamping: 0.1,
-                       initialSpringVelocity: 0.5,
-                       options: [.curveLinear],
-                       animations: {
-               self.sun.moveXY(CGPoint(x: -50, y: -250))
-        },completion: { _ in            
-            self.view.bringSubviewToFront(self.sun)
-            UIView.animate(withDuration: 0.8) {
-                self.sun.transform = CGAffineTransform.init(scaleX: 130, y: 130)
-            }
-            self.view.bringSubviewToFront(self.animateButton)
-        })
+       sun.layer.add(animation, forKey: nil)
+       sun.layer.shadowPath = path
+       sun.layer.shadowColor = UIColor.green.cgColor
+    sun.layer.shadowOpacity = 1
+        sun.layer.shadowOffset = .zero
+        sun.layer.shadowRadius = 10
         
-        UIView.animate(withDuration: 1,
-                       delay: 0.65,
-                       usingSpringWithDamping: 0.3,
-                       initialSpringVelocity: 0.6,
-                       options: [.curveEaseInOut],
-                       animations: {
-            self.trees.moveY( -150)
-        }, completion: nil)
         
     }
     
@@ -76,13 +64,39 @@ class AnimationViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        view.backgroundColor = .black
+        
         view.addSubview(sun)
-        view.addSubview(trees)
-        view.addSubview(tree1)
-        view.addSubview(tree2)
-        view.addSubview(tree3)
-        view.addSubview(ground)
+        
+        let l = CAShapeLayer()
+        l.path = UIBezierPath(rect: CGRect(x: 50, y: 50, width: 0.1, height: 0.1)).cgPath
+        l.cornerRadius = 20
+        l.contents = UIImage.sun.cgImage
+        l.fillColor = UIColor(red: 0, green: 1, blue: 0, alpha: 1) .cgColor
+        l.shadowColor = UIColor.green.cgColor
+        l.shadowRadius = 50
+        l.shadowPath = UIBezierPath(ovalIn: CGRect(x: -50, y: 0, width: 100, height: 100)).cgPath
+        l.shadowOpacity = 0.5
+        l.shadowOffset = .zero
+        l.position = view.center
+        l.rasterizationScale = UIScreen.main.scale
+        l.shouldRasterize = true
+        
+        initialState()
+        
+        let animation = CABasicAnimation()
+        animation.keyPath = "position.y"
+        animation.fromValue = sun.center.y - 100
+        animation.toValue = sun.center.y + 100
+        animation.duration = 6
+        animation.repeatCount = .infinity
+        animation.autoreverses = true
+        animation.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeIn)
+        
+        l.add(animation, forKey: nil)
+        
+        view.layer.addSublayer(l)
+        
         
         sun.accessibilityLabel = "Sun"
         ground.accessibilityLabel = "Ground"
@@ -91,28 +105,17 @@ class AnimationViewController: UIViewController {
         tree2.accessibilityLabel = "Tree2"
         tree3.accessibilityLabel = "Tree3"
 
-        initialState()
+        
     }
     
     private func initialState() {
-        [ground, trees, tree1,tree2, tree3, sun].forEach {
+        [sun].forEach {
             $0.center = view.center
         }
         
-        [tree1,tree2, tree3].forEach {
-            $0.frame.origin.y = ground.frame.origin.y - $0.frame.height
-            $0.frame.origin.y += 170
-            $0.moveY(200)
-        }
-        
-        tree1.moveX(-70)
-        tree2.moveX(-20)
-        tree3.moveX(20)
         self.sun.moveY(150)
         view.sendSubviewToBack(sun)
         sun.transform = CGAffineTransform.identity
-        trees.moveY(150)
-        ground.moveY(164)
         
     }
 
