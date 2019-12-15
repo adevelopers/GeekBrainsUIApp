@@ -84,9 +84,9 @@ class FriendListViewController: UITableViewController {
     }
     
     @objc
-       private func hideKeyboard() {
-           tableView?.endEditing(true)
-       }
+    private func hideKeyboard() {
+        tableView?.endEditing(true)
+    }
 }
 
 extension FriendListViewController: UISearchBarDelegate {

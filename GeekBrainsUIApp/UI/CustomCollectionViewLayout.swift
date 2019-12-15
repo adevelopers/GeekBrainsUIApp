@@ -78,7 +78,7 @@ class CustomCollectionViewLayout: UICollectionViewLayout {
         }
         
         return CGSize(width: collectionView.frame.width,
-                      height: CGFloat(cellHeight))
+                      height: CGFloat(containterHeight))
     }
     
     

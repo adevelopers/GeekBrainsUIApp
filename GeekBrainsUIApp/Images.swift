@@ -20,8 +20,13 @@ extension UIImage {
     static let like = UIImage(imageLiteralResourceName: "like")
     static let likeOutline = UIImage(imageLiteralResourceName: "like_outline")
     
+    static let comment = UIImage(imageLiteralResourceName: "comment_outline")
+    static let share = UIImage(imageLiteralResourceName: "share_outline")
+    
     static let verified = UIImage(imageLiteralResourceName: "verified")
     static let more = UIImage(imageLiteralResourceName: "more")
+    
+    
 
     static func getPhoto(by number: Int) -> UIImage? {
         return UIImage(imageLiteralResourceName: "\(number).jpg")

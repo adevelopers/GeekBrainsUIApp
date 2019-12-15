@@ -41,7 +41,7 @@ final class ViewsCounterView: UIView {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        backgroundColor = .green
+        
     }
     
     private func setupConstraints() {

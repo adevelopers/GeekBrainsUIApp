@@ -44,7 +44,7 @@ class PostCell: UITableViewCell {
         postImageView.contentMode = .scaleAspectFill
         postImageView.clipsToBounds = true
         
-        postFooter.backgroundColor = .red
+//        postFooter.backgroundColor = .red
         
         
         moreButton.setImage(.more, for: .normal)
@@ -116,14 +116,14 @@ class PostCell: UITableViewCell {
             postImageView.leadingAnchor.constraint(equalTo: leadingAnchor),
             postImageView.trailingAnchor.constraint(equalTo: trailingAnchor),
             postImageView.heightAnchor.constraint(equalTo: postImageView.widthAnchor),
-            postImageView.bottomAnchor.constraint(equalTo: postFooter.topAnchor, constant: 8)
+            postImageView.bottomAnchor.constraint(equalTo: postFooter.topAnchor, constant: -8)
         ])
         
         postFooter.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            postFooter.heightAnchor.constraint(equalToConstant: 30),
             postFooter.leftAnchor.constraint(equalTo: leftAnchor),
             postFooter.rightAnchor.constraint(equalTo: rightAnchor),
+            postFooter.heightAnchor.constraint(equalToConstant: 40),
             postFooter.bottomAnchor.constraint(equalTo: bottomAnchor)
         ])
         

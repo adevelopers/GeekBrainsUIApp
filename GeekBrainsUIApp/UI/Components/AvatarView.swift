@@ -21,9 +21,6 @@ final class AvatarView: UIView {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        print(frame)
-        print("layoutSubviews")
-        
         setupUI()
     }
     
