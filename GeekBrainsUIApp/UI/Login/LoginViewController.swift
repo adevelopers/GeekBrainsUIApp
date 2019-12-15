@@ -13,7 +13,8 @@ enum Segues: String {
 }
 
 class LoginViewController: UIViewController {
-
+    
+    @IBOutlet weak var logoView: UIImageView!
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var emailPhoneLabel: UILabel!
     @IBOutlet weak var emailPhoneField: UITextField!
@@ -42,6 +43,11 @@ class LoginViewController: UIViewController {
                                               selector: #selector(keyboardWillBeHidden),
                                               name: UIResponder.keyboardWillHideNotification,
                                               object: nil)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        animateLogo()
     }
 
     override func viewWillDisappear(_ animated: Bool) {
@@ -156,4 +162,17 @@ extension LoginViewController {
         scrollView?.endEditing(true)
     }
 
+}
+
+
+// MARK: Анимации
+extension LoginViewController {
+    private func animateLogo() {
+        logoView.alpha = 0
+        view.layoutIfNeeded()
+        UIView.animate(withDuration: 1) { [weak self] in
+            self?.logoView.alpha = 1
+            self?.view.layoutIfNeeded()
+        }
+    }
 }

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="P5a-eG-HQp">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="P5a-eG-HQp">
     <device id="retina4_0" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -22,6 +22,7 @@
                         <segue destination="GgP-sW-K8F" kind="relationship" relationship="viewControllers" id="MR6-dB-sXO"/>
                         <segue destination="qbA-UM-zZb" kind="relationship" relationship="viewControllers" id="8AQ-VT-x4w"/>
                         <segue destination="btu-Cx-fFN" kind="relationship" relationship="viewControllers" id="U28-uI-Czi"/>
+                        <segue destination="Eki-vu-LGG" kind="relationship" relationship="viewControllers" id="HNu-NR-Pgy"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CVE-5Q-R8G" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -102,34 +103,54 @@
             </objects>
             <point key="canvasLocation" x="2106" y="496"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="UhG-ey-N79">
+        <!--Фотографии-->
+        <scene sceneID="XJp-hi-C0e">
             <objects>
-                <viewController id="OCN-k2-1dP" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="QRr-aG-MiR">
+                <navigationController id="Eki-vu-LGG" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Фотографии" image="photo.on.rectangle" catalog="system" id="Mbf-ap-yCH"/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="NMS-qP-Pag">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="xIL-5E-ieT" kind="relationship" relationship="rootViewController" id="KCl-zR-ex1"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="i62-od-p04" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2106" y="1225"/>
+        </scene>
+        <!--Фотографии-->
+        <scene sceneID="GZ2-MW-ORC">
+            <objects>
+                <collectionViewController title="Фотографии" id="xIL-5E-ieT" customClass="PhotosViewController" customModule="GeekBrainsUIApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="Vaz-bt-dba">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Knm-fR-bmq" customClass="LikeView" customModule="GeekBrainsUIApp" customModuleProvider="target">
-                                <rect key="frame" x="40" y="199" width="240" height="170"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="170" id="8oY-El-Hib"/>
-                                    <constraint firstAttribute="width" constant="240" id="mGe-da-Jpy"/>
-                                </constraints>
-                            </view>
-                        </subviews>
-                        <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstItem="Knm-fR-bmq" firstAttribute="centerY" secondItem="QRr-aG-MiR" secondAttribute="centerY" id="GYL-iS-ySV"/>
-                            <constraint firstItem="Knm-fR-bmq" firstAttribute="centerX" secondItem="QRr-aG-MiR" secondAttribute="centerX" id="T4H-la-Q8L"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="qTQ-VI-M2E"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="xji-zh-sTY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <collectionViewLayout key="collectionViewLayout" id="IWN-8o-U2P" customClass="CustomCollectionViewLayout" customModule="GeekBrainsUIApp" customModuleProvider="target"/>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="vWX-w5-a8N">
+                                <rect key="frame" x="0.0" y="0.0" width="104" height="103"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="lNN-7O-7fT">
+                                    <rect key="frame" x="0.0" y="0.0" width="104" height="103"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </collectionViewCellContentView>
+                                <size key="customSize" width="104" height="103"/>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="xIL-5E-ieT" id="PpZ-0B-HkJ"/>
+                            <outlet property="delegate" destination="xIL-5E-ieT" id="R6f-Qa-hS8"/>
+                        </connections>
+                    </collectionView>
+                    <navigationItem key="navigationItem" id="3OR-im-Jvq"/>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Mpm-H7-Q3w" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1595.625" y="123.59154929577466"/>
+            <point key="canvasLocation" x="3037.5" y="1225.3521126760563"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="m09-yq-WnF">
@@ -214,30 +235,9 @@
                                             <constraint firstAttribute="height" constant="60" id="xVG-uX-qDF"/>
                                         </constraints>
                                     </imageView>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t7B-Rf-eTG" customClass="AvatarView" customModule="GeekBrainsUIApp" customModuleProvider="target">
-                                        <rect key="frame" x="60" y="442" width="200" height="96"/>
-                                        <accessibility key="accessibilityConfiguration" label="AvatarView"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="200" id="5Mr-BI-dYm"/>
-                                            <constraint firstAttribute="height" constant="96" id="U1J-Fr-dUN"/>
-                                        </constraints>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
-                                                <color key="value" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
-                                                <real key="value" value="0.5"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="side">
-                                                <real key="value" value="96"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="image" keyPath="image" value="lena"/>
-                                        </userDefinedRuntimeAttributes>
-                                    </view>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="jLT-ln-kNu" firstAttribute="centerX" secondItem="S1t-vj-i5E" secondAttribute="centerX" id="1aP-7j-sa1"/>
-                                    <constraint firstItem="t7B-Rf-eTG" firstAttribute="centerX" secondItem="S1t-vj-i5E" secondAttribute="centerX" id="5G1-rD-IPx"/>
                                     <constraint firstAttribute="bottom" secondItem="f0U-Tt-l5b" secondAttribute="bottom" constant="20" id="5ii-dd-Mfl">
                                         <variation key="heightClass=compact-widthClass=regular" constant="15"/>
                                         <variation key="heightClass=regular-widthClass=compact" constant="20"/>
@@ -249,7 +249,6 @@
                                         <variation key="heightClass=compact-widthClass=compact" constant="42"/>
                                     </constraint>
                                     <constraint firstItem="f0U-Tt-l5b" firstAttribute="centerX" secondItem="xx3-nN-7fV" secondAttribute="centerX" id="Tr2-GR-oRZ"/>
-                                    <constraint firstItem="t7B-Rf-eTG" firstAttribute="top" secondItem="f0U-Tt-l5b" secondAttribute="bottom" constant="40" id="WOh-uX-BJt"/>
                                     <constraint firstItem="BRF-Lg-zvj" firstAttribute="leading" secondItem="xx3-nN-7fV" secondAttribute="leading" id="a36-8E-mL8"/>
                                     <constraint firstItem="xx3-nN-7fV" firstAttribute="top" secondItem="BRF-Lg-zvj" secondAttribute="bottom" constant="8" id="aoV-cS-cV7"/>
                                     <constraint firstItem="xx3-nN-7fV" firstAttribute="centerX" secondItem="S1t-vj-i5E" secondAttribute="centerX" id="dIR-4b-sGn"/>
@@ -287,6 +286,7 @@
                     <connections>
                         <outlet property="emailPhoneField" destination="IvB-jW-ifI" id="ze2-Vz-s6j"/>
                         <outlet property="emailPhoneLabel" destination="YIr-If-GlD" id="HN7-og-vG3"/>
+                        <outlet property="logoView" destination="jLT-ln-kNu" id="8lG-5b-QlD"/>
                         <outlet property="passwordField" destination="xx3-nN-7fV" id="Dq9-nz-RCB"/>
                         <outlet property="passwordLabel" destination="BRF-Lg-zvj" id="8mN-b6-Jgw"/>
                         <outlet property="scrollView" destination="S1t-vj-i5E" id="xeU-ft-ulE"/>
@@ -315,6 +315,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vuy-HJ-CAA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3041" y="-976"/>
+        </scene>
+        <!--Messages-->
+        <scene sceneID="cQH-uw-dFX">
+            <objects>
+                <tableViewController title="Messages" id="NB2-S9-ll5" customClass="MessagesViewController" customModule="GeekBrainsUIApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="ALU-cR-rqL">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <connections>
+                            <outlet property="dataSource" destination="NB2-S9-ll5" id="z7I-vH-umv"/>
+                            <outlet property="delegate" destination="NB2-S9-ll5" id="CVh-bC-XUw"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="deg-Nw-tyl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3043" y="-1721"/>
         </scene>
         <!--Новости-->
         <scene sceneID="QaN-Yf-a4E">
@@ -366,14 +384,19 @@
         <scene sceneID="wSv-cH-sYq">
             <objects>
                 <tableViewController id="4Zi-Y3-vTa" userLabel="FriendListTableViewController" customClass="FriendListViewController" customModule="GeekBrainsUIApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorInsetReference="fromAutomaticInsets" rowHeight="75" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="ev2-ib-9ft">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" pagingEnabled="YES" dataMode="prototypes" style="plain" separatorStyle="singleLineEtched" separatorInsetReference="fromAutomaticInsets" rowHeight="75" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="ev2-ib-9ft">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <inset key="separatorInset" minX="80" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        <color key="tintColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <inset key="separatorInset" minX="16" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        <searchBar key="tableHeaderView" contentMode="redraw" id="xxP-4W-9gy">
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </searchBar>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="FriendCell" rowHeight="75" id="uEY-hF-DVQ" customClass="FriendCell" customModule="GeekBrainsUIApp" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="55.5" width="320" height="75"/>
+                                <rect key="frame" x="0.0" y="72" width="320" height="75"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="uEY-hF-DVQ" id="po8-WB-zN6">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="75"/>
@@ -437,6 +460,9 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Друзья" id="h4O-b6-aSx"/>
+                    <connections>
+                        <outlet property="searchBar" destination="xxP-4W-9gy" id="zYy-a3-zan"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ddH-pA-plV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -527,9 +553,9 @@
         <image name="Newsfeed" width="28" height="28"/>
         <image name="VK-Logo" width="192" height="192"/>
         <image name="groups2" width="28" height="28"/>
-        <image name="lena" width="200" height="200"/>
         <image name="more_horizontal" width="24" height="24"/>
         <image name="no-photo" width="48" height="48"/>
+        <image name="photo.on.rectangle" catalog="system" width="64" height="48"/>
         <image name="user" width="28" height="28"/>
     </resources>
     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

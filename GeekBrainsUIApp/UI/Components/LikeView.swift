@@ -19,8 +19,29 @@ class LikeView: UIControl {
     private let likeCountLabel = UILabel(frame: CGRect(origin: .zero,
                                                        size: CGSize(width: 50, height: 20)))
     
+    
+    init() {
+        super.init(frame: .zero)
+        setupViews()
+    }
+    
     required init?(coder: NSCoder) {
         super.init(coder: coder)
+        setupViews()
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        let heartSide: CGFloat = 18
+        heartButton.frame = CGRect(origin: .zero, size: CGSize(width: heartSide, height: heartSide * 0.8))
+        likeCountLabel.frame = CGRect(origin: .zero, size: CGSize(width: bounds.width * 0.5, height: bounds.height))
+        heartButton.center = CGPoint(x: 8, y: bounds.height / 2)
+        likeCountLabel.center = CGPoint(x: heartButton.bounds.width + 16, y: bounds.height / 2)
+    }
+    
+    
+    private func setupViews() {
+        backgroundColor = .clear
         heartButton.selectedColor = selectedColor
         heartButton.strokeColor = normalColor
         heartButton.backgroundColor = .clear
@@ -34,15 +55,6 @@ class LikeView: UIControl {
         heartButton.addTarget(self,
                               action: #selector(didTapHeart),
                               for: .touchUpInside)
-    }
-    
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        let heartSide: CGFloat = 18
-        heartButton.frame = CGRect(origin: .zero, size: CGSize(width: heartSide, height: heartSide * 0.8))
-        likeCountLabel.frame = CGRect(origin: .zero, size: CGSize(width: bounds.width * 0.5, height: bounds.height))
-        heartButton.center = CGPoint(x: 8, y: bounds.height / 2)
-        likeCountLabel.center = CGPoint(x: heartButton.bounds.width + 16, y: bounds.height / 2)
     }
     
     @objc
