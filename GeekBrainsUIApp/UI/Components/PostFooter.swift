@@ -11,7 +11,7 @@ import UIKit
 
 final class PostFooter: UIView {
     
-    let likeView = LikeButton(image: .likeOutline)
+    let likeView = LikeButton()
     let commentsButton = UIImageView(image: .comment)
     let shareButton = UIImageView(image: .share)
     let viewsCounter = ViewsCounterView(frame: .zero)
