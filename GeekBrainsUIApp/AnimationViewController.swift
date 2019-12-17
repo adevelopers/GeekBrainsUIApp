@@ -53,7 +53,7 @@ class AnimationViewController: UIViewController {
         
     }
     
-    
+    let sunLayer = CAShapeLayer()
     let ground = UIImageView(image: .ground)
     let sun = UIImageView(image: .sun)
     let trees = UIImageView(image: .trees)
@@ -69,14 +69,17 @@ class AnimationViewController: UIViewController {
         view.addSubview(sun)
         
         let l = CAShapeLayer()
-        l.path = UIBezierPath(rect: CGRect(x: 50, y: 50, width: 0.1, height: 0.1)).cgPath
+        l.path = UIBezierPath(rect: CGRect(x: 50, y: 50, width: 0, height: 0)).cgPath
         l.cornerRadius = 20
         l.contents = UIImage.sun.cgImage
         l.fillColor = UIColor(red: 0, green: 1, blue: 0, alpha: 1) .cgColor
         l.shadowColor = UIColor.green.cgColor
         l.shadowRadius = 50
-        l.shadowPath = UIBezierPath(ovalIn: CGRect(x: -50, y: 0, width: 100, height: 100)).cgPath
-        l.shadowOpacity = 0.5
+        let compositPath = UIBezierPath(ovalIn: CGRect(x: -50, y: 0, width: 100, height: 100))
+        compositPath.append(UIBezierPath(rect: CGRect(x: -200, y: 40, width: 400, height: 15)))
+        
+        l.shadowPath = compositPath.cgPath
+        l.shadowOpacity = 1
         l.shadowOffset = .zero
         l.position = view.center
         l.rasterizationScale = UIScreen.main.scale
@@ -86,7 +89,7 @@ class AnimationViewController: UIViewController {
         
         let animation = CABasicAnimation()
         animation.keyPath = "position.y"
-        animation.fromValue = sun.center.y - 100
+        animation.fromValue = sun.center.y - 500
         animation.toValue = sun.center.y + 100
         animation.duration = 6
         animation.repeatCount = .infinity
@@ -104,6 +107,33 @@ class AnimationViewController: UIViewController {
         tree1.accessibilityLabel = "Tree1"
         tree2.accessibilityLabel = "Tree2"
         tree3.accessibilityLabel = "Tree3"
+        
+        
+        let gradientLayer = CAGradientLayer()
+        gradientLayer.frame = view.bounds
+        gradientLayer.colors = [UIColor.blue.cgColor, UIColor(red: 0, green: 0, blue: 1, alpha: 0.2).cgColor, UIColor.clear.cgColor]
+        gradientLayer.locations = [0, 0.5, 1]
+        gradientLayer.startPoint = CGPoint(x: 0, y: 0.5)
+        gradientLayer.endPoint = CGPoint(x: 1, y: 0.5)
+        
+        
+        
+        
+        
+        
+        sunLayer.path = UIBezierPath(ovalIn: CGRect(x: 0, y: 0, width: 30, height: 30)).cgPath
+        sunLayer.fillColor = UIColor.orange.cgColor
+        
+        
+        sunLayer.position = CGPoint(x: CGFloat(view.center.x) - (sunLayer.frame.width / 2),
+                                    y: view.center.y - (sunLayer.frame.height/2))
+        
+//        sunLayer.mask = gradientLayer
+//        sunLayer.addSublayer(gradientLayer)
+//        sunLayer.masksToBounds = true
+//        view.layer.insertSublayer(gradientLayer, at: 0)
+        view.layer.insertSublayer(sunLayer, at: 0)
+        
 
         
     }
