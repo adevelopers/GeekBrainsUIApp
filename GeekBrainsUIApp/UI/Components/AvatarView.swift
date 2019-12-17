@@ -54,16 +54,23 @@ final class AvatarView: UIView {
     
     @objc
     private func didTap() {
-        
-        UIView.animate(withDuration: 2,
-                       delay: 0,
-                       usingSpringWithDamping: 0.1,
-                       initialSpringVelocity: 0.5,
-                       options: [.curveEaseInOut],
+        isUserInteractionEnabled = false
+        UIView.animate(withDuration: 0.3,
                        animations: {
-                    self.avatarImageView.transform = CGAffineTransform(scaleX: 0.5, y: 0.5)
+                self.transform = CGAffineTransform(scaleX: 0.7, y: 0.7)
         }, completion: { _ in
-            self.avatarImageView.transform = .identity
+            UIView.animate(withDuration: 1,
+                           delay: 0,
+                           usingSpringWithDamping: 0.1,
+                           initialSpringVelocity: 10,
+                           options: [.curveEaseInOut],
+                           animations: {
+                    self.transform = CGAffineTransform(scaleX: 1, y: 1)
+            }, completion: { _ in
+                self.transform = .identity
+                self.isUserInteractionEnabled = true
+            })
         })
+        
     }
 }
