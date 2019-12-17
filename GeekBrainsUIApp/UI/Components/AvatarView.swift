@@ -30,6 +30,8 @@ final class AvatarView: UIView {
         addSubview(avatarImageView)
         setupAvatarImageView()
         setupShadow()
+     
+        addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(didTap)))
     }
     
     private func setupAvatarImageView() {
@@ -48,5 +50,20 @@ final class AvatarView: UIView {
         layer.shadowOpacity = shadowOpacity
         layer.shadowRadius = 8
         layer.shadowOffset = CGSize(width: 0, height: 4)
+    }
+    
+    @objc
+    private func didTap() {
+        
+        UIView.animate(withDuration: 2,
+                       delay: 0,
+                       usingSpringWithDamping: 0.1,
+                       initialSpringVelocity: 0.5,
+                       options: [.curveEaseInOut],
+                       animations: {
+                    self.avatarImageView.transform = CGAffineTransform(scaleX: 0.5, y: 0.5)
+        }, completion: { _ in
+            self.avatarImageView.transform = .identity
+        })
     }
 }
