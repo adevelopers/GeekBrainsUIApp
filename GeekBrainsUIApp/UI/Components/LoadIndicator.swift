@@ -11,48 +11,69 @@ import UIKit
 
 final class LoadIndicator: UIView {
     
-    let circle1 = CAShapeLayer()
-    let circle2 = CAShapeLayer()
-    let circle3 = CAShapeLayer()
-    
+    var circles = [CALayer]()
+    let containerView = UIView()
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
-        backgroundColor = .red
+        backgroundColor = .white
         
-        layer.addSublayer(circle1)
-        layer.addSublayer(circle2)
-        layer.addSublayer(circle3)
+        let circlesCount = 3
+        let side: CGFloat = 10
+        let offset: CGFloat = 5
+        print(bounds.width)
+        let x: CGFloat = 0 //(bounds.width / 2) - (CGFloat(circlesCount / 2) * (side + offset))
+
+        let circleColor = UIColor.gray
         
-        circle1.path = UIBezierPath(ovalIn: CGRect(x: 10, y: 10, width: 50, height: 50)).cgPath
-        circle1.fillColor = UIColor.blue.cgColor
-        
-        circle2.path = UIBezierPath(ovalIn: CGRect(x: 60, y: 10, width: 50, height: 50)).cgPath
-        circle2.fillColor = UIColor.blue.cgColor
-        
-        circle3.path = UIBezierPath(ovalIn: CGRect(x: 110, y: 10, width: 50, height: 50)).cgPath
-        circle3.fillColor = UIColor.blue.cgColor
-        
-        
-        animateFading(with: circle1, and: 3)
-        animateFading(with: circle2, and: 2)
-        animateFading(with: circle3, and: 1)
+        for i in 0..<circlesCount {
+            let circle = CAShapeLayer()
+            circle.opacity = 1
+            circle.path = UIBezierPath(ovalIn: CGRect(x: x + (side + offset)*CGFloat(i),
+                                                      y: 10 ,
+                                                      width: side,
+                                                      height: side)).cgPath
+            circle.fillColor = circleColor.cgColor
+            containerView.layer.addSublayer(circle)
+            circles.append(circle)
+        }
+        containerView.center = CGPoint(x: bounds.width / 2, y: bounds.height / 2 )
+        addSubview(containerView)
+        startAnimating()
+    }
+    
+    private func startAnimating() {
+        var offset: TimeInterval = 0.0
+        circles.forEach {
+            $0.removeAllAnimations()
+            $0.add(scaleAnimation(offset), forKey: nil)
+            offset = offset + 0.10
+        }
     }
     
     override func layoutSubviews() {
         super.layoutSubviews()
-           
+        
+        
     }
     
-    private func animateFading(with layer: CALayer, and duration: CFTimeInterval) {
-        let animation = CABasicAnimation(keyPath: "opacity")
-        animation.fromValue = 0
-        animation.toValue = 1
-        animation.duration = duration
-        animation.repeatCount = .infinity
-        animation.autoreverses = true
+    
+    private func scaleAnimation(_ after: TimeInterval = 0) -> CAAnimationGroup {
+        let scaleDown = CABasicAnimation(keyPath: "opacity")
+        scaleDown.beginTime = after
+        scaleDown.fromValue = 0.1
+        scaleDown.toValue = 1.0
+        scaleDown.duration = 2
+        scaleDown.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeOut)
+
+        let group = CAAnimationGroup()
+        group.animations = [scaleDown]
+        group.repeatCount = Float.infinity
+        group.autoreverses = false
         
-        layer.add(animation, forKey: nil)
+        group.duration = CFTimeInterval(1)
+
+        return group
     }
     
 }
