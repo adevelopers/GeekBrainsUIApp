@@ -55,22 +55,32 @@ final class AvatarView: UIView {
     @objc
     private func didTap() {
         isUserInteractionEnabled = false
-        UIView.animate(withDuration: 0.3,
-                       animations: {
-                self.transform = CGAffineTransform(scaleX: 0.7, y: 0.7)
-        }, completion: { _ in
-            UIView.animate(withDuration: 1,
-                           delay: 0,
-                           usingSpringWithDamping: 0.1,
-                           initialSpringVelocity: 10,
-                           options: [.curveEaseInOut],
-                           animations: {
-                    self.transform = CGAffineTransform(scaleX: 1, y: 1)
-            }, completion: { _ in
-                self.transform = .identity
-                self.isUserInteractionEnabled = true
-            })
-        })
+        layer.removeAllAnimations()
+        
+        CATransaction.begin()
+        CATransaction.setCompletionBlock {
+              self.isUserInteractionEnabled = true
+        }
+        
+        let squeezeAnimation = CABasicAnimation()
+        squeezeAnimation.keyPath = "transform.scale"
+        squeezeAnimation.duration = 0.3
+        squeezeAnimation.fromValue = 1
+        squeezeAnimation.toValue = 0.7
+        
+        let restoreAnimation = CASpringAnimation()
+        restoreAnimation.keyPath = "transform.scale"
+        restoreAnimation.fromValue = 0.7
+        restoreAnimation.toValue = 1
+        restoreAnimation.duration = 1.3
+        restoreAnimation.damping = 3
+        restoreAnimation.initialVelocity = 1
+        
+        let tapAnimation = CAAnimationGroup()
+        tapAnimation.animations = [squeezeAnimation, restoreAnimation]
+        tapAnimation.duration = 1.6
+        layer.add(tapAnimation, forKey: nil)
+        CATransaction.commit()
         
     }
 }
