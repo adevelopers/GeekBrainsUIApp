@@ -194,16 +194,13 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email or phone" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YIr-If-GlD">
-                                        <rect key="frame" x="35" y="183" width="114" height="21"/>
+                                        <rect key="frame" x="45" y="183" width="114" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" red="0.44757090619602763" green="0.44489084088946457" blue="0.45025097150259064" alpha="0.84999999999999998" colorSpace="custom" customColorSpace="displayP3"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IvB-jW-ifI" userLabel="emailPhoneField">
-                                        <rect key="frame" x="35" y="212" width="250" height="34"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="250" id="IHJ-Qq-8jt"/>
-                                        </constraints>
+                                        <rect key="frame" x="45" y="212" width="230" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" textContentType="email"/>
                                     </textField>
@@ -246,6 +243,7 @@
                                 <constraints>
                                     <constraint firstItem="jLT-ln-kNu" firstAttribute="centerX" secondItem="S1t-vj-i5E" secondAttribute="centerX" id="1aP-7j-sa1"/>
                                     <constraint firstItem="3N0-tc-ic0" firstAttribute="trailing" secondItem="xx3-nN-7fV" secondAttribute="trailing" id="3NM-3x-bJU"/>
+                                    <constraint firstItem="xx3-nN-7fV" firstAttribute="leading" secondItem="IvB-jW-ifI" secondAttribute="leading" id="4hE-oH-fou"/>
                                     <constraint firstAttribute="bottom" secondItem="f0U-Tt-l5b" secondAttribute="bottom" constant="20" id="5ii-dd-Mfl">
                                         <variation key="heightClass=compact-widthClass=regular" constant="15"/>
                                         <variation key="heightClass=regular-widthClass=compact" constant="20"/>
