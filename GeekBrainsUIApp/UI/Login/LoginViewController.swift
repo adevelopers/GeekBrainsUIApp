@@ -43,11 +43,13 @@ class LoginViewController: UIViewController {
                                               selector: #selector(keyboardWillBeHidden),
                                               name: UIResponder.keyboardWillHideNotification,
                                               object: nil)
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         animateLogo()
+        animteFields()
     }
 
     override func viewWillDisappear(_ animated: Bool) {
@@ -174,5 +176,27 @@ extension LoginViewController {
             self?.logoView.alpha = 1
             self?.view.layoutIfNeeded()
         }
+    }
+    
+    
+    private func animteFields() {
+        let finishPosition = passwordField.frame.origin.x
+        emailPhoneLabel.frame.origin.x = -view.bounds.width
+        emailPhoneField.frame.origin.x = -view.bounds.width
+        passwordField.frame.origin.x = -view.bounds.width
+        passwordLabel.frame.origin.x = -view.bounds.width
+        signInButton.center.x = -view.bounds.width
+        UIView.animate(withDuration: 1, delay: 1, usingSpringWithDamping: 0.3,
+                       initialSpringVelocity: 0.7,
+                       options: [.curveEaseInOut],
+                       animations: {
+                        self.emailPhoneLabel.frame.origin.x = finishPosition
+                        self.emailPhoneField.frame.origin.x = finishPosition
+                        self.passwordField.frame.origin.x = finishPosition
+                        self.passwordLabel.frame.origin.x = finishPosition
+                        self.signInButton.center.x = self.view.center.x
+        }, completion: { _ in
+            
+        })
     }
 }

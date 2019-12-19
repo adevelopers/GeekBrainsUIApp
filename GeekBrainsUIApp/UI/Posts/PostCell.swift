@@ -43,10 +43,6 @@ class PostCell: UITableViewCell {
         
         postImageView.contentMode = .scaleAspectFill
         postImageView.clipsToBounds = true
-        
-//        postFooter.backgroundColor = .red
-        
-        
         moreButton.setImage(.more, for: .normal)
         
         addSubviews([

@@ -11,7 +11,7 @@ import UIKit
 
 final class PostFooter: UIView {
     
-    let likeView = LikeButton(image: .likeOutline)
+    let likeView = LikeButton()
     let commentsButton = UIImageView(image: .comment)
     let shareButton = UIImageView(image: .share)
     let viewsCounter = ViewsCounterView(frame: .zero)
@@ -27,10 +27,10 @@ final class PostFooter: UIView {
         setup()
     }
     
+    // TODO: реализовать shareButton + commentsButton
     private func setup() {        
-        likeView.contentMode = .scaleAspectFit
-        shareButton.contentMode = .scaleAspectFit
-        commentsButton.contentMode = .scaleAspectFit
+        shareButton.contentMode = .center
+        commentsButton.contentMode = .center
         
         containerStackView.spacing = 32
         containerStackView.distribution = .fillEqually

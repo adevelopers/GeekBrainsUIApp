@@ -30,6 +30,8 @@ final class AvatarView: UIView {
         addSubview(avatarImageView)
         setupAvatarImageView()
         setupShadow()
+     
+        addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(didTap)))
     }
     
     private func setupAvatarImageView() {
@@ -48,5 +50,37 @@ final class AvatarView: UIView {
         layer.shadowOpacity = shadowOpacity
         layer.shadowRadius = 8
         layer.shadowOffset = CGSize(width: 0, height: 4)
+    }
+    
+    @objc
+    private func didTap() {
+        isUserInteractionEnabled = false
+        layer.removeAllAnimations()
+        
+        CATransaction.begin()
+        CATransaction.setCompletionBlock {
+              self.isUserInteractionEnabled = true
+        }
+        
+        let squeezeAnimation = CABasicAnimation()
+        squeezeAnimation.keyPath = "transform.scale"
+        squeezeAnimation.duration = 0.3
+        squeezeAnimation.fromValue = 1
+        squeezeAnimation.toValue = 0.7
+        
+        let restoreAnimation = CASpringAnimation()
+        restoreAnimation.keyPath = "transform.scale"
+        restoreAnimation.fromValue = 0.7
+        restoreAnimation.toValue = 1
+        restoreAnimation.duration = 1.3
+        restoreAnimation.damping = 3
+        restoreAnimation.initialVelocity = 1
+        
+        let tapAnimation = CAAnimationGroup()
+        tapAnimation.animations = [squeezeAnimation, restoreAnimation]
+        tapAnimation.duration = 1.6
+        layer.add(tapAnimation, forKey: nil)
+        CATransaction.commit()
+        
     }
 }
