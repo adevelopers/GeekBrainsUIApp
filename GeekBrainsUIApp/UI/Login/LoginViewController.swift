@@ -22,6 +22,8 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var passwordField: UITextField!
     @IBOutlet weak var signInButton: UIButton!
    
+    let customTransitioningDelegate = CustomTransitioningDelegate()
+    let trnsitioning = AnimatedTransitioning()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,6 +31,19 @@ class LoginViewController: UIViewController {
         setupPasswordField()
         setupActionHideKeyboard()
         setDemoCredentials()
+        
+        self.transitioningDelegate = customTransitioningDelegate
+        self.navigationController?.delegate = self
+        
+        signInButton.addTarget(self, action: #selector(goToTabbar), for: .touchDown)
+    }
+    
+    @objc
+    func goToTabbar() {
+        print("GO")
+        if let tabbarController = self.storyboard?.instantiateViewController(withIdentifier: "tabbarController") {
+            navigationController?.pushViewController(tabbarController, animated: true)
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -199,4 +214,21 @@ extension LoginViewController {
             
         })
     }
+}
+
+extension LoginViewController: UINavigationControllerDelegate {
+    func navigationController(_ navigationController: UINavigationController, animationControllerFor operation: UINavigationController.Operation, from fromVC: UIViewController, to toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        print("NAV TRY TRANSITOIONING")
+        switch operation {
+        case .push:
+            return trnsitioning
+        case .pop:
+            return nil
+        case .none:
+            return nil
+        @unknown default:
+            fatalError("\(#function)")
+        }
+    }
+   
 }

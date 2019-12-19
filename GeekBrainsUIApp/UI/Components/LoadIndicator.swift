@@ -63,7 +63,7 @@ final class LoadIndicator: UIView {
         scaleDown.beginTime = after
         scaleDown.fromValue = 0.1
         scaleDown.toValue = 1.0
-        scaleDown.duration = 2
+        scaleDown.duration = 1
         scaleDown.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeOut)
 
         let group = CAAnimationGroup()
@@ -71,7 +71,7 @@ final class LoadIndicator: UIView {
         group.repeatCount = Float.infinity
         group.autoreverses = false
         
-        group.duration = CFTimeInterval(1)
+        group.duration = CFTimeInterval(0.8)
 
         return group
     }

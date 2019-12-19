@@ -11,7 +11,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="sCZ-jF-Gbn">
             <objects>
-                <tabBarController id="7Zn-w4-e6b" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="tabbarController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="7Zn-w4-e6b" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="8ol-lq-PhQ"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="feD-WX-fOE">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
@@ -221,9 +221,6 @@
                                                 <integer key="value" value="6"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
-                                        <connections>
-                                            <segue destination="7Zn-w4-e6b" kind="show" identifier="tabbar" id="udc-Gq-yMP"/>
-                                        </connections>
                                     </button>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="VK-Logo" translatesAutoresizingMaskIntoConstraints="NO" id="jLT-ln-kNu">
                                         <rect key="frame" x="130" y="100" width="60" height="60"/>

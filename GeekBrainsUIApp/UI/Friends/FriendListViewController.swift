@@ -17,6 +17,10 @@ struct Section<T> {
 class FriendListViewController: UITableViewController {
     @IBOutlet weak var searchBar: UISearchBar!
     
+    
+    let customTransitioningDelegate = CustomTransitioningDelegate()
+    
+    
     var items: [User] = []
     var friendsSections = [Section<User>]()
 
@@ -25,6 +29,7 @@ class FriendListViewController: UITableViewController {
         searchBar.delegate = self
         setupActionHideKeyboard()
         loadUsers()
+        self.transitioningDelegate = customTransitioningDelegate
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
