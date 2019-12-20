@@ -25,10 +25,7 @@ class PhotosViewController: UICollectionViewController {
 
         // Do any additional setup after loading the view.
         //Убираем надпись на кнопке возврата
-        let backButtonItem = UIBarButtonItem()
-        backButtonItem.title = ""
-        backButtonItem.tintColor = .white
-        navigationController?.navigationBar.topItem?.backBarButtonItem = backButtonItem
+        hideBackButtonTitle()
     }
 
     // MARK: UICollectionViewDataSource
@@ -48,7 +45,21 @@ class PhotosViewController: UICollectionViewController {
         }
     
         cell.backgroundColor = .white
-        cell.photoView.image = UIImage.getPhoto(by: Int.random(in: 1...11)) ?? UIImage()
+        cell.photoView.image = UIImage.getPhoto(by: photoCollection[indexPath.row]) ?? UIImage()
         return cell
+    }
+    
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let photoDetailViewController = PhotoDetailViewController()
+        photoDetailViewController.didChangePhoto = { index in
+            let correctedIndex = index % self.photoCollection.count
+            photoDetailViewController.imageView.image = UIImage.getPhoto(by: correctedIndex) ?? UIImage()
+        }
+//        if let cell = collectionView.cellForItem(at: indexPath) as? PhotoCell {
+        photoDetailViewController.index = indexPath.row
+        photoDetailViewController.imageView.image = UIImage.getPhoto(by: photoCollection[indexPath.row]) ?? UIImage()
+//        }
+        
+        navigationController?.pushViewController(photoDetailViewController, animated: true)
     }
 }

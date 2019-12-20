@@ -13,6 +13,7 @@ extension UIViewController {
     func hideBackButtonTitle() {
         let backButtonItem = UIBarButtonItem()
         backButtonItem.title = ""
+        backButtonItem.tintColor = .black
         navigationController?.navigationBar.topItem?.backBarButtonItem = backButtonItem
     }
 }
