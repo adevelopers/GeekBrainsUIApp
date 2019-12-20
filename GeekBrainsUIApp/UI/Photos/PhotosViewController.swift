@@ -12,18 +12,11 @@ private let reuseIdentifier = "Cell"
 
 class PhotosViewController: UICollectionViewController {
 
-    var photoCollection = Array(1...32)
+    var photoCollection = Array(1...12)
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Register cell classes
         self.collectionView.register(UINib(nibName: PhotoCell.reuseId, bundle: nil), forCellWithReuseIdentifier: PhotoCell.reuseId)
-
-        // Do any additional setup after loading the view.
         //Убираем надпись на кнопке возврата
         hideBackButtonTitle()
     }
@@ -52,13 +45,13 @@ class PhotosViewController: UICollectionViewController {
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let photoDetailViewController = PhotoDetailViewController()
         photoDetailViewController.didChangePhoto = { index in
-            let correctedIndex = index % self.photoCollection.count
-            photoDetailViewController.imageView.image = UIImage.getPhoto(by: correctedIndex) ?? UIImage()
+            let correctedIndex = (index % (self.photoCollection.count - 1)) + 1
+            print(correctedIndex)
+            photoDetailViewController.nextImageView.image = UIImage.getPhoto(by: correctedIndex) ?? UIImage()
         }
-//        if let cell = collectionView.cellForItem(at: indexPath) as? PhotoCell {
+
         photoDetailViewController.index = indexPath.row
-        photoDetailViewController.imageView.image = UIImage.getPhoto(by: photoCollection[indexPath.row]) ?? UIImage()
-//        }
+        photoDetailViewController.nextImageView.image = UIImage.getPhoto(by: photoCollection[indexPath.row]) ?? UIImage()
         
         navigationController?.pushViewController(photoDetailViewController, animated: true)
     }
