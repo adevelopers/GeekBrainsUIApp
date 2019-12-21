@@ -24,6 +24,9 @@
 		F1C1D7EC239B9A9900CE34F9 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C1D7EB239B9A9900CE34F9 /* Post.swift */; };
 		F1C1D7EF239BC55400CE34F9 /* NewsfeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C1D7EE239BC55400CE34F9 /* NewsfeedViewController.swift */; };
 		F1C1D7F2239BC92A00CE34F9 /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C1D7F0239BC92A00CE34F9 /* PostCell.swift */; };
+		F1CD9F8E23ACF57000558294 /* PhotoDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1CD9F8D23ACF57000558294 /* PhotoDetailViewController.swift */; };
+		F1CD9F9023AD14D500558294 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1CD9F8F23AD14D500558294 /* TabBarController.swift */; };
+		F1CD9F9223AD25B700558294 /* TabbarAnimatedTransitioning.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1CD9F9123AD25B700558294 /* TabbarAnimatedTransitioning.swift */; };
 		FA08D2682392F9CF0005E549 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA08D2672392F9CF0005E549 /* User.swift */; };
 		FA08D26C239301F60005E549 /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA08D26B239301F60005E549 /* Group.swift */; };
 		FA08D26F2393BD0C0005E549 /* FriendListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA08D26E2393BD0C0005E549 /* FriendListViewController.swift */; };
@@ -65,6 +68,9 @@
 		F1C1D7EB239B9A9900CE34F9 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		F1C1D7EE239BC55400CE34F9 /* NewsfeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsfeedViewController.swift; sourceTree = "<group>"; };
 		F1C1D7F0239BC92A00CE34F9 /* PostCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
+		F1CD9F8D23ACF57000558294 /* PhotoDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailViewController.swift; sourceTree = "<group>"; };
+		F1CD9F8F23AD14D500558294 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		F1CD9F9123AD25B700558294 /* TabbarAnimatedTransitioning.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarAnimatedTransitioning.swift; sourceTree = "<group>"; };
 		FA08D2672392F9CF0005E549 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		FA08D26B239301F60005E549 /* Group.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
 		FA08D26E2393BD0C0005E549 /* FriendListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendListViewController.swift; sourceTree = "<group>"; };
@@ -159,6 +165,8 @@
 				FA08D27623940B310005E549 /* Friends */,
 				F1B2784923A0191400ED7F44 /* CustomCollectionViewLayout.swift */,
 				F101C0AA23A95B2100A191D5 /* CustomTransitioningDelegate.swift */,
+				F1CD9F8F23AD14D500558294 /* TabBarController.swift */,
+				F1CD9F9123AD25B700558294 /* TabbarAnimatedTransitioning.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -239,6 +247,7 @@
 				FACCEAC623A19F6A005C6D77 /* PhotosViewController.swift */,
 				F101C09323A3DD4000A191D5 /* PhotoCell.swift */,
 				F101C09423A3DD4000A191D5 /* PhotoCell.xib */,
+				F1CD9F8D23ACF57000558294 /* PhotoDetailViewController.swift */,
 			);
 			path = Photos;
 			sourceTree = "<group>";
@@ -331,6 +340,7 @@
 				F1B2784423A010C000ED7F44 /* MessagesViewController.swift in Sources */,
 				F101C0A323A5768E00A191D5 /* UIView+addSubviews.swift in Sources */,
 				FA08D27F239426370005E549 /* AddGroupViewController.swift in Sources */,
+				F1CD9F9023AD14D500558294 /* TabBarController.swift in Sources */,
 				FACCEAC723A19F6A005C6D77 /* PhotosViewController.swift in Sources */,
 				F101C0A123A5470800A191D5 /* ViewsCounterView.swift in Sources */,
 				FAACA19D2388893A005BB6A7 /* AppDelegate.swift in Sources */,
@@ -338,12 +348,14 @@
 				F101C0A923A6910100A191D5 /* LoadIndicator.swift in Sources */,
 				FA08D279239411EE0005E549 /* GroupsListViewController.swift in Sources */,
 				FA08D2682392F9CF0005E549 /* User.swift in Sources */,
+				F1CD9F9223AD25B700558294 /* TabbarAnimatedTransitioning.swift in Sources */,
 				FAC59DFC2399AE050097D0B5 /* HeartButton.swift in Sources */,
 				F101C0A523A5891D00A191D5 /* Colors.swift in Sources */,
 				F101C09F23A51EBF00A191D5 /* UIViewController+hideBackButtonTitle.swift in Sources */,
 				F101C09823A3F5DB00A191D5 /* PostFooter.swift in Sources */,
 				FAC59DFA23999D8E0097D0B5 /* LikeView.swift in Sources */,
 				FA08D2752393F0E50005E549 /* FriendViewController.swift in Sources */,
+				F1CD9F8E23ACF57000558294 /* PhotoDetailViewController.swift in Sources */,
 				FAACA19F2388893A005BB6A7 /* SceneDelegate.swift in Sources */,
 				F1C1D7F2239BC92A00CE34F9 /* PostCell.swift in Sources */,
 				F1B2784A23A0191400ED7F44 /* CustomCollectionViewLayout.swift in Sources */,

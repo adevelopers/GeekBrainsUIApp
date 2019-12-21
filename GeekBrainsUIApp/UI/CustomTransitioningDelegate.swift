@@ -40,12 +40,10 @@ class AnimatedTransitioning: NSObject, UIViewControllerAnimatedTransitioning {
         
         transitionContext.containerView.addSubview(destination.view)
         destination.view.frame = source.view.frame
-//        destination.view.transform = CGAffineTransform(translationX: source.view.frame.width, y: 0)
         destination.view.alpha = 0
         
         UIView.animate(withDuration: 1, animations: {
             source.view.transform = CGAffineTransform(translationX: source.view.frame.width, y: -source.view.frame.height / 2)
-//            destination.view.transform = CGAffineTransform(translationX: 0, y: 0)
             destination.view.alpha = 1
         }, completion: { _ in
             destination.view.transform = .identity

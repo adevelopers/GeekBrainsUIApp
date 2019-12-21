@@ -12,23 +12,13 @@ private let reuseIdentifier = "Cell"
 
 class PhotosViewController: UICollectionViewController {
 
-    var photoCollection = Array(1...32)
+    var photoCollection = Array(1...12)
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Register cell classes
         self.collectionView.register(UINib(nibName: PhotoCell.reuseId, bundle: nil), forCellWithReuseIdentifier: PhotoCell.reuseId)
-
-        // Do any additional setup after loading the view.
         //Убираем надпись на кнопке возврата
-        let backButtonItem = UIBarButtonItem()
-        backButtonItem.title = ""
-        backButtonItem.tintColor = .white
-        navigationController?.navigationBar.topItem?.backBarButtonItem = backButtonItem
+        hideBackButtonTitle()
     }
 
     // MARK: UICollectionViewDataSource
@@ -48,7 +38,21 @@ class PhotosViewController: UICollectionViewController {
         }
     
         cell.backgroundColor = .white
-        cell.photoView.image = UIImage.getPhoto(by: Int.random(in: 1...11)) ?? UIImage()
+        cell.photoView.image = UIImage.getPhoto(by: photoCollection[indexPath.row]) ?? UIImage()
         return cell
+    }
+    
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let photoDetailViewController = PhotoDetailViewController()
+        photoDetailViewController.didChangePhoto = { index in
+            let correctedIndex = (index % (self.photoCollection.count - 1)) + 1
+            print(correctedIndex)
+            photoDetailViewController.nextImageView.image = UIImage.getPhoto(by: correctedIndex) ?? UIImage()
+        }
+
+        photoDetailViewController.index = indexPath.row
+        photoDetailViewController.nextImageView.image = UIImage.getPhoto(by: photoCollection[indexPath.row]) ?? UIImage()
+        
+        navigationController?.pushViewController(photoDetailViewController, animated: true)
     }
 }
