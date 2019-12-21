@@ -13,6 +13,12 @@ class NewsfeedViewController: UITableViewController {
     
     let posts: [Post] = Post.generateDemoPosts(with: 34)
     
+    override func loadView() {
+        super.loadView()
+        
+        view.backgroundColor = .white
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
@@ -21,7 +27,16 @@ class NewsfeedViewController: UITableViewController {
         setupTtile()
         tableView.register(PostCell.self, forCellReuseIdentifier: PostCell.reuseId)
         tableView.backgroundColor = .white
-        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        view.backgroundColor = .white
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        animatedPresent()
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -54,4 +69,26 @@ class NewsfeedViewController: UITableViewController {
     private func setupTtile() {
         title = "Новости"
     }
+}
+
+
+extension NewsfeedViewController: AnimatedPresentable {
+    
+    func animatedPresent() {
+        view.backgroundColor = .white
+        tableView.transform = .init(scaleX: 0, y: 0)
+        UIView.animate(withDuration: 2, delay: 2,
+                       usingSpringWithDamping: 0.5,
+                       initialSpringVelocity: 0.7,
+                       options: [], animations: {
+            self.tableView.transform = .init(scaleX: 1, y: 1)
+        }, completion: { _ in
+//            self.tableView.transform = .identity
+        })
+    }
+
+}
+
+protocol AnimatedPresentable {
+    func animatedPresent()
 }

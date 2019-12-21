@@ -18,6 +18,16 @@ class PhotoDetailViewController: UIViewController {
     var didChangePhoto: ((Int) -> Void)?
     var index = 0
     
+    init() {
+        super.init(nibName: nil, bundle: nil)
+        view.backgroundColor = .white
+        
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -27,10 +37,12 @@ class PhotoDetailViewController: UIViewController {
         nextImageView.contentMode = .scaleAspectFit
         view.addSubview(imageView)
         view.addSubview(nextImageView)
-        imageView.bounds = view.bounds
-        imageView.center = view.center
         
-        nextImageView.bounds = view.bounds
+        imageView.frame = view.frame
+        imageView.center = view.center
+        imageView.alpha = 0
+        
+        nextImageView.frame = view.frame
         nextImageView.center = view.center
         
         
@@ -41,9 +53,7 @@ class PhotoDetailViewController: UIViewController {
         view.addGestureRecognizer(leftSwipe)
         view.addGestureRecognizer(rightSwipe)
         
-        animatedShow()
-        imageView.alpha = 0
-        nextImageView.alpha = 0
+        
     }
     
     @objc
