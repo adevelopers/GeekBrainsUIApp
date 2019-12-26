@@ -9,14 +9,28 @@
 import UIKit
 
 
+enum CellsType {
+    case searchBar
+    case friendsHistory
+    case post(item: Post)
+}
+    
+
 class NewsfeedViewController: UITableViewController {
     
-    let posts: [Post] = Post.generateDemoPosts(with: 34)
+    var models: [CellsType] = []
+    
+    
     
     override func loadView() {
         super.loadView()
         
         view.backgroundColor = .white
+        
+        //типа поздняя инициализация
+        models.append(.searchBar)
+        models.append(.friendsHistory)
+        models.append(contentsOf: getPosts().map { CellsType.post(item: $0) })
     }
     
     override func viewDidLoad() {
@@ -25,6 +39,9 @@ class NewsfeedViewController: UITableViewController {
         let navigationAppereance = navigationItem.standardAppearance
         navigationAppereance?.backgroundColor = .orange
         setupTtile()
+        
+        tableView.register(SearchCell.self, forCellReuseIdentifier: SearchCell.reuseId)
+        tableView.register(FriendsHistoryCell.self, forCellReuseIdentifier: FriendsHistoryCell.reuseId)
         tableView.register(PostCell.self, forCellReuseIdentifier: PostCell.reuseId)
         tableView.backgroundColor = .white
     }
@@ -44,30 +61,53 @@ class NewsfeedViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return posts.count
+        return models.count
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return UITableView.automaticDimension
+        let cellModel = models[indexPath.row]
+        
+        switch cellModel {
+        case .searchBar:
+            return 30
+        case .friendsHistory:
+            return 60
+        case .post:
+            return UITableView.automaticDimension
+        }
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: PostCell.reuseId, for: indexPath) as? PostCell else {
-            return UITableViewCell()
+        
+        let cellModel = models[indexPath.row]
+        
+        switch cellModel {
+        case .searchBar:
+            let searchCell = tableView.dequeueReusableCell(withIdentifier: SearchCell.reuseId) as? SearchCell
+            return searchCell ?? UITableViewCell()
+        case .friendsHistory:
+            return tableView.dequeueReusableCell(withIdentifier: FriendsHistoryCell.reuseId) as? FriendsHistoryCell ?? UITableViewCell()
+        case let .post(item: post):
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: PostCell.reuseId, for: indexPath) as? PostCell else {
+                return UITableViewCell()
+            }
+            
+            cell.avatarView.image = UIImage(imageLiteralResourceName: "lena")
+            cell.postImageView.image = .postImageList
+            cell.authorLabel.text = post.title
+            cell.postLabel.text = post.text
+            return cell
         }
         
-        let model = posts[indexPath.section]
-        cell.avatarView.image = UIImage(imageLiteralResourceName: "lena")
-        cell.postImageView.image = .postImageList
-        cell.authorLabel.text = model.title
-        cell.postLabel.text = "Залог хорошего утра для меня --- это спорт, душ и чашечка чая. Готова покорять мир! Желаю вам продуктивной недели и отличного настроения" //model.text
-
-        return cell
     }
-    
     
     private func setupTtile() {
         title = "Новости"
+    }
+    
+    private func getPosts() -> [Post] {
+        // тут как буд-то мы из сети получили список новостей
+        return Post.generateDemoPosts(with: 34)
     }
 }
 

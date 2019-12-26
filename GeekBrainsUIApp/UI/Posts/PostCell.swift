@@ -77,7 +77,6 @@ class PostCell: UITableViewCell {
         NSLayoutConstraint.activate([
             authorLabel.bottomAnchor.constraint(equalTo: avatarView.centerYAnchor, constant: 4),
             authorLabel.leadingAnchor.constraint(equalTo: avatarView.trailingAnchor, constant: 8),
-            authorLabel.rightAnchor.constraint(equalTo: verifiedIcon.leftAnchor, constant: 8)
         ])
         
         dateLabel.translatesAutoresizingMaskIntoConstraints = false
@@ -90,7 +89,7 @@ class PostCell: UITableViewCell {
         verifiedIcon.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             verifiedIcon.centerYAnchor.constraint(equalTo: authorLabel.centerYAnchor),
-            verifiedIcon.rightAnchor.constraint(lessThanOrEqualTo: rightAnchor, constant: 32)
+            verifiedIcon.leftAnchor.constraint(equalTo: authorLabel.rightAnchor, constant: 8)
         ])
         
         moreButton.translatesAutoresizingMaskIntoConstraints = false
