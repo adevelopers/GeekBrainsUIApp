@@ -20,8 +20,6 @@ class NewsfeedViewController: UITableViewController {
     
     var models: [CellsType] = []
     
-    
-    
     override func loadView() {
         super.loadView()
         
