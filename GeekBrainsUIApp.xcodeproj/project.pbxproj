@@ -27,6 +27,8 @@
 		F1CD9F8E23ACF57000558294 /* PhotoDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1CD9F8D23ACF57000558294 /* PhotoDetailViewController.swift */; };
 		F1CD9F9023AD14D500558294 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1CD9F8F23AD14D500558294 /* TabBarController.swift */; };
 		F1CD9F9223AD25B700558294 /* TabbarAnimatedTransitioning.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1CD9F9123AD25B700558294 /* TabbarAnimatedTransitioning.swift */; };
+		F1CD9FB323B113D900558294 /* AnimatedPhotoTransitioning.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1CD9FB223B113D900558294 /* AnimatedPhotoTransitioning.swift */; };
+		F1CD9FB523B114EC00558294 /* AnimatedTransitioning.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1CD9FB423B114EC00558294 /* AnimatedTransitioning.swift */; };
 		FA08D2682392F9CF0005E549 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA08D2672392F9CF0005E549 /* User.swift */; };
 		FA08D26C239301F60005E549 /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA08D26B239301F60005E549 /* Group.swift */; };
 		FA08D26F2393BD0C0005E549 /* FriendListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA08D26E2393BD0C0005E549 /* FriendListViewController.swift */; };
@@ -71,6 +73,8 @@
 		F1CD9F8D23ACF57000558294 /* PhotoDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailViewController.swift; sourceTree = "<group>"; };
 		F1CD9F8F23AD14D500558294 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		F1CD9F9123AD25B700558294 /* TabbarAnimatedTransitioning.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarAnimatedTransitioning.swift; sourceTree = "<group>"; };
+		F1CD9FB223B113D900558294 /* AnimatedPhotoTransitioning.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatedPhotoTransitioning.swift; sourceTree = "<group>"; };
+		F1CD9FB423B114EC00558294 /* AnimatedTransitioning.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatedTransitioning.swift; sourceTree = "<group>"; };
 		FA08D2672392F9CF0005E549 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		FA08D26B239301F60005E549 /* Group.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
 		FA08D26E2393BD0C0005E549 /* FriendListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendListViewController.swift; sourceTree = "<group>"; };
@@ -167,6 +171,7 @@
 				F101C0AA23A95B2100A191D5 /* CustomTransitioningDelegate.swift */,
 				F1CD9F8F23AD14D500558294 /* TabBarController.swift */,
 				F1CD9F9123AD25B700558294 /* TabbarAnimatedTransitioning.swift */,
+				F1CD9FB423B114EC00558294 /* AnimatedTransitioning.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -248,6 +253,7 @@
 				F101C09323A3DD4000A191D5 /* PhotoCell.swift */,
 				F101C09423A3DD4000A191D5 /* PhotoCell.xib */,
 				F1CD9F8D23ACF57000558294 /* PhotoDetailViewController.swift */,
+				F1CD9FB223B113D900558294 /* AnimatedPhotoTransitioning.swift */,
 			);
 			path = Photos;
 			sourceTree = "<group>";
@@ -328,6 +334,7 @@
 			files = (
 				FA08D2732393EF000005E549 /* FriendDetailCell.swift in Sources */,
 				FA08D26C239301F60005E549 /* Group.swift in Sources */,
+				F1CD9FB323B113D900558294 /* AnimatedPhotoTransitioning.swift in Sources */,
 				FAACA1A12388893A005BB6A7 /* LoginViewController.swift in Sources */,
 				FAACA1B123888E71005BB6A7 /* Images.swift in Sources */,
 				F101C09523A3DD4000A191D5 /* PhotoCell.swift in Sources */,
@@ -336,6 +343,7 @@
 				F1C1D7EF239BC55400CE34F9 /* NewsfeedViewController.swift in Sources */,
 				F1C1D7EC239B9A9900CE34F9 /* Post.swift in Sources */,
 				FA08D26F2393BD0C0005E549 /* FriendListViewController.swift in Sources */,
+				F1CD9FB523B114EC00558294 /* AnimatedTransitioning.swift in Sources */,
 				FA08D27C239414290005E549 /* GroupCell.swift in Sources */,
 				F1B2784423A010C000ED7F44 /* MessagesViewController.swift in Sources */,
 				F101C0A323A5768E00A191D5 /* UIView+addSubviews.swift in Sources */,

@@ -34,7 +34,7 @@ class PhotoDetailViewController: UIViewController {
         hideBackButtonTitle()
 
         imageView.contentMode = .scaleAspectFit
-        nextImageView.contentMode = .scaleAspectFit
+        nextImageView.contentMode = .scaleAspectFill
         view.addSubview(imageView)
         view.addSubview(nextImageView)
         
