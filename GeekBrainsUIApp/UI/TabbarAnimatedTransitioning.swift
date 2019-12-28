@@ -34,15 +34,12 @@ class TabbarAnimatedTransitioning: NSObject, UIViewControllerAnimatedTransitioni
         transitionContext.containerView.addSubview(backView)
         transitionContext.containerView.addSubview(destination.view)
         
-        
-        
         switch animationDirection {
         case .left:
-            print("left")
             destination.view.transform = CGAffineTransform(translationX: -source.view.frame.width, y: 0)
             backView.transform = CGAffineTransform(translationX: -source.view.frame.width, y: 0)
             
-            UIView.animate(withDuration: 1.3, animations: {
+            UIView.animate(withDuration: 0.3, animations: {
                 source.view.transform = CGAffineTransform(translationX: source.view.frame.width, y: 0)
                 destination.view.transform = CGAffineTransform(translationX: 0, y: 0)
             }, completion: { _ in
@@ -52,10 +49,9 @@ class TabbarAnimatedTransitioning: NSObject, UIViewControllerAnimatedTransitioni
                 transitionContext.completeTransition(true)
             })
         case .right:
-            print("right")
             destination.view.transform = CGAffineTransform(translationX: source.view.frame.width, y: 0)
             backView.transform = CGAffineTransform(translationX: source.view.frame.width, y: 0)
-            UIView.animate(withDuration: 1.3, animations: {
+            UIView.animate(withDuration: 0.3, animations: {
                 source.view.transform = CGAffineTransform(translationX: -source.view.frame.width, y: 0)
                 destination.view.transform = CGAffineTransform(translationX: 0, y: 0)
             }, completion: { _ in
@@ -64,12 +60,6 @@ class TabbarAnimatedTransitioning: NSObject, UIViewControllerAnimatedTransitioni
                 backView.transform = .identity
                 transitionContext.completeTransition(true)
             })
-        }
-        
-        if
-            let nv = destination as? UINavigationController,
-            let vc = nv.topViewController as? AnimatedPresentable {
-            vc.animatedPresent()
         }
     }
     

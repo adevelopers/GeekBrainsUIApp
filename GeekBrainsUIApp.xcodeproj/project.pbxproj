@@ -30,7 +30,7 @@
 		F1CD9F9223AD25B700558294 /* TabbarAnimatedTransitioning.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1CD9F9123AD25B700558294 /* TabbarAnimatedTransitioning.swift */; };
 		F1CD9FB323B113D900558294 /* AnimatedPhotoTransitioning.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1CD9FB223B113D900558294 /* AnimatedPhotoTransitioning.swift */; };
 		F1CD9FB523B114EC00558294 /* AnimatedTransitioning.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1CD9FB423B114EC00558294 /* AnimatedTransitioning.swift */; };
-		F1CD9FD723B50D8A00558294 /* SearchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1CD9FD623B50D8A00558294 /* SearchCell.swift */; };
+		F1CD9FD723B50D8A00558294 /* WhatsNewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1CD9FD623B50D8A00558294 /* WhatsNewCell.swift */; };
 		F1CD9FD923B5204700558294 /* FirendsHistoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1CD9FD823B5204700558294 /* FirendsHistoryCell.swift */; };
 		FA08D2682392F9CF0005E549 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA08D2672392F9CF0005E549 /* User.swift */; };
 		FA08D26C239301F60005E549 /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA08D26B239301F60005E549 /* Group.swift */; };
@@ -43,6 +43,7 @@
 		FA08D27D239414290005E549 /* GroupCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA08D27B239414290005E549 /* GroupCell.xib */; };
 		FA08D27F239426370005E549 /* AddGroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA08D27E239426370005E549 /* AddGroupViewController.swift */; };
 		FA08D287239823DF0005E549 /* AvatarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA08D286239823DF0005E549 /* AvatarView.swift */; };
+		FA20DD7923B792E300EA3207 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA20DD7823B792E300EA3207 /* Fonts.swift */; };
 		FAACA19D2388893A005BB6A7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAACA19C2388893A005BB6A7 /* AppDelegate.swift */; };
 		FAACA19F2388893A005BB6A7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAACA19E2388893A005BB6A7 /* SceneDelegate.swift */; };
 		FAACA1A12388893A005BB6A7 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAACA1A02388893A005BB6A7 /* LoginViewController.swift */; };
@@ -81,7 +82,7 @@
 		F1CD9F9123AD25B700558294 /* TabbarAnimatedTransitioning.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarAnimatedTransitioning.swift; sourceTree = "<group>"; };
 		F1CD9FB223B113D900558294 /* AnimatedPhotoTransitioning.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatedPhotoTransitioning.swift; sourceTree = "<group>"; };
 		F1CD9FB423B114EC00558294 /* AnimatedTransitioning.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatedTransitioning.swift; sourceTree = "<group>"; };
-		F1CD9FD623B50D8A00558294 /* SearchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCell.swift; sourceTree = "<group>"; };
+		F1CD9FD623B50D8A00558294 /* WhatsNewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhatsNewCell.swift; sourceTree = "<group>"; };
 		F1CD9FD823B5204700558294 /* FirendsHistoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirendsHistoryCell.swift; sourceTree = "<group>"; };
 		FA08D2672392F9CF0005E549 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		FA08D26B239301F60005E549 /* Group.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
@@ -94,6 +95,7 @@
 		FA08D27B239414290005E549 /* GroupCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GroupCell.xib; sourceTree = "<group>"; };
 		FA08D27E239426370005E549 /* AddGroupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddGroupViewController.swift; sourceTree = "<group>"; };
 		FA08D286239823DF0005E549 /* AvatarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarView.swift; sourceTree = "<group>"; };
+		FA20DD7823B792E300EA3207 /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
 		FAACA1992388893A005BB6A7 /* GeekBrainsUIApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GeekBrainsUIApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAACA19C2388893A005BB6A7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FAACA19E2388893A005BB6A7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -170,7 +172,7 @@
 				F1C1D7EE239BC55400CE34F9 /* NewsfeedViewController.swift */,
 				F1CD9FD823B5204700558294 /* FirendsHistoryCell.swift */,
 				F1C1D7F0239BC92A00CE34F9 /* PostCell.swift */,
-				F1CD9FD623B50D8A00558294 /* SearchCell.swift */,
+				F1CD9FD623B50D8A00558294 /* WhatsNewCell.swift */,
 			);
 			path = Posts;
 			sourceTree = "<group>";
@@ -271,6 +273,7 @@
 				FAACA1A72388893C005BB6A7 /* LaunchScreen.storyboard */,
 				FAACA1AA2388893C005BB6A7 /* Info.plist */,
 				FAACA1B023888E71005BB6A7 /* Images.swift */,
+				FA20DD7823B792E300EA3207 /* Fonts.swift */,
 				F101C0A423A5891D00A191D5 /* Colors.swift */,
 			);
 			path = GeekBrainsUIApp;
@@ -422,6 +425,7 @@
 				F1B2784423A010C000ED7F44 /* MessagesViewController.swift in Sources */,
 				F101C0A323A5768E00A191D5 /* UIView+addSubviews.swift in Sources */,
 				FA08D27F239426370005E549 /* AddGroupViewController.swift in Sources */,
+				FA20DD7923B792E300EA3207 /* Fonts.swift in Sources */,
 				F1CD9F9023AD14D500558294 /* TabBarController.swift in Sources */,
 				F1CD9FD923B5204700558294 /* FirendsHistoryCell.swift in Sources */,
 				FACCEAC723A19F6A005C6D77 /* PhotosViewController.swift in Sources */,
@@ -430,7 +434,7 @@
 				F101C0AB23A95B2100A191D5 /* CustomTransitioningDelegate.swift in Sources */,
 				F101C0A923A6910100A191D5 /* LoadIndicator.swift in Sources */,
 				FA08D279239411EE0005E549 /* GroupsListViewController.swift in Sources */,
-				F1CD9FD723B50D8A00558294 /* SearchCell.swift in Sources */,
+				F1CD9FD723B50D8A00558294 /* WhatsNewCell.swift in Sources */,
 				FA08D2682392F9CF0005E549 /* User.swift in Sources */,
 				F1CD9F9223AD25B700558294 /* TabbarAnimatedTransitioning.swift in Sources */,
 				FAC59DFC2399AE050097D0B5 /* HeartButton.swift in Sources */,

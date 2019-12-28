@@ -27,6 +27,7 @@ extension UIImage {
     static let more = UIImage(imageLiteralResourceName: "more")
     
     
+    static let female = UIImage(imageLiteralResourceName: "lena")
 
     static func getPhoto(by number: Int) -> UIImage? {
         return UIImage(imageLiteralResourceName: "\(number).jpg")

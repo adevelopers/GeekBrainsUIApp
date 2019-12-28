@@ -10,7 +10,7 @@ import UIKit
 
 
 enum CellsType {
-    case searchBar
+    case whatsNew
     case friendsHistory
     case post(item: Post)
 }
@@ -26,7 +26,7 @@ class NewsfeedViewController: UITableViewController {
         view.backgroundColor = .white
         
         //типа поздняя инициализация
-        models.append(.searchBar)
+        models.append(.whatsNew)
         models.append(.friendsHistory)
         models.append(contentsOf: getPosts().map { CellsType.post(item: $0) })
     }
@@ -38,10 +38,12 @@ class NewsfeedViewController: UITableViewController {
         navigationAppereance?.backgroundColor = .orange
         setupTtile()
         
-        tableView.register(SearchCell.self, forCellReuseIdentifier: SearchCell.reuseId)
+        tableView.register(WhatsNewCell.self, forCellReuseIdentifier: WhatsNewCell.reuseId)
         tableView.register(FriendsHistoryCell.self, forCellReuseIdentifier: FriendsHistoryCell.reuseId)
         tableView.register(PostCell.self, forCellReuseIdentifier: PostCell.reuseId)
         tableView.backgroundColor = .white
+        tableView.separatorStyle = .none
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -51,7 +53,7 @@ class NewsfeedViewController: UITableViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        animatedPresent()
+        
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -66,10 +68,10 @@ class NewsfeedViewController: UITableViewController {
         let cellModel = models[indexPath.row]
         
         switch cellModel {
-        case .searchBar:
-            return 30
+        case .whatsNew:
+            return 84
         case .friendsHistory:
-            return 60
+            return 156
         case .post:
             return UITableView.automaticDimension
         }
@@ -80,9 +82,9 @@ class NewsfeedViewController: UITableViewController {
         let cellModel = models[indexPath.row]
         
         switch cellModel {
-        case .searchBar:
-            let searchCell = tableView.dequeueReusableCell(withIdentifier: SearchCell.reuseId) as? SearchCell
-            return searchCell ?? UITableViewCell()
+        case .whatsNew:
+            let whatsNewCell = tableView.dequeueReusableCell(withIdentifier: WhatsNewCell.reuseId) as? WhatsNewCell
+            return whatsNewCell ?? UITableViewCell()
         case .friendsHistory:
             return tableView.dequeueReusableCell(withIdentifier: FriendsHistoryCell.reuseId) as? FriendsHistoryCell ?? UITableViewCell()
         case let .post(item: post):
@@ -107,26 +109,4 @@ class NewsfeedViewController: UITableViewController {
         // тут как буд-то мы из сети получили список новостей
         return Post.generateDemoPosts(with: 34)
     }
-}
-
-
-extension NewsfeedViewController: AnimatedPresentable {
-    
-    func animatedPresent() {
-        view.backgroundColor = .white
-        tableView.transform = .init(scaleX: 0, y: 0)
-        UIView.animate(withDuration: 2, delay: 2,
-                       usingSpringWithDamping: 0.5,
-                       initialSpringVelocity: 0.7,
-                       options: [], animations: {
-            self.tableView.transform = .init(scaleX: 1, y: 1)
-        }, completion: { _ in
-//            self.tableView.transform = .identity
-        })
-    }
-
-}
-
-protocol AnimatedPresentable {
-    func animatedPresent()
 }

@@ -33,6 +33,7 @@ class PostCell: UITableViewCell {
     
     private func setup() {
         selectionStyle = .none
+
         topSeparator.backgroundColor = .lightyGray
         authorLabel.textColor = .author
         dateLabel.text = "18 ноя в 11:33"
