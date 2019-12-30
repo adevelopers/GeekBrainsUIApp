@@ -28,6 +28,10 @@ extension UIImage {
     
     
     static let female = UIImage(imageLiteralResourceName: "lena")
+    
+    static let clearButton = UIImage(imageLiteralResourceName: "clearButton")
+    static let searchIcon = UIImage(imageLiteralResourceName: "searchIcon")
+    
 
     static func getPhoto(by number: Int) -> UIImage? {
         return UIImage(imageLiteralResourceName: "\(number).jpg")

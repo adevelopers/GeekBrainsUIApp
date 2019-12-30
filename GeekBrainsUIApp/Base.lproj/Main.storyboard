@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="7Zn-w4-e6b">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="du7-7D-JS0">
     <device id="retina4_0" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -543,28 +543,14 @@
             </objects>
             <point key="canvasLocation" x="3926.25" y="-265.14084507042253"/>
         </scene>
-        <!--View Controller-->
+        <!--Develop View Controller-->
         <scene sceneID="p1S-kk-Htt">
             <objects>
-                <viewController id="du7-7D-JS0" sceneMemberID="viewController">
+                <viewController id="du7-7D-JS0" customClass="DevelopViewController" customModule="GeekBrainsUIApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3FS-ys-9s1">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="R7t-Ct-0EL" customClass="LoadIndicator" customModule="GeekBrainsUIApp" customModuleProvider="target">
-                                <rect key="frame" x="40" y="220" width="240" height="128"/>
-                                <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="240" id="FPy-pb-zQB"/>
-                                    <constraint firstAttribute="height" constant="128" id="b5M-WU-BuR"/>
-                                </constraints>
-                            </view>
-                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <constraints>
-                            <constraint firstItem="R7t-Ct-0EL" firstAttribute="centerY" secondItem="3FS-ys-9s1" secondAttribute="centerY" id="GJV-No-VQi"/>
-                            <constraint firstItem="R7t-Ct-0EL" firstAttribute="centerX" secondItem="3FS-ys-9s1" secondAttribute="centerX" id="igK-Z7-VIa"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="CI4-yo-boW"/>
                     </view>
                 </viewController>
