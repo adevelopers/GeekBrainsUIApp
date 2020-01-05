@@ -44,6 +44,8 @@
 		FA08D27F239426370005E549 /* AddGroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA08D27E239426370005E549 /* AddGroupViewController.swift */; };
 		FA08D287239823DF0005E549 /* AvatarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA08D286239823DF0005E549 /* AvatarView.swift */; };
 		FA20DD7923B792E300EA3207 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA20DD7823B792E300EA3207 /* Fonts.swift */; };
+		FA545DAF23BA218500423432 /* DevelopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA545DAE23BA218500423432 /* DevelopViewController.swift */; };
+		FA545DB123BA48D000423432 /* CustomSearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA545DB023BA48D000423432 /* CustomSearchBar.swift */; };
 		FAACA19D2388893A005BB6A7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAACA19C2388893A005BB6A7 /* AppDelegate.swift */; };
 		FAACA19F2388893A005BB6A7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAACA19E2388893A005BB6A7 /* SceneDelegate.swift */; };
 		FAACA1A12388893A005BB6A7 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAACA1A02388893A005BB6A7 /* LoginViewController.swift */; };
@@ -96,6 +98,8 @@
 		FA08D27E239426370005E549 /* AddGroupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddGroupViewController.swift; sourceTree = "<group>"; };
 		FA08D286239823DF0005E549 /* AvatarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarView.swift; sourceTree = "<group>"; };
 		FA20DD7823B792E300EA3207 /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
+		FA545DAE23BA218500423432 /* DevelopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevelopViewController.swift; sourceTree = "<group>"; };
+		FA545DB023BA48D000423432 /* CustomSearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSearchBar.swift; sourceTree = "<group>"; };
 		FAACA1992388893A005BB6A7 /* GeekBrainsUIApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GeekBrainsUIApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAACA19C2388893A005BB6A7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FAACA19E2388893A005BB6A7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -197,6 +201,7 @@
 				FA08D285239823590005E549 /* Components */,
 				FA08D27723940B6B0005E549 /* Groups */,
 				FA08D27623940B310005E549 /* Friends */,
+				FA545DAD23BA210700423432 /* Develop */,
 				F1B2784923A0191400ED7F44 /* CustomCollectionViewLayout.swift */,
 				F101C0AA23A95B2100A191D5 /* CustomTransitioningDelegate.swift */,
 				F1CD9F8F23AD14D500558294 /* TabBarController.swift */,
@@ -240,6 +245,23 @@
 				F101C0A823A6910100A191D5 /* LoadIndicator.swift */,
 			);
 			path = Components;
+			sourceTree = "<group>";
+		};
+		FA545DAD23BA210700423432 /* Develop */ = {
+			isa = PBXGroup;
+			children = (
+				FA545DB223BA70AD00423432 /* CustomSearchBar */,
+				FA545DAE23BA218500423432 /* DevelopViewController.swift */,
+				FA545DB023BA48D000423432 /* CustomSearchBar.swift */,
+			);
+			path = Develop;
+			sourceTree = "<group>";
+		};
+		FA545DB223BA70AD00423432 /* CustomSearchBar */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = CustomSearchBar;
 			sourceTree = "<group>";
 		};
 		FAACA1902388893A005BB6A7 = {
@@ -423,6 +445,7 @@
 				F1CD9FB523B114EC00558294 /* AnimatedTransitioning.swift in Sources */,
 				FA08D27C239414290005E549 /* GroupCell.swift in Sources */,
 				F1B2784423A010C000ED7F44 /* MessagesViewController.swift in Sources */,
+				FA545DB123BA48D000423432 /* CustomSearchBar.swift in Sources */,
 				F101C0A323A5768E00A191D5 /* UIView+addSubviews.swift in Sources */,
 				FA08D27F239426370005E549 /* AddGroupViewController.swift in Sources */,
 				FA20DD7923B792E300EA3207 /* Fonts.swift in Sources */,
@@ -444,6 +467,7 @@
 				FAC59DFA23999D8E0097D0B5 /* LikeView.swift in Sources */,
 				FA08D2752393F0E50005E549 /* FriendViewController.swift in Sources */,
 				F1CD9F8E23ACF57000558294 /* PhotoDetailViewController.swift in Sources */,
+				FA545DAF23BA218500423432 /* DevelopViewController.swift in Sources */,
 				FAACA19F2388893A005BB6A7 /* SceneDelegate.swift in Sources */,
 				F1C1D7F2239BC92A00CE34F9 /* PostCell.swift in Sources */,
 				F1B2784A23A0191400ED7F44 /* CustomCollectionViewLayout.swift in Sources */,
