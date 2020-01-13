@@ -15,6 +15,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 
+        Session.shared.token = "13DBF900IDDQD"
+        Session.shared.userId = 2098109
+        
+        print("❇️ token: \(Session.shared.token)")
+        print("🌐 userID: \(Session.shared.userId)")
         
         return true
     }
