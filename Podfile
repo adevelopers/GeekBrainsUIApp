@@ -7,5 +7,6 @@ target 'GeekBrainsUIApp' do
 
   # Pods for GeekBrainsUIApp
   pod 'SnapKit'
+  pod 'Alamofire'
 
 end
