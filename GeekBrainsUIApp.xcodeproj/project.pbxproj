@@ -18,6 +18,7 @@
 		F101C0A723A64FD200A191D5 /* LikeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F101C0A623A64FD200A191D5 /* LikeButton.swift */; };
 		F101C0A923A6910100A191D5 /* LoadIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F101C0A823A6910100A191D5 /* LoadIndicator.swift */; };
 		F101C0AB23A95B2100A191D5 /* CustomTransitioningDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F101C0AA23A95B2100A191D5 /* CustomTransitioningDelegate.swift */; };
+		F110D4BB23CC566300373182 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = F110D4BA23CC566300373182 /* Session.swift */; };
 		F1B2784423A010C000ED7F44 /* MessagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B2784323A010C000ED7F44 /* MessagesViewController.swift */; };
 		F1B2784723A0111600ED7F44 /* MessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B2784523A0111600ED7F44 /* MessageCell.swift */; };
 		F1B2784823A0111600ED7F44 /* MessageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F1B2784623A0111600ED7F44 /* MessageCell.xib */; };
@@ -72,6 +73,7 @@
 		F101C0A623A64FD200A191D5 /* LikeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeButton.swift; sourceTree = "<group>"; };
 		F101C0A823A6910100A191D5 /* LoadIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadIndicator.swift; sourceTree = "<group>"; };
 		F101C0AA23A95B2100A191D5 /* CustomTransitioningDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTransitioningDelegate.swift; sourceTree = "<group>"; };
+		F110D4BA23CC566300373182 /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
 		F1B2784323A010C000ED7F44 /* MessagesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesViewController.swift; sourceTree = "<group>"; };
 		F1B2784523A0111600ED7F44 /* MessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageCell.swift; sourceTree = "<group>"; };
 		F1B2784623A0111600ED7F44 /* MessageCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MessageCell.xib; sourceTree = "<group>"; };
@@ -297,6 +299,7 @@
 				FAACA1B023888E71005BB6A7 /* Images.swift */,
 				FA20DD7823B792E300EA3207 /* Fonts.swift */,
 				F101C0A423A5891D00A191D5 /* Colors.swift */,
+				F110D4BA23CC566300373182 /* Session.swift */,
 			);
 			path = GeekBrainsUIApp;
 			sourceTree = "<group>";
@@ -462,6 +465,7 @@
 				F1CD9F9223AD25B700558294 /* TabbarAnimatedTransitioning.swift in Sources */,
 				FAC59DFC2399AE050097D0B5 /* HeartButton.swift in Sources */,
 				F101C0A523A5891D00A191D5 /* Colors.swift in Sources */,
+				F110D4BB23CC566300373182 /* Session.swift in Sources */,
 				F101C09F23A51EBF00A191D5 /* UIViewController+hideBackButtonTitle.swift in Sources */,
 				F101C09823A3F5DB00A191D5 /* PostFooter.swift in Sources */,
 				FAC59DFA23999D8E0097D0B5 /* LikeView.swift in Sources */,
