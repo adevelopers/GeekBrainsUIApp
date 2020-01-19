@@ -45,6 +45,7 @@
 		FA08D27D239414290005E549 /* GroupCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA08D27B239414290005E549 /* GroupCell.xib */; };
 		FA08D27F239426370005E549 /* AddGroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA08D27E239426370005E549 /* AddGroupViewController.swift */; };
 		FA08D287239823DF0005E549 /* AvatarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA08D286239823DF0005E549 /* AvatarView.swift */; };
+		FA14876923D51A960006B03A /* VKApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA14876823D51A960006B03A /* VKApi.swift */; };
 		FA20DD7923B792E300EA3207 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA20DD7823B792E300EA3207 /* Fonts.swift */; };
 		FA545DAF23BA218500423432 /* DevelopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA545DAE23BA218500423432 /* DevelopViewController.swift */; };
 		FA545DB123BA48D000423432 /* CustomSearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA545DB023BA48D000423432 /* CustomSearchBar.swift */; };
@@ -101,6 +102,7 @@
 		FA08D27B239414290005E549 /* GroupCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GroupCell.xib; sourceTree = "<group>"; };
 		FA08D27E239426370005E549 /* AddGroupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddGroupViewController.swift; sourceTree = "<group>"; };
 		FA08D286239823DF0005E549 /* AvatarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarView.swift; sourceTree = "<group>"; };
+		FA14876823D51A960006B03A /* VKApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VKApi.swift; sourceTree = "<group>"; };
 		FA20DD7823B792E300EA3207 /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
 		FA545DAE23BA218500423432 /* DevelopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevelopViewController.swift; sourceTree = "<group>"; };
 		FA545DB023BA48D000423432 /* CustomSearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSearchBar.swift; sourceTree = "<group>"; };
@@ -152,6 +154,7 @@
 			children = (
 				FAACA1A02388893A005BB6A7 /* LoginViewController.swift */,
 				F110D4C223CCE76500373182 /* AuthViewController.swift */,
+				FA14876823D51A960006B03A /* VKApi.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -467,6 +470,7 @@
 				F1CD9FD723B50D8A00558294 /* WhatsNewCell.swift in Sources */,
 				FA08D2682392F9CF0005E549 /* User.swift in Sources */,
 				F1CD9F9223AD25B700558294 /* TabbarAnimatedTransitioning.swift in Sources */,
+				FA14876923D51A960006B03A /* VKApi.swift in Sources */,
 				FAC59DFC2399AE050097D0B5 /* HeartButton.swift in Sources */,
 				F101C0A523A5891D00A191D5 /* Colors.swift in Sources */,
 				F110D4BB23CC566300373182 /* Session.swift in Sources */,
