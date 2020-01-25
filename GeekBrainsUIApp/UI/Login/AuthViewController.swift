@@ -13,6 +13,7 @@ import Alamofire
 
 
 final class AuthViewController: UIViewController {
+    
     let clientId = "7280632"
     
     lazy var webView: WKWebView = {
@@ -40,11 +41,6 @@ final class AuthViewController: UIViewController {
         setupUI()
         setupConstraints()
         connect()
-        
-        DispatchQueue.main.asyncAfter(deadline: .now() + 4, execute: {
-            
-            VKApi().getFriends()
-        })
     }
     
     private func setupUI() {
@@ -59,7 +55,6 @@ final class AuthViewController: UIViewController {
     private func connect() {
         // web config
         
-    
         var urlComponents = URLComponents()
         urlComponents.scheme = "https"
         urlComponents.host = "oauth.vk.com"
@@ -71,13 +66,18 @@ final class AuthViewController: UIViewController {
             URLQueryItem(name: "scope", value: "262150"),
             URLQueryItem(name: "response_type", value: "token"),
             URLQueryItem(name: "v", value: "5.103"),
-            
-            
         ]
-        print(urlComponents.url?.absoluteString)
+        
+        print("\n📮", urlComponents.url?.absoluteString, "\n")
         
         if let url = urlComponents.url {
             webView.load(URLRequest(url: url))
+        }
+    }
+    
+    private func goTo() {
+        if let navigationController =  UIApplication.shared.windows.first?.rootViewController as? UINavigationController {
+            navigationController.pushViewController(DevelopViewController(), animated: true)
         }
     }
 }
@@ -91,6 +91,8 @@ extension AuthViewController: WKNavigationDelegate {
             let fragment = url.fragment
         else {
             decisionHandler(.allow)
+            print(#function, "go to: .allow")
+            
             return
         }
         
@@ -104,35 +106,14 @@ extension AuthViewController: WKNavigationDelegate {
                 return dict
             }
         
-            Session.shared.token = params["access_token"] ?? "69518adc85e5674c88d58f55ba822a443e1555315a28b169a40a57de0657b2bef90c5999931d34f79c563"
+            Session.shared.token = params["access_token"] ?? ""
             Session.shared.userId = params["user_id"] ?? "0"
         
             print(params)
+            print(#function, "go to cancel")
+            goTo()
             decisionHandler(.cancel)
         }
-        
 }
 
 
-
-class VKApi {
-    let vkURL = "https://api.vk.com/method/"
-    
-    func getFriends() {
-        let requestURL = vkURL + "friends.get"
-        let params = ["v": "5.103",
-                      "access_token": Session.shared.token,
-                      "order": "name",
-                      "fields": "city, fomain"
-        ]
-        
-        
-        Alamofire.request(requestURL,
-                          method: .get,
-                          parameters: params)
-                .responseString(completionHandler: { result in
-                            print(result)
-                          })
-    }
-    
-}

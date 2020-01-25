@@ -11,7 +11,17 @@ import UIKit
 
 final class DevelopViewController: UIViewController {
     
-    let searchBar = CustomSearchBar()
+    lazy var button: UIButton = {
+        let button = UIButton()
+        button.setTitle("Выполнить запросы", for: .normal)
+        button.contentEdgeInsets = UIEdgeInsets(top: 10, left: 20, bottom: 10, right: 20)
+        button.layer.borderWidth = 1
+        button.layer.cornerRadius = 10
+        button.layer.borderColor = UIColor.white.cgColor
+        button.setTitleColor(.white, for: .normal)
+        button.addTarget(self, action: #selector(didTap), for: .touchUpInside)
+        return button
+    }()
     
     init() {
         super.init(nibName: nil, bundle: nil)
@@ -19,29 +29,54 @@ final class DevelopViewController: UIViewController {
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
+        print("🔓 Авторизация пройдена")
     }
     
     override func loadView() {
         super.loadView()
         
-        view.addSubview(searchBar)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupUI()
-        setupConstraints()
+        view.addSubview(button)
+        button.snp.makeConstraints {
+                $0.center.equalToSuperview()
+            }
     }
     
-    private func setupUI() {
-        searchBar.backgroundColor = .author
-    }
-    
-    private func setupConstraints() {
-        searchBar.snp.makeConstraints {
-            $0.center.equalToSuperview()
-            $0.width.equalTo(200)
-            $0.height.equalTo(24)
+    @objc
+    private func didTap() {
+        let token = Session.shared.token
+        let userId = Session.shared.userId
+        let api = VKApi(token: token, userId: userId)
+        
+        // - [x]  **Получение списка друзей;**
+        api.getFriends() { result in
+            if case let .success(note) = result {
+                print("\n✅", note)
+            }
         }
+        
+        // - [x]  **Получение фотографий человека;**
+        api.getAllPhotos() { result in
+            if case let .success(note) = result {
+                print("\n✅", note)
+            }
+        }
+        // - [x]  **Получение групп текущего пользователя;**
+        api.getGroups() { result in
+            if case let .success(note) = result {
+                print("\n✅", note)
+            }
+        }
+        
+        // - [x]  **Получение групп по поисковому запросу;**
+        api.searchGroups(with: "Geek") { result in
+            if case let .success(note) = result {
+                print("\n✅", note)
+            }
+        }
+        
     }
 }
