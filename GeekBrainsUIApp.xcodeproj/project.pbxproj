@@ -59,6 +59,9 @@
 		FAC59DFA23999D8E0097D0B5 /* LikeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC59DF923999D8E0097D0B5 /* LikeView.swift */; };
 		FAC59DFC2399AE050097D0B5 /* HeartButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC59DFB2399AE050097D0B5 /* HeartButton.swift */; };
 		FACCEAC723A19F6A005C6D77 /* PhotosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACCEAC623A19F6A005C6D77 /* PhotosViewController.swift */; };
+		FAD1E33423DC677A0082F411 /* VKUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD1E33323DC677A0082F411 /* VKUser.swift */; };
+		FAD1E33623DC68C30082F411 /* VKPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD1E33523DC68C30082F411 /* VKPhoto.swift */; };
+		FAD1E33823DC68F10082F411 /* VKGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD1E33723DC68F10082F411 /* VKGroup.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -118,6 +121,9 @@
 		FAC59DF923999D8E0097D0B5 /* LikeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeView.swift; sourceTree = "<group>"; };
 		FAC59DFB2399AE050097D0B5 /* HeartButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeartButton.swift; sourceTree = "<group>"; };
 		FACCEAC623A19F6A005C6D77 /* PhotosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosViewController.swift; sourceTree = "<group>"; };
+		FAD1E33323DC677A0082F411 /* VKUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VKUser.swift; sourceTree = "<group>"; };
+		FAD1E33523DC68C30082F411 /* VKPhoto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VKPhoto.swift; sourceTree = "<group>"; };
+		FAD1E33723DC68F10082F411 /* VKGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VKGroup.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -192,6 +198,7 @@
 		FA08D2662392EAD20005E549 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				FAD1E33223DC659F0082F411 /* Decodable */,
 				FA08D2672392F9CF0005E549 /* User.swift */,
 				FA08D26B239301F60005E549 /* Group.swift */,
 				F1C1D7EB239B9A9900CE34F9 /* Post.swift */,
@@ -322,6 +329,16 @@
 			path = Photos;
 			sourceTree = "<group>";
 		};
+		FAD1E33223DC659F0082F411 /* Decodable */ = {
+			isa = PBXGroup;
+			children = (
+				FAD1E33323DC677A0082F411 /* VKUser.swift */,
+				FAD1E33523DC68C30082F411 /* VKPhoto.swift */,
+				FAD1E33723DC68F10082F411 /* VKGroup.swift */,
+			);
+			path = Decodable;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -450,6 +467,7 @@
 				FA08D287239823DF0005E549 /* AvatarView.swift in Sources */,
 				FA08D2712393C7E00005E549 /* FriendCell.swift in Sources */,
 				F1C1D7EF239BC55400CE34F9 /* NewsfeedViewController.swift in Sources */,
+				FAD1E33623DC68C30082F411 /* VKPhoto.swift in Sources */,
 				F1C1D7EC239B9A9900CE34F9 /* Post.swift in Sources */,
 				FA08D26F2393BD0C0005E549 /* FriendListViewController.swift in Sources */,
 				F1CD9FB523B114EC00558294 /* AnimatedTransitioning.swift in Sources */,
@@ -461,8 +479,10 @@
 				FA20DD7923B792E300EA3207 /* Fonts.swift in Sources */,
 				F1CD9F9023AD14D500558294 /* TabBarController.swift in Sources */,
 				F1CD9FD923B5204700558294 /* FirendsHistoryCell.swift in Sources */,
+				FAD1E33823DC68F10082F411 /* VKGroup.swift in Sources */,
 				FACCEAC723A19F6A005C6D77 /* PhotosViewController.swift in Sources */,
 				F101C0A123A5470800A191D5 /* ViewsCounterView.swift in Sources */,
+				FAD1E33423DC677A0082F411 /* VKUser.swift in Sources */,
 				FAACA19D2388893A005BB6A7 /* AppDelegate.swift in Sources */,
 				F101C0AB23A95B2100A191D5 /* CustomTransitioningDelegate.swift in Sources */,
 				F101C0A923A6910100A191D5 /* LoadIndicator.swift in Sources */,
