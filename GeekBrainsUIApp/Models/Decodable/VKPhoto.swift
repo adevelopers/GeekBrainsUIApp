@@ -7,7 +7,7 @@
 //
 
 
-struct VKPhoto {
+struct VKPhoto: Decodable {
     let id: Int
     let album_id: Int
     let owner_id: Int
@@ -21,7 +21,7 @@ struct VKPhoto {
 
 extension VKPhoto {
 
-    struct Size {
+    struct Size: Decodable {
         let type: String
         let url: String
         let width: Int

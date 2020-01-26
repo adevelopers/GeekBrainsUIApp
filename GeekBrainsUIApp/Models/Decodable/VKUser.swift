@@ -7,11 +7,12 @@
 //
 
 
-struct VKUser {
+struct VKUser: Decodable {
     let id: Int
     let first_name: String
-    let last_name: String
-    let deactivated: String
+    let last_name: String?
+    let deactivated: String?
     let is_closed: Bool
+    let online: Int
     let can_access_closed: Bool
 }

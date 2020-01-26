@@ -7,7 +7,7 @@
 //
 
 
-struct VKGroup {
+struct VKGroup: Decodable {
     let id: Int
     let name: String
     let screen_name: String
