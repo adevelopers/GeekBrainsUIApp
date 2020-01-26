@@ -62,6 +62,7 @@
 		FAD1E33423DC677A0082F411 /* VKUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD1E33323DC677A0082F411 /* VKUser.swift */; };
 		FAD1E33623DC68C30082F411 /* VKPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD1E33523DC68C30082F411 /* VKPhoto.swift */; };
 		FAD1E33823DC68F10082F411 /* VKGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD1E33723DC68F10082F411 /* VKGroup.swift */; };
+		FAD1E33C23DCED090082F411 /* VKPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD1E33B23DCED090082F411 /* VKPost.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -124,6 +125,7 @@
 		FAD1E33323DC677A0082F411 /* VKUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VKUser.swift; sourceTree = "<group>"; };
 		FAD1E33523DC68C30082F411 /* VKPhoto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VKPhoto.swift; sourceTree = "<group>"; };
 		FAD1E33723DC68F10082F411 /* VKGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VKGroup.swift; sourceTree = "<group>"; };
+		FAD1E33B23DCED090082F411 /* VKPost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VKPost.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -159,8 +161,6 @@
 			isa = PBXGroup;
 			children = (
 				FAACA1A02388893A005BB6A7 /* LoginViewController.swift */,
-				F110D4C223CCE76500373182 /* AuthViewController.swift */,
-				FA14876823D51A960006B03A /* VKApi.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -209,6 +209,7 @@
 		FA08D26D2393BCB60005E549 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				FAD1E33A23DCE4F50082F411 /* Auth */,
 				F101C09923A4011500A191D5 /* Login */,
 				FACCEAC523A19F44005C6D77 /* Photos */,
 				F1B2784223A0109D00ED7F44 /* Messages */,
@@ -300,6 +301,7 @@
 		FAACA19B2388893A005BB6A7 /* GeekBrainsUIApp */ = {
 			isa = PBXGroup;
 			children = (
+				FAD1E33923DCB66D0082F411 /* API */,
 				F101C09D23A51E8100A191D5 /* Extensions */,
 				FA08D2662392EAD20005E549 /* Models */,
 				FA08D26D2393BCB60005E549 /* UI */,
@@ -335,8 +337,25 @@
 				FAD1E33323DC677A0082F411 /* VKUser.swift */,
 				FAD1E33523DC68C30082F411 /* VKPhoto.swift */,
 				FAD1E33723DC68F10082F411 /* VKGroup.swift */,
+				FAD1E33B23DCED090082F411 /* VKPost.swift */,
 			);
 			path = Decodable;
+			sourceTree = "<group>";
+		};
+		FAD1E33923DCB66D0082F411 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				FA14876823D51A960006B03A /* VKApi.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		FAD1E33A23DCE4F50082F411 /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				F110D4C223CCE76500373182 /* AuthViewController.swift */,
+			);
+			path = Auth;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -476,6 +495,7 @@
 				FA545DB123BA48D000423432 /* CustomSearchBar.swift in Sources */,
 				F101C0A323A5768E00A191D5 /* UIView+addSubviews.swift in Sources */,
 				FA08D27F239426370005E549 /* AddGroupViewController.swift in Sources */,
+				FAD1E33C23DCED090082F411 /* VKPost.swift in Sources */,
 				FA20DD7923B792E300EA3207 /* Fonts.swift in Sources */,
 				F1CD9F9023AD14D500558294 /* TabBarController.swift in Sources */,
 				F1CD9FD923B5204700558294 /* FirendsHistoryCell.swift in Sources */,
