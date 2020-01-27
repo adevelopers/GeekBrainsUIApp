@@ -99,21 +99,22 @@ extension AuthViewController: WKNavigationDelegate {
         let params = fragment.components(separatedBy: "&")
                             .map { $0.components(separatedBy: "=") }
             .reduce([String: String]()) { value, params in
-                var dict = value
-                let key = params[0]
-                let value = params[1]
-                dict[key] = value
-                return dict
-            }
+            var dict = value
+            let key = params[0]
+            let value = params[1]
+            dict[key] = value
+            return dict
+        }
         
-            Session.shared.token = params["access_token"] ?? ""
-            Session.shared.userId = params["user_id"] ?? "0"
+        Session.shared.token = params["access_token"] ?? ""
+            
+        if let userId = Int(params["user_id"] ?? "") {
+                Session.shared.userId = userId
+            }
         
             print(params)
             print(#function, "go to cancel")
             goTo()
             decisionHandler(.cancel)
-        }
+    }
 }
-
-

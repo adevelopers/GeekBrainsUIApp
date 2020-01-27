@@ -47,36 +47,15 @@ final class DevelopViewController: UIViewController {
     
     @objc
     private func didTap() {
-        let token = Session.shared.token
-        let userId = Session.shared.userId
-        let api = VKApi(token: token, userId: userId)
-        
-        // - [x]  **Получение списка друзей;**
-        api.getFriends() { result in
-            if case let .success(note) = result {
-                print("\n✅", note)
-            }
+        print("didTap")
+        let api = VKApi()
+        let credential = Credential(token: Session.shared.token, userId: Session.shared.userId)
+        api.getUsers(credential) { x in
+            print("📇 model: ", x)
         }
-        
-        // - [x]  **Получение фотографий человека;**
-        api.getAllPhotos() { result in
-            if case let .success(note) = result {
-                print("\n✅", note)
-            }
-        }
-        // - [x]  **Получение групп текущего пользователя;**
-        api.getGroups() { result in
-            if case let .success(note) = result {
-                print("\n✅", note)
-            }
-        }
-        
-        // - [x]  **Получение групп по поисковому запросу;**
-        api.searchGroups(with: "Geek") { result in
-            if case let .success(note) = result {
-                print("\n✅", note)
-            }
-        }
+//        api.getWall(credential, wallOwnerId: 370484539) { x in
+//            print("📇 model: ", x)
+//        }
         
     }
 }
