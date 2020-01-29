@@ -10,20 +10,28 @@ import UIKit
 
 class GroupsListViewController: UITableViewController {
 
-    var items = Group.items.filter { $0.isInGroup }
+    let session = Session.shared
+    let api: VKApiProtocol = VKApi()
+    
+    var sections: [Section<GroupProtocol>] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         clearsSelectionOnViewWillAppear = false
 
-        
         tableView.register(UINib(nibName: GroupCell.reuseId, bundle: nil), forCellReuseIdentifier: GroupCell.reuseId)
+        
+        loadData()
     }
 
     // MARK: - Table view data source
     
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        return sections.count
+    }
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return items.count
+        return sections[section].items.count
     }
 
     
@@ -31,12 +39,9 @@ class GroupsListViewController: UITableViewController {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: GroupCell.reuseId, for: indexPath) as? GroupCell else {
             return UITableViewCell()
         }
-        let item = items[indexPath.row]
         
-        cell.avatarImageView.image = item.avatar.isEmpty ? .noPhoto : UIImage(imageLiteralResourceName: item.avatar)
-        cell.nameLabel.text = item.name
-        cell.desciptionLabel.text = item.description
-
+        let model: GroupProtocol = sections[indexPath.section].items[indexPath.row]
+        cell.configure(with: .decoded(model))
         return cell
     }
     
@@ -46,7 +51,7 @@ class GroupsListViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            items.remove(at: indexPath.row)
+            sections[indexPath.section].items.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
         }
     }
@@ -54,14 +59,32 @@ class GroupsListViewController: UITableViewController {
     // MARK: - Navigation
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if
-            let segueId = segue.identifier,
-            segueId == "addGroupSegue",
-            let addGroupViewController = segue.destination as? AddGroupViewController
-        {
-            let availiableGroups = Set(Group.items).subtracting(items)
-            addGroupViewController.items = Array(availiableGroups)
-        }
+//        if
+//            let segueId = segue.identifier,
+//            segueId == "addGroupSegue",
+//            let addGroupViewController = segue.destination as? AddGroupViewController
+//        {
+//            let availiableGroups = Set(Group.items).subtracting(items)
+//            addGroupViewController.items = Array(availiableGroups)
+//        }
     }
     
+    
+    // MARK: Data
+    private func loadData() {
+        let credential = Credential(token: session.token, userId: session.userId)
+        api.getGroups(credential) { [weak self] response in
+            switch response {
+            case let .success(models):
+                if let items = models.response?.items {
+                    print("👥 groups: ", models)
+                    self?.sections.append(Section(title: "Группы", items: items))
+                    self?.tableView.reloadData()
+                }
+            case let .failure(error):
+                print("❌ \(error)")
+            }
+        }
+        
+    }
 }

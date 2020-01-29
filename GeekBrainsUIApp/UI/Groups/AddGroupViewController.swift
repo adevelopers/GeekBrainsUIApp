@@ -10,7 +10,7 @@ import UIKit
 
 class AddGroupViewController: UITableViewController {
     
-    var items: [Group] = []
+    var items: [GroupProtocol] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,9 +31,9 @@ class AddGroupViewController: UITableViewController {
         }
         let item = items[indexPath.row]
         
-        cell.avatarImageView.image = item.avatar.isEmpty ? .noPhoto : UIImage(imageLiteralResourceName: item.avatar)
-        cell.nameLabel.text = item.name
-        cell.desciptionLabel.text = item.description
+//        cell.avatarImageView.image = item.avatar.isEmpty ? .noPhoto : UIImage(imageLiteralResourceName: item.avatar)
+//        cell.nameLabel.text = item.name
+//        cell.desciptionLabel.text = item.description
         
         return cell
     }
@@ -45,7 +45,7 @@ class AddGroupViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let selectedGroup = items[indexPath.row]
         let groupsController = navigationController?.children.first { $0 is GroupsListViewController } as? GroupsListViewController
-        groupsController?.items.append(selectedGroup)
+//        groupsController?.items.append(Section(title: <#T##String#>, items: <#T##[_]#>))
         groupsController?.tableView.reloadData()
         navigationController?.popViewController(animated: true)
     }

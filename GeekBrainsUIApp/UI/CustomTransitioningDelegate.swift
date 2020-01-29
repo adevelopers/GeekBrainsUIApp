@@ -13,12 +13,10 @@ class CustomTransitioningDelegate: NSObject, UIViewControllerTransitioningDelega
     
     let trnsitioning = AnimatedTransitioning()
     func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        print("TRY TRA 3")
         return trnsitioning
     }
 
     func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        print("TRY TRA 1")
         return trnsitioning
     }
     

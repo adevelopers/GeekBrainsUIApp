@@ -11,7 +11,7 @@ import UIKit
 
 class FriendViewController: UICollectionViewController {
 
-    var model: User?
+    var model: VKUserProtocol?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,7 +21,7 @@ class FriendViewController: UICollectionViewController {
     }
 
     private func setupTitle() {
-        title = model?.name
+        title = model?.firstName
     }
     
     // MARK: UICollectionViewDataSource
@@ -38,12 +38,14 @@ class FriendViewController: UICollectionViewController {
             return UICollectionViewCell()
         }
         
-        cell.nameLabel.text = friend.name
-        cell.avaterImageView.image = friend.avatar.isEmpty
-            ? .noPhoto
-            : UIImage(imageLiteralResourceName: friend.avatar)
+        cell.nameLabel.text = friend.firstName
+        if
+            let photoLink = friend.photo200orig,
+            let photoUrl = URL(string: photoLink) {
+            cell.avaterImageView.kf.setImage(with: photoUrl)
+        }
         cell.avaterImageView.backgroundColor = .gray
-        cell.lastVisitLabel.text = (friend.sex == .male ? "Заходил" : "Заходила") + " час назад"
+        cell.lastVisitLabel.text = (friend.sex == 1  ? "Заходила" : "Заходил") + " час назад"
         
         return cell
     }

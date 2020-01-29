@@ -17,12 +17,13 @@ struct Section<T> {
 class FriendListViewController: UITableViewController {
     @IBOutlet weak var searchBar: UISearchBar!
     
-    
+    let session = Session.shared
+    let api: VKApiProtocol = VKApi()
     let customTransitioningDelegate = CustomTransitioningDelegate()
     
     
-    var items: [User] = []
-    var friendsSections = [Section<User>]()
+    var items: [VKUserProtocol] = []
+    var friendsSections = [Section<VKUserProtocol>]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -61,20 +62,31 @@ class FriendListViewController: UITableViewController {
             return UITableViewCell()
         }
         let model = friendsSections[indexPath.section].items[indexPath.row]
-        cell.nameLabel.text = model.name
-        cell.locationLabel.text = model.location
-        cell.setAvatar(with: model.avatar)
+        cell.configure(with: model)
         return cell
     }
     
     private func loadUsers() {
-        items = User.items
-        friendsSections = handleUsers(items: items)
+        
+        api.getFriends(credential: Session.shared.getCredential()) { [weak self] response in
+            switch response {
+            case let .success(result):
+                if let users = result.response?.items {
+                    self?.items = users
+                    self?.friendsSections = self?.handleUsers(items: users) ?? []
+                    self?.tableView.reloadData()
+                }
+            case let .failure(error):
+                print("❌ \(error)")
+            }
+        }
+        
+        
     }
     
-    private func handleUsers(items: [User]) -> [Section<User>] {
-        return  Dictionary(grouping: items) { $0.lastName.prefix(1) }
-                   .map { Section<User>(title: "\($0.key)",
+    private func handleUsers(items: [VKUserProtocol]) -> [Section<VKUserProtocol>] {
+        return  Dictionary(grouping: items) { $0.lastName?.prefix(1) }
+                   .map { Section<VKUserProtocol>(title: "\($0.key!)",
                                         items: $0.value) }
                    .sorted(by: {$0.title < $1.title })
     }
@@ -97,11 +109,11 @@ class FriendListViewController: UITableViewController {
 extension FriendListViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         if !searchText.isEmpty {
-            friendsSections = handleUsers(items: User.items.filter {
-                $0.lastName.lowercased().contains(searchText.lowercased())
+            friendsSections = handleUsers(items: items.filter {
+                $0.firstName.lowercased().contains(searchText.lowercased())
             })
         } else {
-            friendsSections = handleUsers(items: User.items)
+            friendsSections = handleUsers(items: items)
         }
     
         tableView.reloadData()

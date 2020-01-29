@@ -68,16 +68,17 @@ final class AuthViewController: UIViewController {
             URLQueryItem(name: "v", value: "5.103"),
         ]
         
-        print("\n📮", urlComponents.url?.absoluteString, "\n")
-        
         if let url = urlComponents.url {
             webView.load(URLRequest(url: url))
         }
     }
     
-    private func goTo() {
-        if let navigationController =  UIApplication.shared.windows.first?.rootViewController as? UINavigationController {
-            navigationController.pushViewController(DevelopViewController(), animated: true)
+    private func presentMainScreen() {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let mainNavigation = storyboard.instantiateViewController(withIdentifier: "mainNavigation")
+        
+        if let appDelegate = UIApplication.shared.delegate as? AppDelegate {
+            appDelegate.window?.rootViewController = mainNavigation
         }
     }
 }
@@ -90,9 +91,9 @@ extension AuthViewController: WKNavigationDelegate {
             url.path == "/blank.html",
             let fragment = url.fragment
         else {
-            decisionHandler(.allow)
             print(#function, "go to: .allow")
-            
+            UserDefaults.standard.isAuthorized = true
+            decisionHandler(.allow)
             return
         }
         
@@ -109,12 +110,15 @@ extension AuthViewController: WKNavigationDelegate {
         Session.shared.token = params["access_token"] ?? ""
             
         if let userId = Int(params["user_id"] ?? "") {
-                Session.shared.userId = userId
-            }
+            Session.shared.userId = userId
+            UserDefaults.standard.isAuthorized = true
+        }
         
-            print(params)
-            print(#function, "go to cancel")
-            goTo()
-            decisionHandler(.cancel)
+        print(params)
+        print(#function, "go to cancel")
+        
+        decisionHandler(.cancel)
+        presentMainScreen()
+            
     }
 }
