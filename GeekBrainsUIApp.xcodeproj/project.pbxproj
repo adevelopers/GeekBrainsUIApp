@@ -209,11 +209,12 @@
 		FA08D2662392EAD20005E549 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				FA10160823E1A8150057D961 /* Realm */,
-				FAD1E33223DC659F0082F411 /* Decodable */,
+				F110D4BA23CC566300373182 /* Session.swift */,
 				FA08D2672392F9CF0005E549 /* User.swift */,
 				FA08D26B239301F60005E549 /* Group.swift */,
 				F1C1D7EB239B9A9900CE34F9 /* Post.swift */,
+				FA10160823E1A8150057D961 /* Realm */,
+				FAD1E33223DC659F0082F411 /* Decodable */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -336,7 +337,6 @@
 				FAACA1B023888E71005BB6A7 /* Images.swift */,
 				FA20DD7823B792E300EA3207 /* Fonts.swift */,
 				F101C0A423A5891D00A191D5 /* Colors.swift */,
-				F110D4BA23CC566300373182 /* Session.swift */,
 			);
 			path = GeekBrainsUIApp;
 			sourceTree = "<group>";

@@ -31,7 +31,7 @@ protocol VKApiProtocol {
 }
 
 class VKApi: VKApiProtocol {
-    let vkURL = "https://api.vk.com/method/"
+    private let vkURL = "https://api.vk.com/method/"
     
     func testRequest() {
         let urlConvertable = vkURL + ""
