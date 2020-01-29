@@ -12,9 +12,16 @@ import Foundation
 struct VKResponse<T: Decodable>: Decodable {
     
     let response: Response?
+    let error: VKError?
     
     struct Response: Decodable {
         let count: Int?
         let items: [T]
     }
+    
+    struct VKError: Decodable {
+        let error_code: Int?
+        let error_msg: String?
+    }
 }
+
