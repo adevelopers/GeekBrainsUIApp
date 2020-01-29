@@ -8,6 +8,7 @@
 
 import UIKit
 
+
 class GroupsListViewController: UITableViewController {
 
     let session = Session.shared
@@ -34,7 +35,6 @@ class GroupsListViewController: UITableViewController {
         return sections[section].items.count
     }
 
-    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: GroupCell.reuseId, for: indexPath) as? GroupCell else {
             return UITableViewCell()
@@ -72,19 +72,37 @@ class GroupsListViewController: UITableViewController {
     
     // MARK: Data
     private func loadData() {
+        
+        // грузим из realm
+        loadFromRealm()
         let credential = Credential(token: session.token, userId: session.userId)
-        api.getGroups(credential) { [weak self] response in
+        api.getGroups(credential) { response in
             switch response {
             case let .success(models):
                 if let items = models.response?.items {
                     print("👥 groups: ", models)
-                    self?.sections.append(Section(title: "Группы", items: items))
-                    self?.tableView.reloadData()
+                    GroupRepository().add(from: items)
+                } else if
+                    let errorCode = models.error?.error_code,
+                    let errorMsg = models.error?.error_msg
+                {
+                    print("❌ #\(errorCode) \(errorMsg)")
+                    UserDefaults.standard.isAuthorized = false
                 }
             case let .failure(error):
                 print("❌ \(error)")
             }
         }
         
+    }
+    
+    private func loadFromRealm() {
+        if
+            let items = try? GroupRepository().getAll(),
+            items.count > 0
+        {
+            sections.append(Section(title: "Группы", items: items))
+            tableView.reloadData()
+        }
     }
 }
