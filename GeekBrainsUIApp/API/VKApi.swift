@@ -41,7 +41,7 @@ class VKApi {
         }
     }
     
-    func getWall(_ credential: Credential, wallOwnerId: Int, completion: @escaping (Result<CommonResponse<VKPost>>) -> Void) {
+    func getWall(_ credential: Credential, wallOwnerId: Int, completion: @escaping (Result<VKResponse<VKPost>>) -> Void) {
         
         let params = [
             "ownerId": credential.userId
@@ -53,7 +53,7 @@ class VKApi {
                   completion: completion)
     }
     
-    func getGroups(_ credential: Credential, completion: @escaping (Result<CommonResponse<VKGroup>>) -> Void) {
+    func getGroups(_ credential: Credential, completion: @escaping (Result<VKResponse<VKGroup>>) -> Void) {
         let params = [
             "order": "name",
             "fields": "city,domain"
@@ -64,7 +64,7 @@ class VKApi {
                   completion: completion)
     }
     
-    func searchGroups(with searchString: String, and credential: Credential, completion: @escaping (Result<CommonResponse<VKGroup>>) -> Void) {
+    func searchGroups(with searchString: String, and credential: Credential, completion: @escaping (Result<VKResponse<VKGroup>>) -> Void) {
         let params = ["order": "name",
                       "q": searchString,
                       "type": "group",
@@ -77,13 +77,13 @@ class VKApi {
                   method: .get, completion: completion)
     }
     
-    func getAllPhotos(_ credential: Credential, completion: @escaping (Result<CommonResponse<VKPhoto>>) -> Void) {
+    func getAllPhotos(_ credential: Credential, completion: @escaping (Result<VKResponse<VKPhoto>>) -> Void) {
         // .allPhotos
         doRequest(credential: credential, request: .allPohots, params: [:], completion: completion)
     }
     
     
-    func getFriends(credential: Credential, completion: @escaping (Result<CommonResponse<VKUser>>) -> Void) {
+    func getFriends(credential: Credential, completion: @escaping (Result<VKResponse<VKUser>>) -> Void) {
         let params = ["order": "name",
                       "fields": "city, domain"
         ]
@@ -95,7 +95,7 @@ class VKApi {
     }
     
     
-    func getUsers(_ credential: Credential, completion: @escaping (Result<CommonResponse<VKUser>>) -> Void) {
+    func getUsers(_ credential: Credential, completion: @escaping (Result<VKResponse<VKUser>>) -> Void) {
         
         let params = [ "order": "name",
                        "fields": "city, domain"
