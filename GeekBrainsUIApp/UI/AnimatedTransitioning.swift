@@ -12,11 +12,10 @@ import UIKit
 final class AnimatedTransitioning: NSObject, UIViewControllerAnimatedTransitioning {
 
     func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
-        return 0.6
+        return 0.3
     }
     
     func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
-        print("TRY TRA")
         guard let source = transitionContext.viewController(forKey: .from) else { return }
         guard let destination = transitionContext.viewController(forKey: .to) else { return }
         

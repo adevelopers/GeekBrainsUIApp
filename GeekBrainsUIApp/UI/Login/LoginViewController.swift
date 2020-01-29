@@ -218,10 +218,9 @@ extension LoginViewController {
 
 extension LoginViewController: UINavigationControllerDelegate {
     func navigationController(_ navigationController: UINavigationController, animationControllerFor operation: UINavigationController.Operation, from fromVC: UIViewController, to toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        print("NAV TRY TRANSITOIONING")
         switch operation {
         case .push:
-            return trnsitioning
+            return nil
         case .pop:
             return nil
         case .none:
