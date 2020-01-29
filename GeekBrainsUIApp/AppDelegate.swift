@@ -7,11 +7,20 @@
 //
 
 import UIKit
+import RealmSwift
+
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    
+    override init() {
+        super.init()
+        
+        setupRealm()
+    }
+    
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
@@ -23,6 +32,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         return true
     }
+    
+    
 
 }
 
+
+// MARK: Realm config
+extension AppDelegate {
+    private func setupRealm() {
+        let config = Realm.Configuration(schemaVersion: 2)
+        Realm.Configuration.defaultConfiguration = config
+    }
+}
