@@ -24,7 +24,12 @@ struct Credential {
     let userId: Int
 }
 
-class VKApi {
+
+protocol VKApiProtocol {
+    func getGroups(_ credential: Credential, completion: @escaping (Result<VKResponse<VKGroup>>) -> Void)
+}
+
+class VKApi: VKApiProtocol {
     let vkURL = "https://api.vk.com/method/"
     
     func testRequest() {
@@ -55,9 +60,13 @@ class VKApi {
     
     func getGroups(_ credential: Credential, completion: @escaping (Result<VKResponse<VKGroup>>) -> Void) {
         let params = [
+            "owner_id" : "\(credential.userId)",
+            "extended" : "1",
             "order": "name",
-            "fields": "city,domain"
+            "fields": "activity, description"
         ]
+        
+        
         doRequest(credential: credential, request: .groups,
                   params: params,
                   method: .get,
