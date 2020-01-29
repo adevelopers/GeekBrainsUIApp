@@ -9,14 +9,16 @@
 import RealmSwift
 
 
-protocol GroupProtocol {
+protocol VKGroupProtocol {
     var id: Int { get }
     var name: String { get }
     var text: String? { get }
     var photo200: String { get }
+    
+    func map(from model: VKGroupProtocol)
 }
 
-class RealmVKGroup: Object, GroupProtocol {
+class RealmVKGroup: Object, VKGroupProtocol {
     
     @objc dynamic var id: Int = -1
     @objc dynamic var name = ""
@@ -33,4 +35,14 @@ class RealmVKGroup: Object, GroupProtocol {
     @objc dynamic var photo100: String = ""
     @objc dynamic var photo200: String = ""
     @objc dynamic var text: String? // Описание группы если есть
+}
+
+
+extension RealmVKGroup {
+    func map(from model: VKGroupProtocol) {
+        id = model.id
+        name = model.name
+        photo200 = model.photo200
+        text = model.text
+    }
 }

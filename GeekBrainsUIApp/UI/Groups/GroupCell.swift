@@ -11,8 +11,8 @@ import Kingfisher
 
 
 enum GroupCellModel {
-    case decoded(GroupProtocol)
-    case realm(GroupProtocol)
+    case decoded(VKGroupProtocol)
+    case realm(VKGroupProtocol)
 }
 
 class GroupCell: UITableViewCell {

@@ -13,7 +13,7 @@ class GroupsListViewController: UITableViewController {
     let session = Session.shared
     let api: VKApiProtocol = VKApi()
     
-    var sections: [Section<GroupProtocol>] = []
+    var sections: [Section<VKGroupProtocol>] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,7 +40,7 @@ class GroupsListViewController: UITableViewController {
             return UITableViewCell()
         }
         
-        let model: GroupProtocol = sections[indexPath.section].items[indexPath.row]
+        let model: VKGroupProtocol = sections[indexPath.section].items[indexPath.row]
         cell.configure(with: .decoded(model))
         return cell
     }

@@ -10,7 +10,7 @@ import UIKit
 
 class AddGroupViewController: UITableViewController {
     
-    var items: [GroupProtocol] = []
+    var items: [VKGroupProtocol] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
