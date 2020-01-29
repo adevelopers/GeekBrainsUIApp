@@ -45,6 +45,7 @@
 		FA08D27D239414290005E549 /* GroupCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA08D27B239414290005E549 /* GroupCell.xib */; };
 		FA08D27F239426370005E549 /* AddGroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA08D27E239426370005E549 /* AddGroupViewController.swift */; };
 		FA08D287239823DF0005E549 /* AvatarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA08D286239823DF0005E549 /* AvatarView.swift */; };
+		FA10160A23E1A8580057D961 /* RealmVKGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA10160923E1A8580057D961 /* RealmVKGroup.swift */; };
 		FA14876923D51A960006B03A /* VKApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA14876823D51A960006B03A /* VKApi.swift */; };
 		FA20DD7923B792E300EA3207 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA20DD7823B792E300EA3207 /* Fonts.swift */; };
 		FA545DAF23BA218500423432 /* DevelopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA545DAE23BA218500423432 /* DevelopViewController.swift */; };
@@ -106,6 +107,7 @@
 		FA08D27B239414290005E549 /* GroupCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GroupCell.xib; sourceTree = "<group>"; };
 		FA08D27E239426370005E549 /* AddGroupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddGroupViewController.swift; sourceTree = "<group>"; };
 		FA08D286239823DF0005E549 /* AvatarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarView.swift; sourceTree = "<group>"; };
+		FA10160923E1A8580057D961 /* RealmVKGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmVKGroup.swift; sourceTree = "<group>"; };
 		FA14876823D51A960006B03A /* VKApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VKApi.swift; sourceTree = "<group>"; };
 		FA20DD7823B792E300EA3207 /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
 		FA545DAE23BA218500423432 /* DevelopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevelopViewController.swift; sourceTree = "<group>"; };
@@ -198,6 +200,7 @@
 		FA08D2662392EAD20005E549 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				FA10160823E1A8150057D961 /* Realm */,
 				FAD1E33223DC659F0082F411 /* Decodable */,
 				FA08D2672392F9CF0005E549 /* User.swift */,
 				FA08D26B239301F60005E549 /* Group.swift */,
@@ -263,6 +266,14 @@
 			path = Components;
 			sourceTree = "<group>";
 		};
+		FA10160823E1A8150057D961 /* Realm */ = {
+			isa = PBXGroup;
+			children = (
+				FA10160923E1A8580057D961 /* RealmVKGroup.swift */,
+			);
+			path = Realm;
+			sourceTree = "<group>";
+		};
 		FA545DAD23BA210700423432 /* Develop */ = {
 			isa = PBXGroup;
 			children = (
@@ -301,11 +312,11 @@
 		FAACA19B2388893A005BB6A7 /* GeekBrainsUIApp */ = {
 			isa = PBXGroup;
 			children = (
+				FAACA19C2388893A005BB6A7 /* AppDelegate.swift */,
 				FAD1E33923DCB66D0082F411 /* API */,
 				F101C09D23A51E8100A191D5 /* Extensions */,
 				FA08D2662392EAD20005E549 /* Models */,
 				FA08D26D2393BCB60005E549 /* UI */,
-				FAACA19C2388893A005BB6A7 /* AppDelegate.swift */,
 				FAACA19E2388893A005BB6A7 /* SceneDelegate.swift */,
 				FAACA1A22388893A005BB6A7 /* Main.storyboard */,
 				FAACA1A52388893C005BB6A7 /* Assets.xcassets */,
@@ -520,6 +531,7 @@
 				FA08D2752393F0E50005E549 /* FriendViewController.swift in Sources */,
 				F1CD9F8E23ACF57000558294 /* PhotoDetailViewController.swift in Sources */,
 				FA545DAF23BA218500423432 /* DevelopViewController.swift in Sources */,
+				FA10160A23E1A8580057D961 /* RealmVKGroup.swift in Sources */,
 				FAACA19F2388893A005BB6A7 /* SceneDelegate.swift in Sources */,
 				F1C1D7F2239BC92A00CE34F9 /* PostCell.swift in Sources */,
 				F1B2784A23A0191400ED7F44 /* CustomCollectionViewLayout.swift in Sources */,
