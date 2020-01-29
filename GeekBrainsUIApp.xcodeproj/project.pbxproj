@@ -47,6 +47,7 @@
 		FA08D287239823DF0005E549 /* AvatarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA08D286239823DF0005E549 /* AvatarView.swift */; };
 		FA10160A23E1A8580057D961 /* RealmVKGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA10160923E1A8580057D961 /* RealmVKGroup.swift */; };
 		FA10160C23E1AB500057D961 /* RealmVKPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA10160B23E1AB500057D961 /* RealmVKPhoto.swift */; };
+		FA10160E23E1AEA70057D961 /* RealmVKUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA10160D23E1AEA70057D961 /* RealmVKUser.swift */; };
 		FA14876923D51A960006B03A /* VKApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA14876823D51A960006B03A /* VKApi.swift */; };
 		FA20DD7923B792E300EA3207 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA20DD7823B792E300EA3207 /* Fonts.swift */; };
 		FA545DAF23BA218500423432 /* DevelopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA545DAE23BA218500423432 /* DevelopViewController.swift */; };
@@ -110,6 +111,7 @@
 		FA08D286239823DF0005E549 /* AvatarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarView.swift; sourceTree = "<group>"; };
 		FA10160923E1A8580057D961 /* RealmVKGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmVKGroup.swift; sourceTree = "<group>"; };
 		FA10160B23E1AB500057D961 /* RealmVKPhoto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmVKPhoto.swift; sourceTree = "<group>"; };
+		FA10160D23E1AEA70057D961 /* RealmVKUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmVKUser.swift; sourceTree = "<group>"; };
 		FA14876823D51A960006B03A /* VKApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VKApi.swift; sourceTree = "<group>"; };
 		FA20DD7823B792E300EA3207 /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
 		FA545DAE23BA218500423432 /* DevelopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevelopViewController.swift; sourceTree = "<group>"; };
@@ -273,6 +275,7 @@
 			children = (
 				FA10160923E1A8580057D961 /* RealmVKGroup.swift */,
 				FA10160B23E1AB500057D961 /* RealmVKPhoto.swift */,
+				FA10160D23E1AEA70057D961 /* RealmVKUser.swift */,
 			);
 			path = Realm;
 			sourceTree = "<group>";
@@ -511,6 +514,7 @@
 				F101C0A323A5768E00A191D5 /* UIView+addSubviews.swift in Sources */,
 				FA08D27F239426370005E549 /* AddGroupViewController.swift in Sources */,
 				FAD1E33C23DCED090082F411 /* VKPost.swift in Sources */,
+				FA10160E23E1AEA70057D961 /* RealmVKUser.swift in Sources */,
 				FA20DD7923B792E300EA3207 /* Fonts.swift in Sources */,
 				F1CD9F9023AD14D500558294 /* TabBarController.swift in Sources */,
 				F1CD9FD923B5204700558294 /* FirendsHistoryCell.swift in Sources */,
