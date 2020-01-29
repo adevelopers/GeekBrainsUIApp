@@ -11,6 +11,7 @@ import RealmSwift
 
 protocol GroupRpositoryProtocol {
     func add(from items: [VKGroupProtocol])
+    func getAll() throws -> [VKGroupProtocol]
 }
 
 final class GroupRepository: GroupRpositoryProtocol {
@@ -30,5 +31,16 @@ final class GroupRepository: GroupRpositoryProtocol {
             print("❌ \(error)")
         }
     }
+    
+    func getAll() throws -> [VKGroupProtocol] {
+        do {
+            let realm = try Realm()
+            return realm.objects(RealmVKGroup.self)
+                        .map { $0.model() }
+        } catch {
+            throw error
+        }
+    }
+    
     
 }

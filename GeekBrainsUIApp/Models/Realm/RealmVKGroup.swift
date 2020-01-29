@@ -16,6 +16,7 @@ protocol VKGroupProtocol {
     var photo200: String { get }
     
     func map(from model: VKGroupProtocol)
+    func model() -> VKGroupProtocol
 }
 
 class RealmVKGroup: Object, VKGroupProtocol {
@@ -35,6 +36,8 @@ class RealmVKGroup: Object, VKGroupProtocol {
     @objc dynamic var photo100: String = ""
     @objc dynamic var photo200: String = ""
     @objc dynamic var text: String? // Описание группы если есть
+    @objc dynamic var activity: String = ""
+    @objc dynamic var status: String?
 }
 
 
@@ -45,4 +48,25 @@ extension RealmVKGroup {
         photo200 = model.photo200
         text = model.text
     }
+    
+    func model() -> VKGroupProtocol {
+        return VKGroup(id: id,
+                       name: name,
+                       screenName: screenName,
+                       isClosed: isClosed,
+                       deactivated: deactivated,
+                       isAdmin: isAdmin,
+                       adminLevel: adminLevel,
+                       isMember: isMember,
+                       isAdvertiser: isAdvertiser,
+                       invitedBy: invitedBy,
+                       type: type,
+                       photo50: photo50,
+                       photo100: photo100,
+                       photo200: photo200,
+                       description: text,
+                       activity: activity,
+                       status: status)
+    }
+    
 }
