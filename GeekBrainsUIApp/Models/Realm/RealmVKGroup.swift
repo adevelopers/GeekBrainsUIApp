@@ -9,7 +9,15 @@
 import RealmSwift
 
 
-class RealmVKGroup: Object {
+protocol GroupProtocol {
+    var id: Int { get }
+    var name: String { get }
+    var text: String? { get }
+    var photo200: String { get }
+}
+
+class RealmVKGroup: Object, GroupProtocol {
+    
     @objc dynamic var id: Int = -1
     @objc dynamic var name = ""
     @objc dynamic var screenName = ""
@@ -24,4 +32,5 @@ class RealmVKGroup: Object {
     @objc dynamic var photo50: String = ""
     @objc dynamic var photo100: String = ""
     @objc dynamic var photo200: String = ""
+    @objc dynamic var text: String? // Описание группы если есть
 }

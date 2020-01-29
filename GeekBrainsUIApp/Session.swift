@@ -35,3 +35,9 @@ final class Session {
         }
     }
 }
+
+extension Session {
+    func getCredential() -> Credential {
+        return Credential(token: token, userId: userId)
+    }
+}

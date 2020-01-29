@@ -15,7 +15,6 @@ extension UserDefaults {
         set { set(newValue, forKey: #function) }
     }
     
-
     // TODO: Вынести в KeyChain
     var token: String? {
         get { return string(forKey: #function) }

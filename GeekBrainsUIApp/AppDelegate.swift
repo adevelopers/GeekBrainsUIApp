@@ -24,16 +24,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
-        DispatchQueue.main.async {
-            if let nav = UIApplication.shared.keyWindow?.rootViewController as? UINavigationController {
-                nav.pushViewController(AuthViewController(), animated: true)
-            }
-        }
+        window = UIWindow()
         
+        if UserDefaults.standard.isAuthorized {
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let firstController = storyboard.instantiateViewController(withIdentifier: "mainNavigation")
+            window?.rootViewController = firstController
+            window?.makeKeyAndVisible()
+        } else {
+            window?.rootViewController = UINavigationController(rootViewController: AuthViewController())
+            window?.makeKeyAndVisible()
+        }
+                
         return true
     }
-    
-    
 
 }
 

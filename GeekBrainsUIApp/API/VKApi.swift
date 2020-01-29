@@ -27,6 +27,7 @@ struct Credential {
 
 protocol VKApiProtocol {
     func getGroups(_ credential: Credential, completion: @escaping (Result<VKResponse<VKGroup>>) -> Void)
+    func getFriends(credential: Credential, completion: @escaping (Result<VKResponse<VKUser>>) -> Void) 
 }
 
 class VKApi: VKApiProtocol {

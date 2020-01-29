@@ -9,7 +9,15 @@
 import RealmSwift
 
 
-class RealmVKUser: Object {
+protocol  VKUserProtocol {
+    var id: Int { get }
+    var firstName: String { get }
+    var lastName: String? { get }
+    var photo200orig: String? { get }
+    var sex: Int? { get }
+}
+
+class RealmVKUser: Object, VKUserProtocol {
     @objc dynamic var id = 0
     @objc dynamic var firstName: String = ""
     @objc dynamic var lastName: String?
@@ -17,6 +25,12 @@ class RealmVKUser: Object {
     @objc dynamic var isClosed: Bool = false
     @objc dynamic var online: Int = 0
     @objc dynamic var canAccessClosed: Bool = false
+    
+    // Опциональная поля
+    var hasPhoto: Int?
+    var sex: Int?
+    @objc dynamic var photo200orig: String?
+    
     
     // По `id`  при совпадении: перезаписывает, а не дублирует
     override class func primaryKey() -> String? {
@@ -32,11 +46,15 @@ extension RealmVKUser {
     
     func mapTo() -> VKUser {
         return VKUser(id: id,
-                      first_name: firstName,
-                      last_name: lastName,
+                      firstName: firstName,
+                      lastName: lastName,
                       deactivated: deactivated,
-                      is_closed: isClosed,
+                      isClosed: isClosed,
                       online: online,
-                      can_access_closed: canAccessClosed)
+                      canAccessClosed: canAccessClosed,
+                      hasPhoto: hasPhoto,
+                      photo200orig: photo200orig,
+                      sex: sex
+        )
     }
 }

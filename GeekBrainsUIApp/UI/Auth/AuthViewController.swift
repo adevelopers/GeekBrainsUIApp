@@ -73,15 +73,13 @@ final class AuthViewController: UIViewController {
         }
     }
     
-    private func goTo() {
-        if let navigationController =  UIApplication.shared.windows.first?.rootViewController as? UINavigationController {
-            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            let nextViewController = storyboard.instantiateViewController(withIdentifier: "tabbarController")
-            
-            navigationController.pushViewController(nextViewController, animated: true)
+    private func presentMainScreen() {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let mainNavigation = storyboard.instantiateViewController(withIdentifier: "mainNavigation")
+        
+        if let appDelegate = UIApplication.shared.delegate as? AppDelegate {
+            appDelegate.window?.rootViewController = mainNavigation
         }
-        
-        
     }
 }
 
@@ -94,6 +92,7 @@ extension AuthViewController: WKNavigationDelegate {
             let fragment = url.fragment
         else {
             print(#function, "go to: .allow")
+            UserDefaults.standard.isAuthorized = true
             decisionHandler(.allow)
             return
         }
@@ -111,14 +110,15 @@ extension AuthViewController: WKNavigationDelegate {
         Session.shared.token = params["access_token"] ?? ""
             
         if let userId = Int(params["user_id"] ?? "") {
-                Session.shared.userId = userId
+            Session.shared.userId = userId
+            UserDefaults.standard.isAuthorized = true
         }
         
         print(params)
         print(#function, "go to cancel")
         
         decisionHandler(.cancel)
-        goTo()
+        presentMainScreen()
             
     }
 }

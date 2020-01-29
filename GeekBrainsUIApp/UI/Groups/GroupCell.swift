@@ -7,6 +7,13 @@
 //
 
 import UIKit
+import Kingfisher
+
+
+enum GroupCellModel {
+    case decoded(GroupProtocol)
+    case realm(GroupProtocol)
+}
 
 class GroupCell: UITableViewCell {
     @IBOutlet weak var nameLabel: UILabel!
@@ -26,4 +33,24 @@ class GroupCell: UITableViewCell {
 
     }
     
+}
+
+extension GroupCell {
+    func configure(with model: GroupCellModel) {
+        if case let .realm(group) = model {
+            nameLabel.text = group.name
+            desciptionLabel.text = group.text
+            if let imageUrl = URL(string: group.photo200) {
+                avatarImageView.kf.setImage(with: imageUrl)
+            }
+        }
+        
+        if case let .decoded(group) = model {
+            nameLabel.text = group.name
+            desciptionLabel.text = group.text
+            if let imageUrl = URL(string: group.photo200) {
+                avatarImageView.kf.setImage(with: imageUrl)
+            }
+        }
+    }
 }
