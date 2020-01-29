@@ -38,7 +38,6 @@ class VKApi: VKApiProtocol {
         Alamofire.request(urlConvertable, method: .get).responseData { response in
             if
                 let responseValue = response.value,
-//                let responseString = String(bytes: responseValue, encoding: .utf8),
                 let jsonObject = try? JSONSerialization.jsonObject(with: responseValue, options: .mutableContainers)
             {
                 
@@ -53,7 +52,7 @@ class VKApi: VKApiProtocol {
             "ownerId": credential.userId
         ]
         
-        doRequest(credential: credential,
+        request(credential: credential,
                   request: .wallPosts,
                   params: params,
                   completion: completion)
@@ -68,7 +67,7 @@ class VKApi: VKApiProtocol {
         ]
         
         
-        doRequest(credential: credential, request: .groups,
+        request(credential: credential, request: .groups,
                   params: params,
                   method: .get,
                   completion: completion)
@@ -81,15 +80,14 @@ class VKApi: VKApiProtocol {
                       "fields": "city, domain"
                 ]
         
-        doRequest(credential: credential,
+        request(credential: credential,
                   request: .groupsSearch,
                   params: params,
                   method: .get, completion: completion)
     }
     
     func getAllPhotos(_ credential: Credential, completion: @escaping (Result<VKResponse<VKPhoto>>) -> Void) {
-        // .allPhotos
-        doRequest(credential: credential, request: .allPohots, params: [:], completion: completion)
+        request(credential: credential, request: .allPohots, params: [:], completion: completion)
     }
     
     
@@ -98,7 +96,7 @@ class VKApi: VKApiProtocol {
                       "fields": "city, domain"
         ]
         
-        doRequest(credential: credential,
+        request(credential: credential,
                   request: .friends,
                   params: params,
                   completion: completion)
@@ -111,10 +109,10 @@ class VKApi: VKApiProtocol {
                        "fields": "city, domain"
         ]
         
-        doRequest(credential: credential, request: .users, params: params, completion: completion)
+        request(credential: credential, request: .users, params: params, completion: completion)
     }
     
-    private func doRequest<ResponseType: Decodable>(credential: Credential,
+    private func request<ResponseType: Decodable>(credential: Credential,
                            request: ApiRequest,
                            params input: [String: Any],
                            method: HTTPMethod = .get,
