@@ -14,7 +14,7 @@ enum CellsType {
     case friendsHistory
     case post(item: Post)
 }
-    
+
 
 class NewsfeedViewController: UITableViewController {
     

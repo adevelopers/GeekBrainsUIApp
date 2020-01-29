@@ -9,7 +9,18 @@
 import RealmSwift
 
 
-// TODO: Добавить поле `sizes`
+protocol VKPhotoProtocol {
+    var id: Int { get }
+    var name: String { get }
+    var albumId: Int { get }
+    var ownerId: Int { get }
+    var userId: Int { get }
+    var text: String { get }
+    var date: Int { get }
+    var width: Int { get }
+    var height: Int { get }
+}
+
 class RealmVKPhoto: Object {
     @objc dynamic var id = 0
     @objc dynamic var name = ""
