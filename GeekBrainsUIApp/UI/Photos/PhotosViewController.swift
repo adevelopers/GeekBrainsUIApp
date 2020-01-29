@@ -12,11 +12,13 @@ private let reuseIdentifier = "Cell"
 
 class PhotosViewController: UICollectionViewController {
 
+    let session = Session.shared
+    let api: VKApiProtocol = VKApi()
+    
     let photoTransitioning = AnimatedPhotoTransitioning()
     
     var photoCollection = Array(1...7)
     var selectedView: UIImageView?
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,6 +26,7 @@ class PhotosViewController: UICollectionViewController {
         self.collectionView.register(UINib(nibName: PhotoCell.reuseId, bundle: nil), forCellWithReuseIdentifier: PhotoCell.reuseId)
         //Убираем надпись на кнопке возврата
         hideBackButtonTitle()
+        loadPhotos()
     }
 
     // MARK: UICollectionViewDataSource
@@ -79,5 +82,12 @@ extension PhotosViewController: UINavigationControllerDelegate {
         } else {
             return nil
         }
+    }
+    
+}
+
+extension PhotosViewController {
+    func loadPhotos() {
+//        api.get
     }
 }
