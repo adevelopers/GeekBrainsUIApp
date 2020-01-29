@@ -9,16 +9,6 @@
 import Foundation
 
 
-struct CommonResponse<T: Decodable>: Decodable {
-    
-    let response: Response?
-    
-    struct Response: Decodable {
-        let count: Int?
-        let items: [T]
-    }
-}
-
 struct VKPost: Decodable {
     let id: Int
     let owner_id: Int //    идентификатор владельца стены, на которой размещена запись. В версиях API ниже 5.7 это поле называется to_id.
