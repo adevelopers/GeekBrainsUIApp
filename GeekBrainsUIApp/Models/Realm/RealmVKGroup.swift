@@ -38,6 +38,17 @@ class RealmVKGroup: Object, VKGroupProtocol {
     @objc dynamic var text: String? // Описание группы если есть
     @objc dynamic var activity: String = ""
     @objc dynamic var status: String?
+    
+    // По `id`  при совпадении: перезаписывает, а не дублирует
+    override class func primaryKey() -> String? {
+        return "id"
+    }
+    
+    override class func indexedProperties() -> [String] {
+        return ["name", "type", "deactivated"]
+    }
+    
+    
 }
 
 
