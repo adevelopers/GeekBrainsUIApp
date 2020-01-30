@@ -45,7 +45,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 // MARK: Realm config
 extension AppDelegate {
     private func setupRealm() {
-        let config = Realm.Configuration(schemaVersion: 1)
+        var config = Realm.Configuration(schemaVersion: 1)
+        config.deleteRealmIfMigrationNeeded = true
         Realm.Configuration.defaultConfiguration = config
     }
 }
