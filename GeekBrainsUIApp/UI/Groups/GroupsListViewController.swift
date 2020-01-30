@@ -72,16 +72,27 @@ class GroupsListViewController: UITableViewController {
     
     // MARK: Data
     private func loadData() {
-        
         // грузим из realm
         loadFromRealm()
+        // запрашиваем с API
+        requestFromApi { [weak self] items in
+            print("👥 groups: ", items)
+            // сохраняем в realm
+            self?.saveToRealm(items: items)
+        }
+    }
+    
+    private func saveToRealm(items: [VKGroupProtocol]) {
+        GroupRepository().add(from: items)
+    }
+    
+    private func requestFromApi(completion: @escaping ([VKGroupProtocol]) -> Void) {
         let credential = Credential(token: session.token, userId: session.userId)
         api.getGroups(credential) { response in
             switch response {
             case let .success(models):
                 if let items = models.response?.items {
-                    print("👥 groups: ", models)
-                    GroupRepository().add(from: items)
+                    completion(items)
                 } else if
                     let errorCode = models.error?.error_code,
                     let errorMsg = models.error?.error_msg
@@ -93,7 +104,6 @@ class GroupsListViewController: UITableViewController {
                 print("❌ \(error)")
             }
         }
-        
     }
     
     private func loadFromRealm() {
