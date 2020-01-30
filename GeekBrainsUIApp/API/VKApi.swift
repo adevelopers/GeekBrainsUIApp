@@ -93,7 +93,7 @@ class VKApi: VKApiProtocol {
     
     func getFriends(credential: Credential, completion: @escaping (Result<VKResponse<VKUser>>) -> Void) {
         let params = ["order": "name",
-                      "fields": "city, domain"
+                      "fields": "city, domain, photo_200, photo_200_orig"
         ]
         
         request(credential: credential,
