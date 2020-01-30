@@ -51,6 +51,7 @@
 		FA10161023E1B2A20057D961 /* VKResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA10160F23E1B2A20057D961 /* VKResponse.swift */; };
 		FA10161223E1D3410057D961 /* UserDefaults+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA10161123E1D3410057D961 /* UserDefaults+extensions.swift */; };
 		FA10161523E212C10057D961 /* GroupRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA10161423E212C10057D961 /* GroupRepository.swift */; };
+		FA10161723E2C2040057D961 /* UserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA10161623E2C2040057D961 /* UserRepository.swift */; };
 		FA14876923D51A960006B03A /* VKApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA14876823D51A960006B03A /* VKApi.swift */; };
 		FA20DD7923B792E300EA3207 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA20DD7823B792E300EA3207 /* Fonts.swift */; };
 		FA545DAF23BA218500423432 /* DevelopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA545DAE23BA218500423432 /* DevelopViewController.swift */; };
@@ -118,6 +119,7 @@
 		FA10160F23E1B2A20057D961 /* VKResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VKResponse.swift; sourceTree = "<group>"; };
 		FA10161123E1D3410057D961 /* UserDefaults+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+extensions.swift"; sourceTree = "<group>"; };
 		FA10161423E212C10057D961 /* GroupRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupRepository.swift; sourceTree = "<group>"; };
+		FA10161623E2C2040057D961 /* UserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepository.swift; sourceTree = "<group>"; };
 		FA14876823D51A960006B03A /* VKApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VKApi.swift; sourceTree = "<group>"; };
 		FA20DD7823B792E300EA3207 /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
 		FA545DAE23BA218500423432 /* DevelopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevelopViewController.swift; sourceTree = "<group>"; };
@@ -292,6 +294,7 @@
 			isa = PBXGroup;
 			children = (
 				FA10161423E212C10057D961 /* GroupRepository.swift */,
+				FA10161623E2C2040057D961 /* UserRepository.swift */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -548,6 +551,7 @@
 				FA10161223E1D3410057D961 /* UserDefaults+extensions.swift in Sources */,
 				F1CD9FD723B50D8A00558294 /* WhatsNewCell.swift in Sources */,
 				FA08D2682392F9CF0005E549 /* User.swift in Sources */,
+				FA10161723E2C2040057D961 /* UserRepository.swift in Sources */,
 				F1CD9F9223AD25B700558294 /* TabbarAnimatedTransitioning.swift in Sources */,
 				FA14876923D51A960006B03A /* VKApi.swift in Sources */,
 				FAC59DFC2399AE050097D0B5 /* HeartButton.swift in Sources */,
