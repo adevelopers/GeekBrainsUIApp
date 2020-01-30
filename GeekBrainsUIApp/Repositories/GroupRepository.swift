@@ -16,6 +16,7 @@ protocol GroupRpositoryProtocol {
 
 final class GroupRepository: GroupRpositoryProtocol {
     
+    
     func add(from items: [VKGroupProtocol]) {
         do {
             let realm = try! Realm()
@@ -24,7 +25,7 @@ final class GroupRepository: GroupRpositoryProtocol {
                 items.forEach {
                     let realmVkGroup = RealmVKGroup()
                     realmVkGroup.map(from: $0)
-                    realm.add(realmVkGroup)
+                    realm.add(realmVkGroup, update: .modified)
                 }
             }
         } catch {

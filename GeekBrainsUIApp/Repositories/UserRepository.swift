@@ -24,7 +24,7 @@ final class UserRepository: UserRpositoryProtocol {
                 items.forEach {
                     let record = RealmVKUser()
                     record.map(from: $0)
-                    realm.add(record)
+                    realm.add(record, update: .modified)
                 }
             }
         } catch {
