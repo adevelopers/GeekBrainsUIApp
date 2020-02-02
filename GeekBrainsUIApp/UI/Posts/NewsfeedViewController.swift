@@ -9,14 +9,24 @@
 import UIKit
 
 
+protocol VKPostProtocol {
+    var id: Int { get }
+    var ownerId: Int { get }
+    var text: String? { get }
+    var postType: String? { get }
+}
+
 enum CellsType {
     case whatsNew
     case friendsHistory
-    case post(item: Post)
+    case post(item: VKPostProtocol)
 }
 
 
 class NewsfeedViewController: UITableViewController {
+    
+    let api = VKApi()
+    
     
     var models: [CellsType] = []
     
@@ -28,7 +38,7 @@ class NewsfeedViewController: UITableViewController {
         //типа поздняя инициализация
         models.append(.whatsNew)
         models.append(.friendsHistory)
-        models.append(contentsOf: getPosts().map { CellsType.post(item: $0) })
+//        models.append(contentsOf: getPosts().map { CellsType.post(item: $0) })
     }
     
     override func viewDidLoad() {
@@ -43,6 +53,8 @@ class NewsfeedViewController: UITableViewController {
         tableView.register(PostCell.self, forCellReuseIdentifier: PostCell.reuseId)
         tableView.backgroundColor = .white
         tableView.separatorStyle = .none
+        
+        loadData()
         
     }
     
@@ -94,7 +106,7 @@ class NewsfeedViewController: UITableViewController {
             
             cell.avatarView.image = UIImage(imageLiteralResourceName: "lena")
             cell.postImageView.image = .postImageList
-            cell.authorLabel.text = post.title
+            cell.authorLabel.text = "Анфиса А."
             cell.postLabel.text = post.text
             return cell
         }
@@ -108,5 +120,25 @@ class NewsfeedViewController: UITableViewController {
     private func getPosts() -> [Post] {
         // тут как буд-то мы из сети получили список новостей
         return Post.generateDemoPosts(with: 34)
+    }
+}
+
+
+extension NewsfeedViewController {
+    
+    private func loadData() {
+        VKApi().getWall(Session.shared.getCredential(),
+                        wallOwnerId: Session.shared.userId) { response in
+                            switch response {
+                            case let .success(result):
+                                if let items: [CellsType] = result.response?.items.map({ CellsType.post(item: $0) }) {
+                                    self.models.append(contentsOf: items)
+                                    self.tableView.reloadData()
+                                }
+                            case let .failure(error):
+                                print("❌ \(error)")
+                            }
+                            
+        }
     }
 }
