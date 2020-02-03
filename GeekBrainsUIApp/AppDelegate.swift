@@ -10,6 +10,9 @@ import UIKit
 import RealmSwift
 
 
+
+
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -27,9 +30,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow()
         
         if UserDefaults.standard.isAuthorized {
-            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            let firstController = storyboard.instantiateViewController(withIdentifier: "mainNavigation")
-            window?.rootViewController = firstController
+            let navController = UINavigationController(rootViewController: TabBarController())
+            navController.isNavigationBarHidden = true
+            window?.rootViewController = navController
             window?.makeKeyAndVisible()
         } else {
             window?.rootViewController = UINavigationController(rootViewController: AuthViewController())

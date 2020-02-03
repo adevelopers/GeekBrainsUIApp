@@ -9,12 +9,6 @@
 import UIKit
 
 
-protocol VKPostProtocol {
-    var id: Int { get }
-    var ownerId: Int { get }
-    var text: String? { get }
-    var postType: String? { get }
-}
 
 enum CellsType {
     case whatsNew
@@ -132,6 +126,21 @@ extension NewsfeedViewController {
                             switch response {
                             case let .success(result):
                                 if let items: [CellsType] = result.response?.items.map({ CellsType.post(item: $0) }) {
+                                    
+                                    items.forEach {
+                                        if case let .post(post) = $0 {
+                                            if let attachment = post.attachments?.first,
+                                                attachment.type == "photo",
+                                                let sizes = attachment.photo?.sizes,
+                                                let photoLink = sizes.first(where: { $0.type == "x" })?.url
+                                            {
+                                                print("photo url-> ", photoLink)
+                                            } else {
+                                                print("post -> ", post.attachments)
+                                            }
+                                        }
+                                    }
+                                    
                                     self.models.append(contentsOf: items)
                                     self.tableView.reloadData()
                                 }

@@ -26,11 +26,19 @@ extension UIImage {
     static let verified = UIImage(imageLiteralResourceName: "verified")
     static let more = UIImage(imageLiteralResourceName: "more")
     
-    
     static let female = UIImage(imageLiteralResourceName: "lena")
     
     static let clearButton = UIImage(imageLiteralResourceName: "clearButton")
     static let searchIcon = UIImage(imageLiteralResourceName: "searchIcon")
+    
+    
+    // MARK: Tab bar icons
+    
+    static let tabMore = UIImage(imageLiteralResourceName: "More")
+    static let tabNewsfeed = UIImage(imageLiteralResourceName: "Newsfeed")
+    static let tabGroups = UIImage(imageLiteralResourceName: "groups2")
+    static let tabMessages = UIImage(imageLiteralResourceName: "Messages")
+    static let tabSearch = UIImage(imageLiteralResourceName: "Search")
     
 
     static func getPhoto(by number: Int) -> UIImage? {

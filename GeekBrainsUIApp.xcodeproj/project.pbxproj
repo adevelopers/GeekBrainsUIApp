@@ -52,6 +52,7 @@
 		FA10161223E1D3410057D961 /* UserDefaults+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA10161123E1D3410057D961 /* UserDefaults+extensions.swift */; };
 		FA10161523E212C10057D961 /* GroupRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA10161423E212C10057D961 /* GroupRepository.swift */; };
 		FA10161723E2C2040057D961 /* UserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA10161623E2C2040057D961 /* UserRepository.swift */; };
+		FA10161923E2C3410057D961 /* PhotoRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA10161823E2C3410057D961 /* PhotoRepository.swift */; };
 		FA14876923D51A960006B03A /* VKApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA14876823D51A960006B03A /* VKApi.swift */; };
 		FA20DD7923B792E300EA3207 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA20DD7823B792E300EA3207 /* Fonts.swift */; };
 		FA545DAF23BA218500423432 /* DevelopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA545DAE23BA218500423432 /* DevelopViewController.swift */; };
@@ -120,6 +121,7 @@
 		FA10161123E1D3410057D961 /* UserDefaults+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+extensions.swift"; sourceTree = "<group>"; };
 		FA10161423E212C10057D961 /* GroupRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupRepository.swift; sourceTree = "<group>"; };
 		FA10161623E2C2040057D961 /* UserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepository.swift; sourceTree = "<group>"; };
+		FA10161823E2C3410057D961 /* PhotoRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoRepository.swift; sourceTree = "<group>"; };
 		FA14876823D51A960006B03A /* VKApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VKApi.swift; sourceTree = "<group>"; };
 		FA20DD7823B792E300EA3207 /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
 		FA545DAE23BA218500423432 /* DevelopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevelopViewController.swift; sourceTree = "<group>"; };
@@ -226,6 +228,7 @@
 		FA08D26D2393BCB60005E549 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				FAE56D3C23E8A0AE00EE667D /* Tabbar */,
 				FAD1E33A23DCE4F50082F411 /* Auth */,
 				F101C09923A4011500A191D5 /* Login */,
 				FACCEAC523A19F44005C6D77 /* Photos */,
@@ -295,6 +298,7 @@
 			children = (
 				FA10161423E212C10057D961 /* GroupRepository.swift */,
 				FA10161623E2C2040057D961 /* UserRepository.swift */,
+				FA10161823E2C3410057D961 /* PhotoRepository.swift */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -393,6 +397,13 @@
 				F110D4C223CCE76500373182 /* AuthViewController.swift */,
 			);
 			path = Auth;
+			sourceTree = "<group>";
+		};
+		FAE56D3C23E8A0AE00EE667D /* Tabbar */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Tabbar;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -523,6 +534,7 @@
 				FAACA1B123888E71005BB6A7 /* Images.swift in Sources */,
 				F101C09523A3DD4000A191D5 /* PhotoCell.swift in Sources */,
 				FA08D287239823DF0005E549 /* AvatarView.swift in Sources */,
+				FA10161923E2C3410057D961 /* PhotoRepository.swift in Sources */,
 				FA08D2712393C7E00005E549 /* FriendCell.swift in Sources */,
 				F1C1D7EF239BC55400CE34F9 /* NewsfeedViewController.swift in Sources */,
 				FAD1E33623DC68C30082F411 /* VKPhoto.swift in Sources */,
