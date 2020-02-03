@@ -9,6 +9,14 @@
 import Foundation
 
 
+protocol VKPostProtocol {
+    var id: Int { get }
+    var ownerId: Int { get }
+    var text: String? { get }
+    var postType: String? { get }
+    var attachments: [VKPost.Attachment]? { get }
+}
+
 struct VKPost: Decodable, VKPostProtocol {
     let id: Int
     let ownerId: Int //    идентификатор владельца стены, на которой размещена запись. В версиях API ниже 5.7 это поле называется to_id.
@@ -106,6 +114,7 @@ extension VKPost {
     
     struct Attachment: Decodable { // attachments - array    медиавложения записи (фотографии, ссылки и т.п.).
         let type: String?
+        let photo: VKPhoto?
     }
     
     struct Geo: Decodable {
