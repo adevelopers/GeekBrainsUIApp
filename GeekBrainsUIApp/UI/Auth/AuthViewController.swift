@@ -54,7 +54,6 @@ final class AuthViewController: UIViewController {
     
     private func connect() {
         // web config
-        
         var urlComponents = URLComponents()
         urlComponents.scheme = "https"
         urlComponents.host = "oauth.vk.com"
@@ -74,11 +73,8 @@ final class AuthViewController: UIViewController {
     }
     
     private func presentMainScreen() {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let mainNavigation = storyboard.instantiateViewController(withIdentifier: "mainNavigation")
-        
         if let appDelegate = UIApplication.shared.delegate as? AppDelegate {
-            appDelegate.window?.rootViewController = mainNavigation
+            appDelegate.window?.rootViewController = UINavigationController(rootViewController: TabBarController())
         }
     }
 }

@@ -93,7 +93,10 @@ class VKApi: VKApiProtocol {
     
     func getFriends(credential: Credential, completion: @escaping (Result<VKResponse<VKUser>>) -> Void) {
         let params = ["order": "name",
-                      "fields": "city, domain, photo_200, photo_200_orig"
+                      "fields": "city,"
+                        + "domain,"
+                        + "photo_200,"
+                        + "photo_200_orig"
         ]
         
         request(credential: credential,
@@ -132,7 +135,7 @@ class VKApi: VKApiProtocol {
                     guard let resultData = result.data else {
                         return
                     }
-                    self.printData(resultData)
+//                    self.printData(resultData)
                     
                     do {
                         let decodedModel = try JSONDecoder().decode(ResponseType.self, from: resultData)

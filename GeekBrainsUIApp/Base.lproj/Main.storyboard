@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="P5a-eG-HQp">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
@@ -18,12 +18,6 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
-                    <connections>
-                        <segue destination="GgP-sW-K8F" kind="relationship" relationship="viewControllers" id="MR6-dB-sXO"/>
-                        <segue destination="qbA-UM-zZb" kind="relationship" relationship="viewControllers" id="8AQ-VT-x4w"/>
-                        <segue destination="btu-Cx-fFN" kind="relationship" relationship="viewControllers" id="U28-uI-Czi"/>
-                        <segue destination="Eki-vu-LGG" kind="relationship" relationship="viewControllers" id="HNu-NR-Pgy"/>
-                    </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CVE-5Q-R8G" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -84,7 +78,7 @@
         <!--Группы-->
         <scene sceneID="8p8-LC-spP">
             <objects>
-                <navigationController id="btu-Cx-fFN" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="groupsNavigation" id="btu-Cx-fFN" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Группы" image="groups2" id="xUt-UT-nMo"/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="9z8-jn-lJR">
@@ -106,7 +100,7 @@
         <!--Фотографии-->
         <scene sceneID="XJp-hi-C0e">
             <objects>
-                <navigationController id="Eki-vu-LGG" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="photosNavigation" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Eki-vu-LGG" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Фотографии" image="photo.on.rectangle" catalog="system" id="Mbf-ap-yCH"/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="NMS-qP-Pag">
@@ -119,7 +113,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="i62-od-p04" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2106" y="1225"/>
+            <point key="canvasLocation" x="1174" y="1225"/>
         </scene>
         <!--Фотографии-->
         <scene sceneID="GZ2-MW-ORC">
@@ -160,9 +154,6 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="hYd-ny-rN3">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
-                    <connections>
-                        <segue destination="7Zn-w4-e6b" kind="relationship" relationship="rootViewController" id="XAu-Vx-6XC"/>
-                    </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bI2-3y-bJo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -171,7 +162,7 @@
         <!--Login View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="LoginViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="LoginViewController" customModule="GeekBrainsUIApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="loginViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="LoginViewController" customModule="GeekBrainsUIApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -290,7 +281,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-681" y="-202"/>
+            <point key="canvasLocation" x="-1326" y="-72"/>
         </scene>
         <!--Новости-->
         <scene sceneID="Usf-ec-Hjw">
@@ -332,7 +323,7 @@
         <!--Новости-->
         <scene sceneID="QaN-Yf-a4E">
             <objects>
-                <navigationController title="Новости" id="GgP-sW-K8F" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="postsNavigation" title="Новости" id="GgP-sW-K8F" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Новости" image="Newsfeed" id="VKl-uU-hRy"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="7kv-9i-jxp">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -353,7 +344,7 @@
         <!--First line-->
         <scene sceneID="oS4-Zg-IUL">
             <objects>
-                <navigationController title="First line" modalPresentationStyle="fullScreen" id="qbA-UM-zZb" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="friendsNavigation" title="First line" modalPresentationStyle="fullScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="qbA-UM-zZb" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Друзья" image="user" id="I5b-vv-gSP"/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="65y-5y-XsG">

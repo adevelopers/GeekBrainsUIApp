@@ -9,14 +9,26 @@
 
 struct VKPhoto: Decodable {
     let id: Int
-    let album_id: Int
-    let owner_id: Int
-    let user_id: Int
-    let text: String
+    let albumId: Int?
+    let ownerId: Int?
+    let userId: Int?
+    let text: String?
     let date: Int
     let sizes: [Size]
-    let width: Int
-    let height: Int
+    let width: Int?
+    let height: Int?
+    
+    enum CodingKeys: String, CodingKey {
+        case id
+        case albumId = "album_id"
+        case ownerId = "owner_id"
+        case userId = "user_id"
+        case text
+        case date
+        case sizes
+        case width
+        case height
+    }
 }
 
 extension VKPhoto {

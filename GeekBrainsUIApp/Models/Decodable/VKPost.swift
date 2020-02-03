@@ -9,41 +9,86 @@
 import Foundation
 
 
-struct VKPost: Decodable {
+protocol VKPostProtocol {
+    var id: Int { get }
+    var ownerId: Int { get }
+    var text: String? { get }
+    var postType: String? { get }
+    var attachments: [VKPost.Attachment]? { get }
+}
+
+struct VKPost: Decodable, VKPostProtocol {
     let id: Int
-    let owner_id: Int //    идентификатор владельца стены, на которой размещена запись. В версиях API ниже 5.7 это поле называется to_id.
-    let from_id: Int? //    идентификатор автора записи (от чьего имени опубликована запись).
-    let created_by: Int? //  идентификатор администратора, который опубликовал запись
+    let ownerId: Int //    идентификатор владельца стены, на которой размещена запись. В версиях API ниже 5.7 это поле называется to_id.
+    let fromId: Int? //    идентификатор автора записи (от чьего имени опубликована запись).
+    let createdBy: Int? //  идентификатор администратора, который опубликовал запись
     let date: Int? //     время публикации записи в формате unixtime.
     let text: String? // текст записи.
-    let reply_owner_id: Int? // идентификатор владельца записи, в ответ на которую была оставлена текущая.
-    let reply_post_id: Int? // идентификатор записи, в ответ на которую была оставлена текущая.
-    let friends_only: Int? // 1, если запись была создана с опцией «Только для друзей».
+    let replyOwnerId: Int? // идентификатор владельца записи, в ответ на которую была оставлена текущая.
+    let replyPostId: Int? // идентификатор записи, в ответ на которую была оставлена текущая.
+    let friendsOnly: Int? // 1, если запись была создана с опцией «Только для друзей».
     let comments: Comments?
     let like: Likes?
     let reposts: Reposts?
     let views: Views? // информация о просмотрах записи. Объект с единственным полем:
-    let post_type: String? // тип записи, может принимать следующие значения: post, copy, reply, postpone, suggest.
-    let post_source: PostSource?
+    let postType: String? // тип записи, может принимать следующие значения: post, copy, reply, postpone, suggest.
+    let postSource: PostSource?
     let geo: Geo?
-    let signer_id: Int? // идентификатор автора, если запись была опубликована от имени сообщества и подписана пользователем;
+    let signerId: Int? // идентификатор автора, если запись была опубликована от имени сообщества и подписана пользователем;
     //        let copy_history: [VKPost]
-    let can_pin: Int?        //
-    let can_delete: Int?     //
-    let can_edit: Int?       //
-    let is_pinned: Int?      //
-    let marked_as_ads: Int?  //
-    let is_favorite: Bool?   //     true, если объект добавлен в закладки у текущего пользователя.
-    let postponed_id: Int?   //  integer
+    let canPin: Int?        //
+    let canDelete: Int?     //
+    let canEdit: Int?       //
+    let isPinned: Int?      //
+    let markedAsAds: Int?  //
+    let isFavorite: Bool?   //     true, если объект добавлен в закладки у текущего пользователя.
+    let postponedId: Int?   //  integer
+    let attachments: [Attachment]?
+    
+    enum CodingKeys: String, CodingKey {
+        case id
+        case ownerId = "owner_id"
+        case fromId = "from_id"
+        case createdBy = "created_by"
+        case date
+        case text
+        case replyOwnerId = "reply_owner_id"
+        case replyPostId = "reply_post_id"
+        case friendsOnly = "friends_only"
+        case comments
+        case like
+        case reposts
+        case views
+        case postType = "post_type"
+        case postSource = "post_source"
+        case geo
+        case signerId = "signer_id"
+        case canPin = "can_pin"
+        case canDelete = "can_delete"
+        case canEdit = "can_edit"
+        case isPinned = "is_pinned"
+        case markedAsAds = "marked_as_ads"
+        case isFavorite = "is_favorite"
+        case postponedId = "postponed_id"
+        case attachments
+    }
 }
 
 extension VKPost {
     struct Comments: Decodable {
         let count: Int?  // count (integer) — количество комментариев;
-        let can_post: Int? // (integer, [0,1]) — информация о том, может ли текущий пользователь комментировать запись (1 — может, 0 — не может);
-        let groups_can_post: Int? // (integer, [0,1]) — информация о том, могут ли сообщества комментировать запись;
-        let can_close: Bool? // (boolean) — может ли текущий пользователь закрыть комментарии к записи;
-        let can_open: Bool? // (boolean) — может ли текущий пользователь открыть комментарии к записи.
+        let canPost: Int? // (integer, [0,1]) — информация о том, может ли текущий пользователь комментировать запись (1 — может, 0 — не может);
+//        let groupsCanPost: Decimal // (integer, [0,1]) — информация о том, могут ли сообщества комментировать запись;
+//        let canClose: Bool? // (boolean) — может ли текущий пользователь закрыть комментарии к записи;
+//        let canOpen: Bool? // (boolean) — может ли текущий пользователь открыть комментарии к записи.
+        
+        enum CodingKeys: String, CodingKey {
+            case count
+            case canPost = "can_post"
+//            case groupsCanPost = "groups_can_post"
+//            case canClose = "can_close"
+//            case canOpen = "can_open"
+        }
     }
     
     struct Likes: Decodable {
@@ -69,6 +114,7 @@ extension VKPost {
     
     struct Attachment: Decodable { // attachments - array    медиавложения записи (фотографии, ссылки и т.п.).
         let type: String?
+        let photo: VKPhoto?
     }
     
     struct Geo: Decodable {
