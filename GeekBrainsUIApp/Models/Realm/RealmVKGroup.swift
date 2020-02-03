@@ -9,14 +9,17 @@
 import RealmSwift
 
 
-protocol GroupProtocol {
+protocol VKGroupProtocol {
     var id: Int { get }
     var name: String { get }
     var text: String? { get }
     var photo200: String { get }
+    
+    func map(from model: VKGroupProtocol)
+    func model() -> VKGroupProtocol
 }
 
-class RealmVKGroup: Object, GroupProtocol {
+class RealmVKGroup: Object, VKGroupProtocol {
     
     @objc dynamic var id: Int = -1
     @objc dynamic var name = ""
@@ -33,4 +36,48 @@ class RealmVKGroup: Object, GroupProtocol {
     @objc dynamic var photo100: String = ""
     @objc dynamic var photo200: String = ""
     @objc dynamic var text: String? // Описание группы если есть
+    @objc dynamic var activity: String = ""
+    @objc dynamic var status: String?
+    
+    // По `id`  при совпадении: перезаписывает, а не дублирует
+    override class func primaryKey() -> String? {
+        return "id"
+    }
+    
+    override class func indexedProperties() -> [String] {
+        return ["name", "type", "deactivated"]
+    }
+    
+    
+}
+
+
+extension RealmVKGroup {
+    func map(from model: VKGroupProtocol) {
+        id = model.id
+        name = model.name
+        photo200 = model.photo200
+        text = model.text
+    }
+    
+    func model() -> VKGroupProtocol {
+        return VKGroup(id: id,
+                       name: name,
+                       screenName: screenName,
+                       isClosed: isClosed,
+                       deactivated: deactivated,
+                       isAdmin: isAdmin,
+                       adminLevel: adminLevel,
+                       isMember: isMember,
+                       isAdvertiser: isAdvertiser,
+                       invitedBy: invitedBy,
+                       type: type,
+                       photo50: photo50,
+                       photo100: photo100,
+                       photo200: photo200,
+                       description: text,
+                       activity: activity,
+                       status: status)
+    }
+    
 }

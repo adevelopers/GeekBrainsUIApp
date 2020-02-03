@@ -48,7 +48,16 @@ struct VKGroup: Decodable {
     }
 }
 
-extension VKGroup: GroupProtocol {
+extension VKGroup: VKGroupProtocol {
+    func model() -> VKGroupProtocol {
+        return self
+    }
+    
+    
+    func map(from model: VKGroupProtocol) {
+        
+    }
+    
     var text: String? {
         return description
     }

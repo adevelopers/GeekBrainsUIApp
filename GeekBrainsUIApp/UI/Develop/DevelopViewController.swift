@@ -11,7 +11,9 @@ import UIKit
 
 final class DevelopViewController: UIViewController {
     
-    lazy var button: UIButton = {
+    private let api = VKApi()
+    
+    private lazy var button: UIButton = {
         let button = UIButton()
         button.setTitle("Выполнить запросы", for: .normal)
         button.contentEdgeInsets = UIEdgeInsets(top: 10, left: 20, bottom: 10, right: 20)
@@ -48,14 +50,8 @@ final class DevelopViewController: UIViewController {
     @objc
     private func didTap() {
         print("didTap")
-        let api = VKApi()
-        let credential = Credential(token: Session.shared.token, userId: Session.shared.userId)
-        api.getUsers(credential) { x in
-            print("📇 model: ", x)
+        api.getUsers(Session.shared.getCredential()) { response in
+            print("📇 model: ", response)
         }
-//        api.getWall(credential, wallOwnerId: 370484539) { x in
-//            print("📇 model: ", x)
-//        }
-        
     }
 }

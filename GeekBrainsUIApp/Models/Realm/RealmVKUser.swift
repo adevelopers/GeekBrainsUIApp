@@ -44,7 +44,15 @@ class RealmVKUser: Object, VKUserProtocol {
 
 extension RealmVKUser {
     
-    func mapTo() -> VKUser {
+    func map(from model: VKUserProtocol) {
+        id = model.id
+        firstName = model.firstName
+        lastName = model.lastName
+        photo200orig = model.photo200orig
+        sex = model.sex
+    }
+    
+    func model() -> VKUser {
         return VKUser(id: id,
                       firstName: firstName,
                       lastName: lastName,

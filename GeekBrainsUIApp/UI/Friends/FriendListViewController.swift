@@ -24,7 +24,7 @@ class FriendListViewController: UITableViewController {
     
     var items: [VKUserProtocol] = []
     var friendsSections = [Section<VKUserProtocol>]()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         searchBar.delegate = self
@@ -43,7 +43,7 @@ class FriendListViewController: UITableViewController {
         }
     }
     
-
+    
     // MARK: DataSource
     override func numberOfSections(in tableView: UITableView) -> Int {
         return friendsSections.count
@@ -66,31 +66,13 @@ class FriendListViewController: UITableViewController {
         return cell
     }
     
-    private func loadUsers() {
-        
-        api.getFriends(credential: Session.shared.getCredential()) { [weak self] response in
-            switch response {
-            case let .success(result):
-                if let users = result.response?.items {
-                    self?.items = users
-                    self?.friendsSections = self?.handleUsers(items: users) ?? []
-                    self?.tableView.reloadData()
-                }
-            case let .failure(error):
-                print("❌ \(error)")
-            }
-        }
-        
-        
-    }
-    
     private func handleUsers(items: [VKUserProtocol]) -> [Section<VKUserProtocol>] {
         return  Dictionary(grouping: items) { $0.lastName?.prefix(1) }
-                   .map { Section<VKUserProtocol>(title: "\($0.key!)",
-                                        items: $0.value) }
-                   .sorted(by: {$0.title < $1.title })
+            .map { Section<VKUserProtocol>(title: "\($0.key!)",
+                items: $0.value) }
+            .sorted(by: {$0.title < $1.title })
     }
-
+    
     override func sectionIndexTitles(for tableView: UITableView) -> [String]? {
         return friendsSections.map { $0.title }
     }
@@ -115,7 +97,56 @@ extension FriendListViewController: UISearchBarDelegate {
         } else {
             friendsSections = handleUsers(items: items)
         }
-    
+        
         tableView.reloadData()
+    }
+}
+
+// MARK: Загрузка и сохранение в Realm
+extension FriendListViewController {
+    
+    private func loadUsers() {
+        // грузим из realm
+        loadFromRealm()
+        // запрашиваем с API
+        requestFromApi { [weak self] items in
+            // сохраняем в realm
+            self?.saveToRealm(items: items)
+        }
+    }
+    
+    private func requestFromApi(completion: @escaping ([VKUserProtocol]) -> Void) {
+        api.getFriends(credential: Session.shared.getCredential()) { [weak self] response in
+            switch response {
+            case let .success(result):
+                if let users = result.response?.items {
+                    self?.items = users
+                    self?.friendsSections = self?.handleUsers(items: users) ?? []
+                    self?.tableView.reloadData()
+                } else if
+                    let errorCode = result.error?.error_code,
+                    let errorMsg = result.error?.error_msg
+                {
+                    print("❌ #\(errorCode) \(errorMsg)")
+                    UserDefaults.standard.isAuthorized = false
+                }
+            case let .failure(error):
+                print("❌ \(error)")
+            }
+        }
+    }
+    
+    private func saveToRealm(items: [VKUserProtocol]) {
+        UserRepository().add(from: items)
+    }
+    
+    private func loadFromRealm() {
+        if
+            let items = try? UserRepository().getAll(),
+            items.count > 0
+        {
+            friendsSections = handleUsers(items: items)
+            tableView.reloadData()
+        }
     }
 }
