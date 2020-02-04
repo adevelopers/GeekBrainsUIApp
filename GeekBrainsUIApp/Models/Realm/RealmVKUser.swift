@@ -44,13 +44,15 @@ class RealmVKUser: Object, VKUserProtocol {
 
 extension RealmVKUser {
     
-    func map(from model: VKUserProtocol) {
+    convenience init(from model: VKUserProtocol) {
+        self.init()
         id = model.id
         firstName = model.firstName
         lastName = model.lastName
         photo200orig = model.photo200orig
         sex = model.sex
     }
+    
     
     func model() -> VKUser {
         return VKUser(id: id,
