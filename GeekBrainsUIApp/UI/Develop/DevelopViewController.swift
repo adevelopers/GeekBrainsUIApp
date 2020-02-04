@@ -50,8 +50,7 @@ final class DevelopViewController: UIViewController {
     @objc
     private func didTap() {
         print("didTap")
-        api.getUsers(Session.shared.getCredential()) { response in
-            print("📇 model: ", response)
-        }
+        UserDefaults.standard.isAuthorized = false
+        UserDefaults.standard.userId = 0
     }
 }

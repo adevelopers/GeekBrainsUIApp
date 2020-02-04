@@ -24,7 +24,7 @@ struct VKGroup: Decodable {
     let photo100: String
     let photo200: String
     let description: String?
-    let activity: String
+    let activity: String?
     let status: String?
     
     enum CodingKeys: String, CodingKey {

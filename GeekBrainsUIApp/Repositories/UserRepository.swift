@@ -22,8 +22,7 @@ final class UserRepository: UserRpositoryProtocol {
             
             try realm.write {
                 items.forEach {
-                    let record = RealmVKUser()
-                    record.map(from: $0)
+                    let record = RealmVKUser(from: $0)
                     realm.add(record, update: .modified)
                 }
             }

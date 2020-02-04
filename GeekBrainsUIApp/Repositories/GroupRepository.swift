@@ -12,6 +12,7 @@ import RealmSwift
 protocol GroupRpositoryProtocol {
     func add(from items: [VKGroupProtocol])
     func getAll() throws -> [VKGroupProtocol]
+    func remove(items: [RealmVKGroup]) 
 }
 
 final class GroupRepository: GroupRpositoryProtocol {
@@ -43,5 +44,26 @@ final class GroupRepository: GroupRpositoryProtocol {
         }
     }
     
+    func getObjects() throws -> Results<RealmVKGroup> {
+        do {
+            let realm = try Realm()
+            return realm.objects(RealmVKGroup.self)
+        } catch {
+            throw error
+        }
+    }
     
+    
+    
+    // DELETE
+    func remove(items: [RealmVKGroup]) {
+        do {
+            let realm = try! Realm()
+            try realm.write {
+                realm.delete(items)
+            }
+        } catch {
+            print("❌ \(error)")
+        }
+    }
 }

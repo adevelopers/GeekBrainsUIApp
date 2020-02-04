@@ -10,9 +10,6 @@ import UIKit
 import RealmSwift
 
 
-
-
-
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -48,8 +45,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 // MARK: Realm config
 extension AppDelegate {
     private func setupRealm() {
+        printRealmPath()
         var config = Realm.Configuration(schemaVersion: 1)
         config.deleteRealmIfMigrationNeeded = true
         Realm.Configuration.defaultConfiguration = config
+    }
+    
+    private func printRealmPath() {
+        print("👩🏾‍🎤 Realm path: ", Realm.Configuration.defaultConfiguration.fileURL?.path)
     }
 }

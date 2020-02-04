@@ -34,6 +34,7 @@
 		F1CD9FB523B114EC00558294 /* AnimatedTransitioning.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1CD9FB423B114EC00558294 /* AnimatedTransitioning.swift */; };
 		F1CD9FD723B50D8A00558294 /* WhatsNewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1CD9FD623B50D8A00558294 /* WhatsNewCell.swift */; };
 		F1CD9FD923B5204700558294 /* FirendsHistoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1CD9FD823B5204700558294 /* FirendsHistoryCell.swift */; };
+		F1F1E35F23E998010092CE57 /* MoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F1E35E23E998010092CE57 /* MoreViewController.swift */; };
 		FA08D2682392F9CF0005E549 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA08D2672392F9CF0005E549 /* User.swift */; };
 		FA08D26C239301F60005E549 /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA08D26B239301F60005E549 /* Group.swift */; };
 		FA08D26F2393BD0C0005E549 /* FriendListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA08D26E2393BD0C0005E549 /* FriendListViewController.swift */; };
@@ -103,6 +104,7 @@
 		F1CD9FB423B114EC00558294 /* AnimatedTransitioning.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatedTransitioning.swift; sourceTree = "<group>"; };
 		F1CD9FD623B50D8A00558294 /* WhatsNewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhatsNewCell.swift; sourceTree = "<group>"; };
 		F1CD9FD823B5204700558294 /* FirendsHistoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirendsHistoryCell.swift; sourceTree = "<group>"; };
+		F1F1E35E23E998010092CE57 /* MoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreViewController.swift; sourceTree = "<group>"; };
 		FA08D2672392F9CF0005E549 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		FA08D26B239301F60005E549 /* Group.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
 		FA08D26E2393BD0C0005E549 /* FriendListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendListViewController.swift; sourceTree = "<group>"; };
@@ -212,6 +214,14 @@
 			path = Posts;
 			sourceTree = "<group>";
 		};
+		F1F1E35D23E997AF0092CE57 /* More */ = {
+			isa = PBXGroup;
+			children = (
+				F1F1E35E23E998010092CE57 /* MoreViewController.swift */,
+			);
+			path = More;
+			sourceTree = "<group>";
+		};
 		FA08D2662392EAD20005E549 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -237,6 +247,7 @@
 				FA08D285239823590005E549 /* Components */,
 				FA08D27723940B6B0005E549 /* Groups */,
 				FA08D27623940B310005E549 /* Friends */,
+				F1F1E35D23E997AF0092CE57 /* More */,
 				FA545DAD23BA210700423432 /* Develop */,
 				F1B2784923A0191400ED7F44 /* CustomCollectionViewLayout.swift */,
 				F101C0AA23A95B2100A191D5 /* CustomTransitioningDelegate.swift */,
@@ -535,6 +546,7 @@
 				F101C09523A3DD4000A191D5 /* PhotoCell.swift in Sources */,
 				FA08D287239823DF0005E549 /* AvatarView.swift in Sources */,
 				FA10161923E2C3410057D961 /* PhotoRepository.swift in Sources */,
+				F1F1E35F23E998010092CE57 /* MoreViewController.swift in Sources */,
 				FA08D2712393C7E00005E549 /* FriendCell.swift in Sources */,
 				F1C1D7EF239BC55400CE34F9 /* NewsfeedViewController.swift in Sources */,
 				FAD1E33623DC68C30082F411 /* VKPhoto.swift in Sources */,
