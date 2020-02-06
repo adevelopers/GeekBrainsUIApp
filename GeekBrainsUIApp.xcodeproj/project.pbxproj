@@ -72,6 +72,9 @@
 		FAD1E33623DC68C30082F411 /* VKPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD1E33523DC68C30082F411 /* VKPhoto.swift */; };
 		FAD1E33823DC68F10082F411 /* VKGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD1E33723DC68F10082F411 /* VKGroup.swift */; };
 		FAD1E33C23DCED090082F411 /* VKPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD1E33B23DCED090082F411 /* VKPost.swift */; };
+		FAE56D3F23EB6B8200EE667D /* FriendsConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE56D3E23EB6B8200EE667D /* FriendsConfigurator.swift */; };
+		FAE56D4123EB6F4800EE667D /* TabsConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE56D4023EB6F4800EE667D /* TabsConfigurator.swift */; };
+		FAE56D4323EBA59B00EE667D /* FriendsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE56D4223EBA59B00EE667D /* FriendsPresenter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -144,6 +147,9 @@
 		FAD1E33523DC68C30082F411 /* VKPhoto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VKPhoto.swift; sourceTree = "<group>"; };
 		FAD1E33723DC68F10082F411 /* VKGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VKGroup.swift; sourceTree = "<group>"; };
 		FAD1E33B23DCED090082F411 /* VKPost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VKPost.swift; sourceTree = "<group>"; };
+		FAE56D3E23EB6B8200EE667D /* FriendsConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsConfigurator.swift; sourceTree = "<group>"; };
+		FAE56D4023EB6F4800EE667D /* TabsConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabsConfigurator.swift; sourceTree = "<group>"; };
+		FAE56D4223EBA59B00EE667D /* FriendsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsPresenter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -251,7 +257,6 @@
 				FA545DAD23BA210700423432 /* Develop */,
 				F1B2784923A0191400ED7F44 /* CustomCollectionViewLayout.swift */,
 				F101C0AA23A95B2100A191D5 /* CustomTransitioningDelegate.swift */,
-				F1CD9F8F23AD14D500558294 /* TabBarController.swift */,
 				F1CD9F9123AD25B700558294 /* TabbarAnimatedTransitioning.swift */,
 				F1CD9FB423B114EC00558294 /* AnimatedTransitioning.swift */,
 			);
@@ -261,10 +266,11 @@
 		FA08D27623940B310005E549 /* Friends */ = {
 			isa = PBXGroup;
 			children = (
+				FAE56D3E23EB6B8200EE667D /* FriendsConfigurator.swift */,
+				FAE56D4223EBA59B00EE667D /* FriendsPresenter.swift */,
 				FA08D26E2393BD0C0005E549 /* FriendListViewController.swift */,
 				FA08D2702393C7E00005E549 /* FriendCell.swift */,
-				FA08D2722393EF000005E549 /* FriendDetailCell.swift */,
-				FA08D2742393F0E50005E549 /* FriendViewController.swift */,
+				FAE56D3D23EB687B00EE667D /* Detail */,
 			);
 			path = Friends;
 			sourceTree = "<group>";
@@ -413,8 +419,19 @@
 		FAE56D3C23E8A0AE00EE667D /* Tabbar */ = {
 			isa = PBXGroup;
 			children = (
+				F1CD9F8F23AD14D500558294 /* TabBarController.swift */,
+				FAE56D4023EB6F4800EE667D /* TabsConfigurator.swift */,
 			);
 			path = Tabbar;
+			sourceTree = "<group>";
+		};
+		FAE56D3D23EB687B00EE667D /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				FA08D2722393EF000005E549 /* FriendDetailCell.swift */,
+				FA08D2742393F0E50005E549 /* FriendViewController.swift */,
+			);
+			path = Detail;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -557,6 +574,7 @@
 				F1B2784423A010C000ED7F44 /* MessagesViewController.swift in Sources */,
 				FA545DB123BA48D000423432 /* CustomSearchBar.swift in Sources */,
 				F101C0A323A5768E00A191D5 /* UIView+addSubviews.swift in Sources */,
+				FAE56D4123EB6F4800EE667D /* TabsConfigurator.swift in Sources */,
 				FA08D27F239426370005E549 /* AddGroupViewController.swift in Sources */,
 				FAD1E33C23DCED090082F411 /* VKPost.swift in Sources */,
 				FA10160E23E1AEA70057D961 /* RealmVKUser.swift in Sources */,
@@ -577,7 +595,9 @@
 				FA08D2682392F9CF0005E549 /* User.swift in Sources */,
 				FA10161723E2C2040057D961 /* UserRepository.swift in Sources */,
 				F1CD9F9223AD25B700558294 /* TabbarAnimatedTransitioning.swift in Sources */,
+				FAE56D4323EBA59B00EE667D /* FriendsPresenter.swift in Sources */,
 				FA14876923D51A960006B03A /* VKApi.swift in Sources */,
+				FAE56D3F23EB6B8200EE667D /* FriendsConfigurator.swift in Sources */,
 				FAC59DFC2399AE050097D0B5 /* HeartButton.swift in Sources */,
 				F101C0A523A5891D00A191D5 /* Colors.swift in Sources */,
 				F110D4BB23CC566300373182 /* Session.swift in Sources */,

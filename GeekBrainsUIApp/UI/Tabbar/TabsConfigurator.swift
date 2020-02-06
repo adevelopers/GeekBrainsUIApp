@@ -1,12 +1,13 @@
 //
-//   TabBarController.swift
+//  TabsConfigurator.swift
 //  GeekBrainsUIApp
 //
-//  Created by Кирилл Худяков on 20.12.2019.
-//  Copyright © 2019 Kirill Khudiakov. All rights reserved.
+//  Created by Kirill Khudiakov on 06.02.2020.
+//  Copyright © 2020 Kirill Khudiakov. All rights reserved.
 //
 
 import UIKit
+
 
 extension String {
     static let loginViewController = "loginViewController"
@@ -35,20 +36,20 @@ final class TabsConfigurator: TabConfigurable {
     
     var tabs: [TabConfig] = [
         .init(title: "Posts", icon: .tabNewsfeed, initType: .storyboard(id: .postsNavigation) ),
-        .init(title: "Search", icon: .tabSearch, initType: .storyboard(id: .friendsNavigation)),
-        .init(title: "Messages", icon: .tabMessages, initType: .storyboard(id: .groupsNavigation)),
+        .init(title: "Friends", icon: .tabSearch, initType: .storyboard(id: .friendsNavigation)),
+        .init(title: "Groups", icon: .tabMessages, initType: .storyboard(id: .groupsNavigation)),
         .init(title: "More", icon: .tabMore,
               initType: .direct(controller: UINavigationController(rootViewController: MoreViewController()))),
     ]
     
     func configured() -> [UIViewController] {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        
         return tabs.enumerated().map { item in
             let tab = item.element
             switch tab.initType {
             case let .storyboard(id: controllerId):
                 // елси контроллер в Storyboard
-                let controller = storyboard.instantiateViewController(identifier: controllerId)
+                let controller = createConfiguredController(controllerId: controllerId)
                 controller.tabBarItem = UITabBarItem(title: tab.title, image: tab.icon, tag: item.offset)
                 return controller
             case let .direct(controller: controller):
@@ -60,46 +61,23 @@ final class TabsConfigurator: TabConfigurable {
     
 }
 
-final class TabBarController: UITabBarController {
-    let transitioning = TabbarAnimatedTransitioning()
-    var previousIndex = 0
-    
-    let configurator = TabsConfigurator()
-    
-    override func loadView() {
-        super.loadView()
-        navigationController?.isNavigationBarHidden = true
-        setViewControllers(configurator.configured(), animated: false)
-    }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        delegate = self
+extension TabsConfigurator {
+    private func createConfiguredController(controllerId: String) -> UIViewController {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let controller = storyboard.instantiateViewController(identifier: controllerId)
         
-    }
-
-}
-
-
-extension TabBarController: UITabBarControllerDelegate {
-    func tabBarController(_ tabBarController: UITabBarController,
-                          animationControllerForTransitionFrom fromVC: UIViewController,
-                          to toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        
-        guard
-            let was = viewControllers?.firstIndex(of: fromVC),
-            let will = viewControllers?.firstIndex(of: toVC)
-        else {
-            return nil
+        switch controllerId { // если можем, то конфигурим контроллер
+        case .friendsNavigation:
+            if
+                let navigationController = controller as? UINavigationController,
+                let friendsController = navigationController.viewControllers.first as? FriendListViewController
+            {
+                friendsController.configurator = FriendsConfiguratorImpl()
+            }
+        default:
+            break
         }
         
-        if was > will {
-            transitioning.animationDirection = .left
-        } else {
-            transitioning.animationDirection = .right
-        }
-        
-        previousIndex = will
-        return transitioning
+        return controller
     }
 }

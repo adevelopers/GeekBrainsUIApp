@@ -10,13 +10,13 @@ import RealmSwift
 
 
 protocol UserRpositoryProtocol {
-    func add(from items: [VKUserProtocol])
-    func getAll() throws -> [VKUserProtocol]
+    func add(from items: [VKUser])
+    func getAll() throws -> Results<RealmVKUser>
 }
 
 final class UserRepository: UserRpositoryProtocol {
     
-    func add(from items: [VKUserProtocol]) {
+    func add(from items: [VKUser]) {
         do {
             let realm = try! Realm()
             
@@ -31,11 +31,10 @@ final class UserRepository: UserRpositoryProtocol {
         }
     }
     
-    func getAll() throws -> [VKUserProtocol] {
+    func getAll() throws -> Results<RealmVKUser> {
         do {
             let realm = try Realm()
             return realm.objects(RealmVKUser.self)
-                .map { $0.model() }
         } catch {
             throw error
         }

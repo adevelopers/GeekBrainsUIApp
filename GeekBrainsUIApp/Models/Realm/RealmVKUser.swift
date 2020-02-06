@@ -12,7 +12,7 @@ import RealmSwift
 protocol  VKUserProtocol {
     var id: Int { get }
     var firstName: String { get }
-    var lastName: String? { get }
+    var lastName: String { get }
     var photo200orig: String? { get }
     var sex: Int? { get }
 }
@@ -20,7 +20,7 @@ protocol  VKUserProtocol {
 class RealmVKUser: Object, VKUserProtocol {
     @objc dynamic var id = 0
     @objc dynamic var firstName: String = ""
-    @objc dynamic var lastName: String?
+    @objc dynamic var lastName: String = ""
     @objc dynamic var deactivated: String?
     @objc dynamic var isClosed: Bool = false
     @objc dynamic var online: Int = 0
@@ -44,11 +44,11 @@ class RealmVKUser: Object, VKUserProtocol {
 
 extension RealmVKUser {
     
-    convenience init(from model: VKUserProtocol) {
+    convenience init(from model: VKUser) {
         self.init()
         id = model.id
         firstName = model.firstName
-        lastName = model.lastName
+        lastName = model.lastName ?? ""
         photo200orig = model.photo200orig
         sex = model.sex
     }

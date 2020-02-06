@@ -35,4 +35,4 @@ struct VKUser: Decodable {
     }
 }
 
-extension VKUser: VKUserProtocol {}
+
