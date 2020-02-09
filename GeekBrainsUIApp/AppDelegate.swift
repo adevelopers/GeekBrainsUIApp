@@ -29,17 +29,27 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         window = UIWindow()
         
-        if UserDefaults.standard.isAuthorized {
-            let navController = UINavigationController(rootViewController: TabBarController())
-            navController.isNavigationBarHidden = true
-            window?.rootViewController = navController
-            window?.makeKeyAndVisible()
-        } else {
-            window?.rootViewController = UINavigationController(rootViewController: AuthViewController())
-            window?.makeKeyAndVisible()
-        }
+        
+        
+        routeToLogin()
+//        if UserDefaults.standard.isAuthorized {
+//            let navController = UINavigationController(rootViewController: TabBarController())
+//            navController.isNavigationBarHidden = true
+//            window?.rootViewController = navController
+//            window?.makeKeyAndVisible()
+//        } else {
+//            window?.rootViewController = UINavigationController(rootViewController: LoginViewController())
+//            window?.makeKeyAndVisible()
+//        }
                 
         return true
+    }
+    
+    private func routeToLogin() {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let loginController = storyboard.instantiateViewController(withIdentifier: "loginViewController")
+        window?.rootViewController  = loginController
+        window?.makeKeyAndVisible()
     }
 
 }
