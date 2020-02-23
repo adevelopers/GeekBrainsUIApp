@@ -10,5 +10,7 @@ target 'GeekBrainsUIApp' do
   pod 'Alamofire'
   pod 'RealmSwift'
   pod 'Kingfisher'
+  pod 'Firebase/Analytics'
+  pod 'Firebase/Auth'
 
 end

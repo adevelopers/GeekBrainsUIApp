@@ -13,9 +13,9 @@ struct VKUser: Decodable {
     var firstName: String
     var lastName: String?
     let deactivated: String?
-    let isClosed: Bool
+    let isClosed: Bool?
     let online: Int
-    let canAccessClosed: Bool
+    let canAccessClosed: Bool?
     
     let hasPhoto: Int?
     let photo200orig: String?
@@ -35,4 +35,4 @@ struct VKUser: Decodable {
     }
 }
 
-extension VKUser: VKUserProtocol {}
+
