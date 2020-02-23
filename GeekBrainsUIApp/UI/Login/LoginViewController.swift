@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import FirebaseAuth
+
 
 enum Segues: String {
     case tabbar
@@ -40,7 +42,8 @@ class LoginViewController: UIViewController {
     
     @objc
     func goToTabbar() {
-        print("GO")
+        signIn()
+        
         if let tabbarController = self.storyboard?.instantiateViewController(withIdentifier: "tabbarController") {
             navigationController?.pushViewController(tabbarController, animated: true)
         }
@@ -100,14 +103,14 @@ class LoginViewController: UIViewController {
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
         guard
             let login = emailPhoneField.text,
-            let passord = passwordField.text
+            let password = passwordField.text
         else {
             return false
         }
         
         switch Segues(rawValue: identifier) {
         case .tabbar:
-            if isValid(credentials: (login, passord)) {
+            if isValid(credentials: (login, password)) {
                 return true
             } else {
                 showError(message: "Введены неверные данные пользователя")
@@ -118,14 +121,57 @@ class LoginViewController: UIViewController {
         }
     }
     
+    
+    private func signIn() {
+        guard
+            let email = emailPhoneField.text,
+            let password = passwordField.text
+        else {
+            return
+        }
+
+        Auth.auth().signIn(withEmail: email, password: password) { (result, error) in
+            guard
+                error == nil,
+                let result = result
+            else {
+                print("❌  \(error)")
+                return
+            }
+
+            print("result -> \(result.user.email)")
+        }
+    }
+    
+//    private func createAndAuth() {
+//        guard
+//            let email = emailPhoneField.text,
+//            let password = passwordField.text
+//        else {
+//            return
+//        }
+//
+//        Auth.auth().createUser(withEmail: email, password: password) { (result, error) in
+//            guard
+//                error == nil,
+//                let result = result
+//            else {
+//                print("❌  \(error)")
+//                return
+//            }
+//
+//            print("result -> \(result.user)")
+//        }
+//    }
+    
 }
 
 extension LoginViewController {
     
     private func isValid(credentials: (login: String, password: String)) -> Bool {
         if
-            credentials.login == "client",
-            credentials.password == "12345"
+            credentials.login == "gk@adeveloper.ru",
+            credentials.password == "12345678"
         {
             print("✅")
             return true
@@ -143,8 +189,8 @@ extension LoginViewController {
     }
     
     private func setDemoCredentials() {
-        emailPhoneField.text = "client"
-        passwordField.text = "12345"
+        emailPhoneField.text = "gk@adeveloper.ru"
+        passwordField.text = "12345678"
     }
     
 }
