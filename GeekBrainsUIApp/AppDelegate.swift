@@ -8,7 +8,6 @@
 
 import UIKit
 import RealmSwift
-import Firebase
 
 
 @UIApplicationMain
@@ -25,31 +24,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
-        FirebaseApp.configure()
-        
         window = UIWindow()
         
-        
-        
-        routeToLogin()
-//        if UserDefaults.standard.isAuthorized {
-//            let navController = UINavigationController(rootViewController: TabBarController())
-//            navController.isNavigationBarHidden = true
-//            window?.rootViewController = navController
-//            window?.makeKeyAndVisible()
-//        } else {
-//            window?.rootViewController = UINavigationController(rootViewController: LoginViewController())
-//            window?.makeKeyAndVisible()
-//        }
+        if UserDefaults.standard.isAuthorized {
+            let navController = UINavigationController(rootViewController: TabBarController())
+            navController.isNavigationBarHidden = true
+            window?.rootViewController = navController
+            window?.makeKeyAndVisible()
+        } else {
+            window?.rootViewController = UINavigationController(rootViewController: AuthViewController())
+            window?.makeKeyAndVisible()
+        }
                 
         return true
-    }
-    
-    private func routeToLogin() {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let loginController = storyboard.instantiateViewController(withIdentifier: "loginViewController")
-        window?.rootViewController  = loginController
-        window?.makeKeyAndVisible()
     }
 
 }
