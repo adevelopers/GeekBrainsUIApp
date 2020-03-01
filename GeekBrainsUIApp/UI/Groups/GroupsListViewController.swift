@@ -7,7 +7,8 @@
 //
 
 import UIKit
-
+import VkApiCore
+import VkApiKit
 
 class GroupsListViewController: UITableViewController {
 

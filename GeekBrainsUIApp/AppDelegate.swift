@@ -17,7 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     override init() {
         super.init()
-        
+//        resetToken()
         setupRealm()
     }
     
@@ -27,6 +27,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow()
         
         if UserDefaults.standard.isAuthorized {
+            
             let navController = UINavigationController(rootViewController: TabBarController())
             navController.isNavigationBarHidden = true
             window?.rootViewController = navController
@@ -39,6 +40,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
 
+    
+    private func resetToken() {
+        UserDefaults.standard.token = nil
+        UserDefaults.standard.userId = 0
+        UserDefaults.standard.isAuthorized = false
+    }
 }
 
 

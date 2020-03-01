@@ -7,6 +7,9 @@
 //
 
 import UIKit
+import VkApiCore
+import VkApiKit
+
 
 struct Section<T> {
     var title: String

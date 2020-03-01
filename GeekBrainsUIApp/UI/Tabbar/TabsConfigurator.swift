@@ -35,7 +35,11 @@ final class TabsConfigurator: TabConfigurable {
     }
     
     var tabs: [TabConfig] = [
-        .init(title: "Posts", icon: .tabNewsfeed, initType: .storyboard(id: .postsNavigation) ),
+        .init(title: "Posts", icon: .tabNewsfeed,
+              initType: .direct(controller: UINavigationController(rootViewController:
+                    PostsViewController(presenter: PostsPresenterImp())
+                )
+            )),
         .init(title: "Friends", icon: .tabSearch, initType: .storyboard(id: .friendsNavigation)),
         .init(title: "Groups", icon: .tabMessages, initType: .storyboard(id: .groupsNavigation)),
         .init(title: "More", icon: .tabMore,

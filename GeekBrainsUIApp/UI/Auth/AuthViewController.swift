@@ -9,12 +9,12 @@
 import UIKit
 import WebKit
 import SnapKit
-import Alamofire
+
 
 
 final class AuthViewController: UIViewController {
     
-    let clientId = "7280632"
+    let vkAppId = "7280632"
     
     lazy var webView: WKWebView = {
         let webConfig = WKWebViewConfiguration()
@@ -46,6 +46,7 @@ final class AuthViewController: UIViewController {
     private func setupUI() {
         view.addSubview(webView)
     }
+    
     private func setupConstraints() {
         webView.snp.makeConstraints {
             $0.edges.equalToSuperview()
@@ -53,16 +54,18 @@ final class AuthViewController: UIViewController {
     }
     
     private func connect() {
+        
+        let scope = "wall, photos, groups, video, status, friends"
         // web config
         var urlComponents = URLComponents()
         urlComponents.scheme = "https"
         urlComponents.host = "oauth.vk.com"
         urlComponents.path = "/authorize"
         urlComponents.queryItems = [
-            URLQueryItem(name: "client_id", value: clientId),
+            URLQueryItem(name: "client_id", value: vkAppId),
             URLQueryItem(name: "redirect_uri", value: "https://oauth.vk.com/blank.html"),
             URLQueryItem(name: "display", value: "mobile"),
-            URLQueryItem(name: "scope", value: "wall, photos, groups, video, status, friends"),
+            URLQueryItem(name: "scope", value: scope),
             URLQueryItem(name: "response_type", value: "token"),
             URLQueryItem(name: "v", value: "5.103"),
         ]

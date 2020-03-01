@@ -7,6 +7,9 @@
 //
 
 import RealmSwift
+import VkApiCore
+import VkApiKit
+
 
 
 protocol UserRpositoryProtocol {

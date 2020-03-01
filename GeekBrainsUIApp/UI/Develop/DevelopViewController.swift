@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import VkApiKit
 
 final class DevelopViewController: UIViewController {
     

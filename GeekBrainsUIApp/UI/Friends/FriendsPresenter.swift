@@ -8,7 +8,7 @@
 
 import UIKit
 import RealmSwift
-
+import VkApiKit
 
 protocol FriendsPresenter {
     func viewDidLoad()

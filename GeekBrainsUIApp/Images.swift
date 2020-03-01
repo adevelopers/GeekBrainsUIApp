@@ -44,4 +44,6 @@ extension UIImage {
     static func getPhoto(by number: Int) -> UIImage? {
         return UIImage(imageLiteralResourceName: "\(number).jpg")
     }
+    
+    static let pikachu = UIImage(imageLiteralResourceName: "pikachu")
 }
