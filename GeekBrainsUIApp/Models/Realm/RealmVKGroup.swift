@@ -7,17 +7,9 @@
 //
 
 import RealmSwift
+import VkApiCore
 
 
-protocol VKGroupProtocol {
-    var id: Int { get }
-    var name: String { get }
-    var text: String? { get }
-    var photo200: String { get }
-    
-    func map(from model: VKGroupProtocol)
-    func model() -> VKGroupProtocol
-}
 
 class RealmVKGroup: Object, VKGroupProtocol {
     
@@ -61,6 +53,7 @@ extension RealmVKGroup {
     }
     
     func model() -> VKGroupProtocol {
+        
         return VKGroup(id: id,
                        name: name,
                        screenName: screenName,
@@ -75,9 +68,9 @@ extension RealmVKGroup {
                        photo50: photo50,
                        photo100: photo100,
                        photo200: photo200,
-                       description: text,
+                       description: text ?? "",
                        activity: activity,
-                       status: status)
+                       status: status ?? "")
     }
     
 }

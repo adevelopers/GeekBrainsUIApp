@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import VkApiCore
+import VkApiKit
 
 class AddGroupViewController: UITableViewController {
     

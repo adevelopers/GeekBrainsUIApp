@@ -7,7 +7,10 @@
 //
 
 import Foundation
+import VkApiCore
 
+
+// TODO: dfgdfgdf
 final class Session {
     static let shared = Session()
     
@@ -25,7 +28,6 @@ final class Session {
     }
     
     private init() {
-        
         if let savedToken = UserDefaults.standard.token {
             self.token = savedToken
         }

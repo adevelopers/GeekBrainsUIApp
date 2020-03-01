@@ -8,7 +8,7 @@
 
 import UIKit
 import Kingfisher
-
+import VkApiCore
 
 enum GroupCellModel {
     case decoded(VKGroupProtocol)

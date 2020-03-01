@@ -9,10 +9,10 @@
 import Foundation
 
 
-struct VKResponse<T: Decodable>: Decodable {
+public struct VKResponse<T: Decodable>: Decodable {
     
-    let response: Response?
-    let error: VKError?
+    public let response: Response?
+    public let error: VKError?
     
     enum CodingKeys: String, CodingKey {
         case response
@@ -21,9 +21,9 @@ struct VKResponse<T: Decodable>: Decodable {
     
     
     
-    struct Response: Decodable {
-        let count: Int?
-        let items: [T]
+    public struct Response: Decodable {
+        public let count: Int?
+        public let items: [T]
         
         enum CodingKeys: String, CodingKey {
             case count
@@ -32,9 +32,9 @@ struct VKResponse<T: Decodable>: Decodable {
 
     }
     
-    struct VKError: Decodable {
-        let error_code: Int?
-        let error_msg: String?
+    public struct VKError: Decodable {
+        public let error_code: Int?
+        public let error_msg: String?
     }
 }
 

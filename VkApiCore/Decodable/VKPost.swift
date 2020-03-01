@@ -9,7 +9,7 @@
 import Foundation
 
 
-protocol VKPostProtocol {
+public protocol VKPostProtocol {
     var id: Int { get }
     var ownerId: Int { get }
     var text: String? { get }
@@ -17,13 +17,13 @@ protocol VKPostProtocol {
     var attachments: [VKPost.Attachment]? { get }
 }
 
-struct VKPost: Decodable, VKPostProtocol {
-    let id: Int
-    let ownerId: Int //    идентификатор владельца стены, на которой размещена запись. В версиях API ниже 5.7 это поле называется to_id.
+public struct VKPost: Decodable, VKPostProtocol {
+    public let id: Int
+    public let ownerId: Int //    идентификатор владельца стены, на которой размещена запись. В версиях API ниже 5.7 это поле называется to_id.
     let fromId: Int? //    идентификатор автора записи (от чьего имени опубликована запись).
     let createdBy: Int? //  идентификатор администратора, который опубликовал запись
     let date: Int? //     время публикации записи в формате unixtime.
-    let text: String? // текст записи.
+    public let text: String? // текст записи.
     let replyOwnerId: Int? // идентификатор владельца записи, в ответ на которую была оставлена текущая.
     let replyPostId: Int? // идентификатор записи, в ответ на которую была оставлена текущая.
     let friendsOnly: Int? // 1, если запись была создана с опцией «Только для друзей».
@@ -31,7 +31,7 @@ struct VKPost: Decodable, VKPostProtocol {
     let like: Likes?
     let reposts: Reposts?
     let views: Views? // информация о просмотрах записи. Объект с единственным полем:
-    let postType: String? // тип записи, может принимать следующие значения: post, copy, reply, postpone, suggest.
+    public let postType: String? // тип записи, может принимать следующие значения: post, copy, reply, postpone, suggest.
     let postSource: PostSource?
     let geo: Geo?
     let signerId: Int? // идентификатор автора, если запись была опубликована от имени сообщества и подписана пользователем;
@@ -43,7 +43,7 @@ struct VKPost: Decodable, VKPostProtocol {
     let markedAsAds: Int?  //
     let isFavorite: Bool?   //     true, если объект добавлен в закладки у текущего пользователя.
     let postponedId: Int?   //  integer
-    let attachments: [Attachment]?
+    public let attachments: [Attachment]?
     
     enum CodingKeys: String, CodingKey {
         case id
@@ -75,7 +75,7 @@ struct VKPost: Decodable, VKPostProtocol {
 }
 
 extension VKPost {
-    struct Comments: Decodable {
+    public struct Comments: Decodable {
         let count: Int?  // count (integer) — количество комментариев;
         let canPost: Int? // (integer, [0,1]) — информация о том, может ли текущий пользователь комментировать запись (1 — может, 0 — не может);
 //        let groupsCanPost: Decimal // (integer, [0,1]) — информация о том, могут ли сообщества комментировать запись;
@@ -91,39 +91,39 @@ extension VKPost {
         }
     }
     
-    struct Likes: Decodable {
+    public struct Likes: Decodable {
         let count: Int? // (integer) — число пользователей, которым понравилась запись;
         let user_likes: Int? //* (integer, [0,1]) — наличие отметки «Мне нравится» от текущего пользователя (1 — есть, 0 — нет);
         let can_like: Int? //* (integer, [0,1]) — информация о том, может ли текущий пользователь поставить отметку «Мне нравится» (1 — может, 0 — не может);
         let can_publish: Int? // * (integer, [0,1]) — информация о том, может ли текущий пользователь сделать репост записи (1 — может, 0 — не может).
     }
     
-    struct Reposts: Decodable { // информация о репостах записи («Рассказать друзьям»), объект с полями:
+    public struct Reposts: Decodable { // информация о репостах записи («Рассказать друзьям»), объект с полями:
         let count: Int? // (integer) — число пользователей, скопировавших запись;
         let user_reposted: Int? // * (integer, [0,1]) — наличие репоста от текущего пользователя (1 — есть, 0 — нет).
     }
     
-    struct Views: Decodable {
+    public struct Views: Decodable {
         let count: Int? // count (integer) — число просмотров записи.
     }
     
-    struct PostSource: Decodable {
+    public struct PostSource: Decodable {
         let type: String?
         let platform: String?
     }
     
-    struct Attachment: Decodable { // attachments - array    медиавложения записи (фотографии, ссылки и т.п.).
-        let type: String?
-        let photo: VKPhoto?
+    public struct Attachment: Decodable { // attachments - array    медиавложения записи (фотографии, ссылки и т.п.).
+        public let type: String?
+        public let photo: VKPhoto?
     }
     
-    struct Geo: Decodable {
+    public struct Geo: Decodable {
         let type: String?
         let coordinates: String?
         let place: Place?
     }
     
-    struct Place: Decodable {
+    public struct Place: Decodable {
         let id: Int? // идентификатор места.
         let title: String? // string    название места.
         let latitude: Int? // integer    географическая широта, заданная в градусах (от -90 до 90).
