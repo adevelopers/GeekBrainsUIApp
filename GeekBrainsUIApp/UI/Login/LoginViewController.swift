@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import FirebaseAuth
 
 
 enum Segues: String {
@@ -130,39 +129,7 @@ class LoginViewController: UIViewController {
             return
         }
 
-        Auth.auth().signIn(withEmail: email, password: password) { (result, error) in
-            guard
-                error == nil,
-                let result = result
-            else {
-                print("❌  \(error)")
-                return
-            }
-
-            print("result -> \(result.user.email)")
-        }
     }
-    
-//    private func createAndAuth() {
-//        guard
-//            let email = emailPhoneField.text,
-//            let password = passwordField.text
-//        else {
-//            return
-//        }
-//
-//        Auth.auth().createUser(withEmail: email, password: password) { (result, error) in
-//            guard
-//                error == nil,
-//                let result = result
-//            else {
-//                print("❌  \(error)")
-//                return
-//            }
-//
-//            print("result -> \(result.user)")
-//        }
-//    }
     
 }
 
