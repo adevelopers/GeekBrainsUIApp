@@ -21,7 +21,7 @@ enum CellsType {
 class NewsfeedViewController: UITableViewController {
     
     let api = VKApi()
-    
+    // Теперь доделаю )
     
     var models: [CellsType] = []
     
